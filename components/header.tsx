@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState("en");
   const { cartItems } = useCart();
   const cartItemCount = cartItems.length;
   const router = useRouter();
@@ -36,10 +37,12 @@ export function Header() {
     const locale = pathname.split("/")[1];
     if (locale && languages.some((lang) => lang.code === locale)) {
       i18n.changeLanguage(locale);
+      setCurrentLanguage(locale);
     }
   }, [pathname, i18n]);
 
   const handleLanguageChange = (newLocale: string) => {
+    setCurrentLanguage(newLocale);
     // Get the current path segments
     const segments = pathname.split("/");
 
@@ -171,7 +174,10 @@ export function Header() {
 
           <div className="flex items-center gap-1">
             <Globe className="h-4 w-4 text-muted-foreground" />
-            <Select value={i18n.language} onValueChange={handleLanguageChange}>
+            <Select
+              value={currentLanguage}
+              onValueChange={handleLanguageChange}
+            >
               <SelectTrigger className="w-auto min-w-[60px] h-8 border-none bg-transparent px-2 py-0 font-medium text-sm flex justify-between items-center">
                 <SelectValue className="text-left pr-2" />
               </SelectTrigger>
