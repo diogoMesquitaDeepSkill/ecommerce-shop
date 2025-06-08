@@ -1,17 +1,33 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, Search, ShoppingCart, User, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { useCart } from "@/components/cart-provider"
+import { useCart } from "@/components/cart-provider";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Globe, Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 export function Header() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const { cartItems } = useCart()
-  const cartItemCount = cartItems.length
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const { cartItems } = useCart();
+  const cartItemCount = cartItems.length;
+
+  const languages = [
+    { code: "en", name: "English", display: "EN" },
+    { code: "es", name: "Español", display: "ES" },
+    { code: "fr", name: "Français", display: "FR" },
+    { code: "de", name: "Deutsch", display: "DE" },
+    { code: "pt", name: "Português", display: "PT" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
@@ -52,16 +68,28 @@ export function Header() {
         </Link>
 
         <nav className="mx-6 hidden md:flex items-center gap-6 text-sm">
-          <Link href="/" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/"
+            className="font-medium transition-colors hover:text-primary"
+          >
             Home
           </Link>
-          <Link href="/products" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/products"
+            className="font-medium transition-colors hover:text-primary"
+          >
             All Products
           </Link>
-          <Link href="/products/men" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/products/men"
+            className="font-medium transition-colors hover:text-primary"
+          >
             Men
           </Link>
-          <Link href="/products/women" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/products/women"
+            className="font-medium transition-colors hover:text-primary"
+          >
             Women
           </Link>
         </nav>
@@ -69,14 +97,28 @@ export function Header() {
         <div className="ml-auto flex items-center gap-2">
           {isSearchOpen ? (
             <div className="relative flex items-center">
-              <Input type="search" placeholder="Search products..." className="w-[200px] md:w-[300px]" autoFocus />
-              <Button variant="ghost" size="icon" className="absolute right-0" onClick={() => setIsSearchOpen(false)}>
+              <Input
+                type="search"
+                placeholder="Search products..."
+                className="w-[200px] md:w-[300px]"
+                autoFocus
+              />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-0"
+                onClick={() => setIsSearchOpen(false)}
+              >
                 <X className="h-4 w-4" />
                 <span className="sr-only">Close search</span>
               </Button>
             </div>
           ) : (
-            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsSearchOpen(true)}
+            >
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </Button>
@@ -98,8 +140,27 @@ export function Header() {
               <span className="sr-only">Cart</span>
             </Button>
           </Link>
+
+          <div className="flex items-center gap-1">
+            <Globe className="h-4 w-4 text-muted-foreground" />
+            <Select
+              value={selectedLanguage}
+              onValueChange={setSelectedLanguage}
+            >
+              <SelectTrigger className="w-auto min-w-[60px] h-8 border-none bg-transparent px-2 py-0 font-medium text-sm flex justify-between items-center">
+                <SelectValue className="text-left pr-2" />
+              </SelectTrigger>
+              <SelectContent align="end">
+                {languages.map((language) => (
+                  <SelectItem key={language.code} value={language.code}>
+                    {language.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
     </header>
-  )
+  );
 }
