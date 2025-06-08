@@ -16,7 +16,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import "../app/i18n/client";
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react";
 import "./globals.css";
+import "./i18n-client";
 import { languages } from "./i18n/settings";
 
 const inter = Inter({ subsets: ["latin"] });
