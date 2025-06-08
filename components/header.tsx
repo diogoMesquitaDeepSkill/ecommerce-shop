@@ -13,21 +13,50 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Globe, Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import "../app/i18n/client";
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const { cartItems } = useCart();
   const cartItemCount = cartItems.length;
+  const router = useRouter();
+  const pathname = usePathname();
+  const { i18n } = useTranslation();
 
   const languages = [
-    { code: "en", name: "English", display: "EN" },
-    { code: "es", name: "Español", display: "ES" },
-    { code: "fr", name: "Français", display: "FR" },
-    { code: "de", name: "Deutsch", display: "DE" },
     { code: "pt", name: "Português", display: "PT" },
+    { code: "en", name: "English", display: "EN" },
+    { code: "fr", name: "Français", display: "FR" },
   ];
+
+  useEffect(() => {
+    // Update i18next language when path changes
+    const locale = pathname.split("/")[1];
+    if (locale && languages.some((lang) => lang.code === locale)) {
+      i18n.changeLanguage(locale);
+    }
+  }, [pathname, i18n]);
+
+  const handleLanguageChange = (newLocale: string) => {
+    // Get the current path segments
+    const segments = pathname.split("/");
+
+    // Replace the locale segment or add it if it doesn't exist
+    if (segments[1] && languages.some((lang) => lang.code === segments[1])) {
+      segments[1] = newLocale;
+    } else {
+      segments.splice(1, 0, newLocale);
+    }
+
+    // Construct the new path
+    const newPath = segments.join("/");
+
+    // Navigate to the new path
+    router.push(newPath);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
@@ -143,10 +172,7 @@ export function Header() {
 
           <div className="flex items-center gap-1">
             <Globe className="h-4 w-4 text-muted-foreground" />
-            <Select
-              value={selectedLanguage}
-              onValueChange={setSelectedLanguage}
-            >
+            <Select value={i18n.language} onValueChange={handleLanguageChange}>
               <SelectTrigger className="w-auto min-w-[60px] h-8 border-none bg-transparent px-2 py-0 font-medium text-sm flex justify-between items-center">
                 <SelectValue className="text-left pr-2" />
               </SelectTrigger>

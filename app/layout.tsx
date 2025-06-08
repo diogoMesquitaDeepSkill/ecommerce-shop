@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react";
 import "./globals.css";
+import { languages } from "./i18n/settings";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,13 +16,19 @@ export const metadata: Metadata = {
   generator: "v0.dev",
 };
 
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ locale: lng }));
+}
+
 export default function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={inter.className}>
         <CartProvider>
           <div className="flex flex-col min-h-screen">
