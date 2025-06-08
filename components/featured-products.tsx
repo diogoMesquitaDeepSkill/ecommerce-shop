@@ -1,10 +1,12 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ShoppingCart } from "lucide-react"
-import { useCart } from "@/components/cart-provider"
+"use client";
+
+import { useCart } from "@/components/cart-provider";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   {
@@ -39,14 +41,16 @@ const products = [
     category: "men",
     isNew: false,
   },
-]
+];
 
 export function FeaturedProducts() {
   return (
     <section className="space-y-6">
       <div className="flex flex-col items-center text-center space-y-2">
         <h2 className="text-3xl font-bold tracking-tight">Featured Products</h2>
-        <p className="text-muted-foreground max-w-[600px]">Our most popular items, handpicked for you</p>
+        <p className="text-muted-foreground max-w-[600px]">
+          Our most popular items, handpicked for you
+        </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {products.map((product) => (
@@ -54,11 +58,11 @@ export function FeaturedProducts() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 function ProductCard({ product }) {
-  const { addToCart } = useCart()
+  const { addToCart } = useCart();
 
   return (
     <Card className="overflow-hidden group">
@@ -70,7 +74,9 @@ function ProductCard({ product }) {
             fill
             className="object-cover transition-transform group-hover:scale-105"
           />
-          {product.isNew && <Badge className="absolute top-2 right-2">New</Badge>}
+          {product.isNew && (
+            <Badge className="absolute top-2 right-2">New</Badge>
+          )}
         </div>
       </Link>
       <CardContent className="p-4">
@@ -86,5 +92,5 @@ function ProductCard({ product }) {
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

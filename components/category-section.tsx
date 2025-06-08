@@ -1,30 +1,32 @@
-import Link from "next/link"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 export function CategorySection() {
   const categories = [
     {
-      name: "Men's Collection",
+      name: "Fine Wines",
       image: "/placeholder.svg?height=600&width=400",
-      href: "/products/men",
+      href: "/products/wines",
     },
     {
-      name: "Women's Collection",
+      name: "Gourmet Foods",
       image: "/placeholder.svg?height=600&width=400",
-      href: "/products/women",
+      href: "/products/foods",
     },
     {
-      name: "Accessories",
+      name: "Gift Sets",
       image: "/placeholder.svg?height=600&width=400",
-      href: "/products/accessories",
+      href: "/products/gift-sets",
     },
-  ]
+  ];
 
   return (
     <section className="space-y-6">
       <div className="flex flex-col items-center text-center space-y-2">
         <h2 className="text-3xl font-bold tracking-tight">Shop by Category</h2>
-        <p className="text-muted-foreground max-w-[600px]">Browse our collections and find your perfect style</p>
+        <p className="text-muted-foreground max-w-[600px]">
+          Explore our curated selection of premium wines and gourmet foods
+        </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {categories.map((category) => (
@@ -37,7 +39,9 @@ export function CategorySection() {
                 />
                 <div className="absolute inset-0 bg-black/30 hover:bg-black/40 transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-2xl font-bold text-white">{category.name}</h3>
+                  <h3 className="text-2xl font-bold text-white">
+                    {category.name}
+                  </h3>
                 </div>
               </CardContent>
             </Card>
@@ -45,5 +49,5 @@ export function CategorySection() {
         ))}
       </div>
     </section>
-  )
+  );
 }

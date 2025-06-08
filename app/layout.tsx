@@ -1,23 +1,24 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { CartProvider } from "@/components/cart-provider"
+import { CartProvider } from "@/components/cart-provider";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import type React from "react";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "StyleHub | Premium Clothing Brand",
-  description: "Discover the latest fashion trends with our premium clothing collection",
-    generator: 'v0.dev'
-}
+  title: "GourmetHub | Premium Food & Wine",
+  description:
+    "Discover our curated selection of premium wines and gourmet food products",
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -31,5 +32,5 @@ export default function RootLayout({
         </CartProvider>
       </body>
     </html>
-  )
+  );
 }
