@@ -45,7 +45,7 @@ export default function ProductPage() {
   }
 
 
-  const imageUrl = product.media[0]?.url || "/placeholder.svg";
+  const imageUrl = product.media ? product.media[0]?.url : "/placeholder.svg";
   const categories = product.categories.map(
     (category) => category.name
   );

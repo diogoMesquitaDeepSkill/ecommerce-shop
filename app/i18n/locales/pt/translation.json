@@ -42,5 +42,25 @@
       "termsOfService": "Termos de Serviço",
       "cookiePolicy": "Política de Cookies"
     }
+  },
+  "home": {
+    "hero": {
+      "mainTitle": "Seleção Premium de Vinhos & Gourmet",
+      "mainDescription": "Descubra nossa coleção cuidadosamente selecionada de vinhos finos e produtos gourmet de todo o mundo.",
+      "title": "Pronto para melhorar seu estilo?",
+      "description": "Descubra nossas últimas coleções e encontre seu look perfeito.",
+      "shopNow": "Comprar Agora",
+      "featuredWines": "Vinhos em Destaque"
+    },
+    "categories": {
+      "title": "Comprar por Categoria",
+      "description": "Explore nossa seleção curada de vinhos premium e produtos gourmet"
+    },
+    "featured": {
+      "title": "Produtos em Destaque",
+      "description": "Nossos itens mais populares, cuidadosamente selecionados para você",
+      "addToCart": "Adicionar ao Carrinho",
+      "new": "Novo"
+    }
   }
 } 

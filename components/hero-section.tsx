@@ -1,7 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { usePathname } from "next/navigation";
 
 export function HeroSection() {
+  const { t } = useTranslation();
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
+
   return (
     <div className="relative">
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
@@ -14,11 +22,10 @@ export function HeroSection() {
         <div className="container px-4 mx-auto">
           <div className="max-w-lg space-y-6 text-white">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Premium Wine & Gourmet Selection
+              {t('home.hero.mainTitle')}
             </h1>
             <p className="text-lg md:text-xl">
-              Discover our carefully curated collection of fine wines and
-              exquisite gourmet products from around the world.
+              {t('home.hero.mainDescription')}
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
@@ -26,7 +33,7 @@ export function HeroSection() {
                 size="lg"
                 className="bg-white text-black hover:bg-white/90"
               >
-                <Link href="/products">Shop Now</Link>
+                <Link href={`/${locale}/products`}>{t('home.hero.shopNow')}</Link>
               </Button>
               <Button
                 asChild
@@ -34,7 +41,7 @@ export function HeroSection() {
                 variant="outline"
                 className="text-white border-white hover:bg-white/10"
               >
-                <Link href="/products/wines">Featured Wines</Link>
+                <Link href={`/${locale}/products/wines`}>{t('home.hero.featuredWines')}</Link>
               </Button>
             </div>
           </div>

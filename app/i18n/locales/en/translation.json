@@ -42,5 +42,25 @@
       "termsOfService": "Terms of Service",
       "cookiePolicy": "Cookie Policy"
     }
+  },
+  "home": {
+    "hero": {
+      "mainTitle": "Premium Wine & Gourmet Selection",
+      "mainDescription": "Discover our carefully curated collection of fine wines and exquisite gourmet products from around the world.",
+      "title": "Ready to upgrade your style?",
+      "description": "Discover our latest collections and find your perfect fit.",
+      "shopNow": "Shop Now",
+      "featuredWines": "Featured Wines"
+    },
+    "categories": {
+      "title": "Shop by Category",
+      "description": "Explore our curated selection of premium wines and gourmet foods"
+    },
+    "featured": {
+      "title": "Featured Products",
+      "description": "Our most popular items, handpicked for you",
+      "addToCart": "Add to Cart",
+      "new": "New"
+    }
   }
 } 

@@ -4,8 +4,17 @@ import { HeroSection } from "@/components/hero-section";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
+import { useTranslation } from "@/app/i18n";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
+  const { t } = await useTranslation(locale);
+
   return (
     <div className="flex flex-col min-h-screen">
       <HeroSection />
@@ -14,15 +23,15 @@ export default function Home() {
         <FeaturedProducts />
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight">
-            Ready to upgrade your style?
+            {t('home.hero.title')}
           </h2>
           <p className="max-w-[600px] text-muted-foreground">
-            Discover our latest collections and find your perfect fit.
+            {t('home.hero.description')}
           </p>
           <Button asChild size="lg">
-            <Link href="/products">
+            <Link href={`/${locale}/products`}>
               <ShoppingBag className="w-4 h-4 mr-2" />
-              Shop Now
+              {t('home.hero.shopNow')}
             </Link>
           </Button>
         </div>

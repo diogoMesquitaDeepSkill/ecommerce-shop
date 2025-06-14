@@ -24,7 +24,7 @@ export interface StrapiProduct {
     description: string;
     price: number;
     stock: number;
-    media: StrapiMedia[];
+    media?: StrapiMedia[];
     categories: StrapiCategory[];
     localizations?: {
         id: number;

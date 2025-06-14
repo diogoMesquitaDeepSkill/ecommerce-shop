@@ -36,7 +36,7 @@ export function ProductGrid({ products }: { products: StrapiProduct[] }) {
 
 function ProductCard({ product, locale }: { product: StrapiProduct; locale: string }) {
   const { addToCart } = useCart()
-  const mediaUrls = product.media.map(media => media.url) || ["/placeholder.svg"]
+  const mediaUrls = product.media?.map(media => media.url) || ["/placeholder.svg"]
   const categories = product.categories.map(cat => cat.name)
 
   const productData = {
