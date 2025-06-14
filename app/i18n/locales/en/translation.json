@@ -1,1 +1,46 @@
-{} 
+{
+  "header": {
+    "home": "Home",
+    "allProducts": "All Products",
+    "wine": "Wine",
+    "food": "Food",
+    "about": "About",
+    "contact": "Contact",
+    "searchPlaceholder": "Search products...",
+    "search": "Search",
+    "closeSearch": "Close search",
+    "account": "Account",
+    "cart": "Cart",
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "description": "Premium wines and gourmet food products. Curated selection of the finest delicacies.",
+    "shop": {
+      "title": "Shop",
+      "wine": "Wine",
+      "food": "Food",
+      "newArrivals": "New Arrivals",
+      "sale": "Sale"
+    },
+    "company": {
+      "title": "Company",
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "careers": "Careers",
+      "storeLocator": "Store Locator"
+    },
+    "customerService": {
+      "title": "Customer Service",
+      "helpCenter": "Help Center",
+      "shippingReturns": "Shipping & Returns",
+      "sizeGuide": "Size Guide",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "copyright": "© {{year}} GourmetHub. All rights reserved.",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "cookiePolicy": "Cookie Policy"
+    }
+  }
+} 

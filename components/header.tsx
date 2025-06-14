@@ -24,7 +24,7 @@ export function Header() {
   const cartItemCount = cartItems.length;
   const router = useRouter();
   const pathname = usePathname();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const languages = [
     { code: "pt", name: "Português", display: "PT" },
@@ -67,35 +67,35 @@ export function Header() {
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle menu</span>
+              <span className="sr-only">{t('header.toggleMenu')}</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-4 mt-8">
               <Link href={`/${currentLanguage}`} className="text-lg font-medium">
-                Home
+                {t('header.home')}
               </Link>
               <Link href={`/${currentLanguage}/products`} className="text-lg font-medium">
-                All Products
+                {t('header.allProducts')}
               </Link>
               <Link href={`/${currentLanguage}/products/wine`} className="text-lg font-medium">
-                Wine
+                {t('header.wine')}
               </Link>
               <Link href={`/${currentLanguage}/products/food`} className="text-lg font-medium">
-                Food
+                {t('header.food')}
               </Link>
               <Link href={`/${currentLanguage}/about`} className="text-lg font-medium">
-                About
+                {t('header.about')}
               </Link>
               <Link href={`/${currentLanguage}/contact`} className="text-lg font-medium">
-                Contact
+                {t('header.contact')}
               </Link>
             </nav>
           </SheetContent>
         </Sheet>
 
         <Link href="/" className="ml-4 md:ml-0 flex items-center gap-2">
-          <span className="text-xl font-bold">StyleHub</span>
+          <span className="text-xl font-bold">GourmetHub</span>
         </Link>
 
         <nav className="mx-6 hidden md:flex items-center gap-6 text-sm">
@@ -103,25 +103,25 @@ export function Header() {
             href={`/${currentLanguage}`}
             className="font-medium transition-colors hover:text-primary"
           >
-            Home
+            {t('header.home')}
           </Link>
           <Link
             href={`/${currentLanguage}/products`}
             className="font-medium transition-colors hover:text-primary"
           >
-            All Products
+            {t('header.allProducts')}
           </Link>
           <Link
             href={`/${currentLanguage}/products/wine`}
             className="font-medium transition-colors hover:text-primary"
           >
-            Wine
+            {t('header.wine')}
           </Link>
           <Link
             href={`/${currentLanguage}/products/food`}
             className="font-medium transition-colors hover:text-primary"
           >
-            Food
+            {t('header.food')}
           </Link>
         </nav>
 
@@ -130,7 +130,7 @@ export function Header() {
             <div className="relative flex items-center">
               <Input
                 type="search"
-                placeholder="Search products..."
+                placeholder={t('header.searchPlaceholder')}
                 className="w-[200px] md:w-[300px]"
                 autoFocus
               />
@@ -141,7 +141,7 @@ export function Header() {
                 onClick={() => setIsSearchOpen(false)}
               >
                 <X className="h-4 w-4" />
-                <span className="sr-only">Close search</span>
+                <span className="sr-only">{t('header.closeSearch')}</span>
               </Button>
             </div>
           ) : (
@@ -151,13 +151,13 @@ export function Header() {
               onClick={() => setIsSearchOpen(true)}
             >
               <Search className="h-5 w-5" />
-              <span className="sr-only">Search</span>
+              <span className="sr-only">{t('header.search')}</span>
             </Button>
           )}
 
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
-            <span className="sr-only">Account</span>
+            <span className="sr-only">{t('header.account')}</span>
           </Button>
 
           <Link href={`/${currentLanguage}/cart`}>
@@ -168,7 +168,7 @@ export function Header() {
                   {cartItemCount}
                 </span>
               )}
-              <span className="sr-only">Cart</span>
+              <span className="sr-only">{t('header.cart')}</span>
             </Button>
           </Link>
 

@@ -4,10 +4,12 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Update language when path changes
@@ -22,10 +24,9 @@ export function Footer() {
       <div className="container px-4 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">StyleHub</h3>
+            <h3 className="text-lg font-bold">GourmetHub</h3>
             <p className="text-sm text-muted-foreground">
-              Premium wines and gourmet food products. Curated selection of the
-              finest delicacies.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <Link
@@ -52,14 +53,14 @@ export function Footer() {
             </div>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">Shop</h3>
+            <h3 className="text-sm font-bold">{t('footer.shop.title')}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${currentLanguage}/products/wine`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Wine
+                  {t('footer.shop.wine')}
                 </Link>
               </li>
               <li>
@@ -67,7 +68,7 @@ export function Footer() {
                   href={`/${currentLanguage}/products/food`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Food
+                  {t('footer.shop.food')}
                 </Link>
               </li>
               <li>
@@ -75,7 +76,7 @@ export function Footer() {
                   href={`/${currentLanguage}/products/new`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  New Arrivals
+                  {t('footer.shop.newArrivals')}
                 </Link>
               </li>
               <li>
@@ -83,20 +84,20 @@ export function Footer() {
                   href={`/${currentLanguage}/products/sale`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Sale
+                  {t('footer.shop.sale')}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">Company</h3>
+            <h3 className="text-sm font-bold">{t('footer.company.title')}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${currentLanguage}/about`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  About Us
+                  {t('footer.company.aboutUs')}
                 </Link>
               </li>
               <li>
@@ -104,7 +105,7 @@ export function Footer() {
                   href={`/${currentLanguage}/contact`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Contact
+                  {t('footer.company.contact')}
                 </Link>
               </li>
               <li>
@@ -112,7 +113,7 @@ export function Footer() {
                   href={`/${currentLanguage}/careers`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Careers
+                  {t('footer.company.careers')}
                 </Link>
               </li>
               <li>
@@ -120,20 +121,20 @@ export function Footer() {
                   href={`/${currentLanguage}/stores`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Store Locator
+                  {t('footer.company.storeLocator')}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">Customer Service</h3>
+            <h3 className="text-sm font-bold">{t('footer.customerService.title')}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${currentLanguage}/help`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Help Center
+                  {t('footer.customerService.helpCenter')}
                 </Link>
               </li>
               <li>
@@ -141,7 +142,7 @@ export function Footer() {
                   href={`/${currentLanguage}/shipping`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Shipping & Returns
+                  {t('footer.customerService.shippingReturns')}
                 </Link>
               </li>
               <li>
@@ -149,7 +150,7 @@ export function Footer() {
                   href={`/${currentLanguage}/size-guide`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Size Guide
+                  {t('footer.customerService.sizeGuide')}
                 </Link>
               </li>
               <li>
@@ -157,7 +158,7 @@ export function Footer() {
                   href={`/${currentLanguage}/faq`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  FAQ
+                  {t('footer.customerService.faq')}
                 </Link>
               </li>
             </ul>
@@ -165,17 +166,17 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t pt-8 mt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} StyleHub. All rights reserved.
+            {t('footer.legal.copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
             <Link href={`/${currentLanguage}/privacy`} className="hover:text-foreground">
-              Privacy Policy
+              {t('footer.legal.privacyPolicy')}
             </Link>
             <Link href={`/${currentLanguage}/terms`} className="hover:text-foreground">
-              Terms of Service
+              {t('footer.legal.termsOfService')}
             </Link>
             <Link href={`/${currentLanguage}/cookies`} className="hover:text-foreground">
-              Cookie Policy
+              {t('footer.legal.cookiePolicy')}
             </Link>
           </div>
         </div>

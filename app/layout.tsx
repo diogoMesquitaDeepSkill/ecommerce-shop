@@ -7,6 +7,7 @@ import type React from "react";
 import "./globals.css";
 import "./i18n-client";
 import { languages } from "./i18n/settings";
+import { Providers } from "./components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,13 +32,15 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <CartProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </CartProvider>
+        <Providers>
+          <CartProvider>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </CartProvider>
+        </Providers>
       </body>
     </html>
   );

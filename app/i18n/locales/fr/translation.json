@@ -1,1 +1,46 @@
-{} 
+{
+  "header": {
+    "home": "Accueil",
+    "allProducts": "Tous les Produits",
+    "wine": "Vins",
+    "food": "Alimentation",
+    "about": "À Propos",
+    "contact": "Contact",
+    "searchPlaceholder": "Rechercher des produits...",
+    "search": "Rechercher",
+    "closeSearch": "Fermer la recherche",
+    "account": "Compte",
+    "cart": "Panier",
+    "toggleMenu": "Basculer le menu"
+  },
+  "footer": {
+    "description": "Vins premium et produits gastronomiques. Sélection soignée des meilleures délicatesses.",
+    "shop": {
+      "title": "Boutique",
+      "wine": "Vins",
+      "food": "Alimentation",
+      "newArrivals": "Nouveautés",
+      "sale": "Soldes"
+    },
+    "company": {
+      "title": "Entreprise",
+      "aboutUs": "À Propos",
+      "contact": "Contact",
+      "careers": "Carrières",
+      "storeLocator": "Trouver un Magasin"
+    },
+    "customerService": {
+      "title": "Service Client",
+      "helpCenter": "Centre d'Aide",
+      "shippingReturns": "Livraison & Retours",
+      "sizeGuide": "Guide des Tailles",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "copyright": "© {{year}} GourmetHub. Tous droits réservés.",
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsOfService": "Conditions d'Utilisation",
+      "cookiePolicy": "Politique des Cookies"
+    }
+  }
+} 
