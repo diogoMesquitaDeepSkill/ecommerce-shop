@@ -72,22 +72,22 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-4 mt-8">
-              <Link href="/" className="text-lg font-medium">
+              <Link href={`/${currentLanguage}`} className="text-lg font-medium">
                 Home
               </Link>
-              <Link href="/products" className="text-lg font-medium">
+              <Link href={`/${currentLanguage}/products`} className="text-lg font-medium">
                 All Products
               </Link>
-              <Link href="/products/men" className="text-lg font-medium">
-                Men
+              <Link href={`/${currentLanguage}/products/wine`} className="text-lg font-medium">
+                Wine
               </Link>
-              <Link href="/products/women" className="text-lg font-medium">
-                Women
+              <Link href={`/${currentLanguage}/products/food`} className="text-lg font-medium">
+                Food
               </Link>
-              <Link href="/about" className="text-lg font-medium">
+              <Link href={`/${currentLanguage}/about`} className="text-lg font-medium">
                 About
               </Link>
-              <Link href="/contact" className="text-lg font-medium">
+              <Link href={`/${currentLanguage}/contact`} className="text-lg font-medium">
                 Contact
               </Link>
             </nav>
@@ -100,28 +100,28 @@ export function Header() {
 
         <nav className="mx-6 hidden md:flex items-center gap-6 text-sm">
           <Link
-            href="/"
+            href={`/${currentLanguage}`}
             className="font-medium transition-colors hover:text-primary"
           >
             Home
           </Link>
           <Link
-            href="/products"
+            href={`/${currentLanguage}/products`}
             className="font-medium transition-colors hover:text-primary"
           >
             All Products
           </Link>
           <Link
-            href="/products/men"
+            href={`/${currentLanguage}/products/wine`}
             className="font-medium transition-colors hover:text-primary"
           >
-            Men
+            Wine
           </Link>
           <Link
-            href="/products/women"
+            href={`/${currentLanguage}/products/food`}
             className="font-medium transition-colors hover:text-primary"
           >
-            Women
+            Food
           </Link>
         </nav>
 
@@ -160,7 +160,7 @@ export function Header() {
             <span className="sr-only">Account</span>
           </Button>
 
-          <Link href="/cart">
+          <Link href={`/${currentLanguage}/cart`}>
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingCart className="h-5 w-5" />
               {cartItemCount > 0 && (

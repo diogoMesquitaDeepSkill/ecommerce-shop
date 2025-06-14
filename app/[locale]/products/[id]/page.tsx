@@ -44,7 +44,7 @@ const products: Product[] = [
     name: "Classic White T-Shirt",
     price: 29.99,
     image: "/placeholder.svg?height=600&width=600",
-    category: "men",
+    category: "wine",
     isNew: true,
     description:
       "A timeless classic white t-shirt made from 100% organic cotton. Features a comfortable fit and durable construction that will last through countless washes.",
@@ -67,7 +67,7 @@ const products: Product[] = [
     name: "Slim Fit Jeans",
     price: 59.99,
     image: "/placeholder.svg?height=600&width=600",
-    category: "men",
+    category: "wine",
     isNew: false,
     description:
       "Modern slim fit jeans with a slight stretch for comfort. Features a classic five-pocket design and a versatile mid-wash that pairs well with anything.",
@@ -90,7 +90,7 @@ const products: Product[] = [
     name: "Summer Floral Dress",
     price: 79.99,
     image: "/placeholder.svg?height=600&width=600",
-    category: "women",
+    category: "food",
     isNew: true,
     description:
       "A lightweight floral dress perfect for summer days. Features a flattering silhouette with a flowy skirt and adjustable straps.",
@@ -113,7 +113,7 @@ const products: Product[] = [
     name: "Casual Hoodie",
     price: 49.99,
     image: "/placeholder.svg?height=600&width=600",
-    category: "men",
+    category: "wine",
     isNew: false,
     description:
       "A comfortable casual hoodie perfect for everyday wear. Features a soft fleece lining and a relaxed fit for maximum comfort.",

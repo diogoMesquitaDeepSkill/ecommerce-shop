@@ -1,7 +1,22 @@
+"use client";
+
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function Footer() {
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Update language when path changes
+    const locale = pathname.split("/")[1];
+    if (locale && ["en", "pt", "fr"].includes(locale)) {
+      setCurrentLanguage(locale);
+    }
+  }, [pathname]);
+
   return (
     <footer className="border-t bg-background">
       <div className="container px-4 py-12 mx-auto">
@@ -41,23 +56,23 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/products/men"
+                  href={`/${currentLanguage}/products/wine`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Men's Collection
+                  Wine
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/women"
+                  href={`/${currentLanguage}/products/food`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Women's Collection
+                  Food
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/new"
+                  href={`/${currentLanguage}/products/new`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   New Arrivals
@@ -65,7 +80,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/products/sale"
+                  href={`/${currentLanguage}/products/sale`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Sale
@@ -78,7 +93,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href={`/${currentLanguage}/about`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   About Us
@@ -86,7 +101,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href={`/${currentLanguage}/contact`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Contact
@@ -94,7 +109,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/careers"
+                  href={`/${currentLanguage}/careers`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Careers
@@ -102,7 +117,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/stores"
+                  href={`/${currentLanguage}/stores`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Store Locator
@@ -115,7 +130,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/help"
+                  href={`/${currentLanguage}/help`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Help Center
@@ -123,7 +138,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/shipping"
+                  href={`/${currentLanguage}/shipping`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Shipping & Returns
@@ -131,7 +146,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/size-guide"
+                  href={`/${currentLanguage}/size-guide`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Size Guide
@@ -139,7 +154,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/faq"
+                  href={`/${currentLanguage}/faq`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   FAQ
@@ -153,13 +168,13 @@ export function Footer() {
             © {new Date().getFullYear()} StyleHub. All rights reserved.
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
-            <Link href="/privacy" className="hover:text-foreground">
+            <Link href={`/${currentLanguage}/privacy`} className="hover:text-foreground">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-foreground">
+            <Link href={`/${currentLanguage}/terms`} className="hover:text-foreground">
               Terms of Service
             </Link>
-            <Link href="/cookies" className="hover:text-foreground">
+            <Link href={`/${currentLanguage}/cookies`} className="hover:text-foreground">
               Cookie Policy
             </Link>
           </div>

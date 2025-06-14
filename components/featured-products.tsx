@@ -14,7 +14,7 @@ const products = [
     name: "Classic White T-Shirt",
     price: 29.99,
     image: "/placeholder.svg?height=400&width=300",
-    category: "men",
+    category: "wine",
     isNew: true,
   },
   {
@@ -22,7 +22,7 @@ const products = [
     name: "Slim Fit Jeans",
     price: 59.99,
     image: "/placeholder.svg?height=400&width=300",
-    category: "men",
+    category: "wine",
     isNew: false,
   },
   {
@@ -30,7 +30,7 @@ const products = [
     name: "Summer Floral Dress",
     price: 79.99,
     image: "/placeholder.svg?height=400&width=300",
-    category: "women",
+    category: "food",
     isNew: true,
   },
   {
@@ -38,7 +38,7 @@ const products = [
     name: "Casual Hoodie",
     price: 49.99,
     image: "/placeholder.svg?height=400&width=300",
-    category: "men",
+    category: "wine",
     isNew: false,
   },
 ];
