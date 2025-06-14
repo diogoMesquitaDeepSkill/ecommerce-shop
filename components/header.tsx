@@ -11,15 +11,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Globe, Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("en");
   const { cartItems } = useCart();
   const cartItemCount = cartItems.length;
   const router = useRouter();
@@ -32,17 +31,9 @@ export function Header() {
     { code: "fr", name: "Français", display: "FR" },
   ];
 
-  useEffect(() => {
-    // Update i18next language when path changes
-    const locale = pathname.split("/")[1];
-    if (locale && languages.some((lang) => lang.code === locale)) {
-      i18n.changeLanguage(locale);
-      setCurrentLanguage(locale);
-    }
-  }, [pathname, i18n]);
+  const currentLanguage = pathname.split("/")[1] || "en";
 
   const handleLanguageChange = (newLocale: string) => {
-    setCurrentLanguage(newLocale);
     // Get the current path segments
     const segments = pathname.split("/");
 
@@ -55,6 +46,9 @@ export function Header() {
 
     // Construct the new path
     const newPath = segments.join("/");
+
+    // Update i18n language
+    i18n.changeLanguage(newLocale);
 
     // Navigate to the new path
     router.push(newPath);
@@ -173,7 +167,6 @@ export function Header() {
           </Link>
 
           <div className="flex items-center gap-1">
-            <Globe className="h-4 w-4 text-muted-foreground" />
             <Select
               value={currentLanguage}
               onValueChange={handleLanguageChange}

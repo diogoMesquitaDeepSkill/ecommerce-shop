@@ -3,21 +3,12 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export function Footer() {
-  const [currentLanguage, setCurrentLanguage] = useState("en");
   const pathname = usePathname();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    // Update language when path changes
-    const locale = pathname.split("/")[1];
-    if (locale && ["en", "pt", "fr"].includes(locale)) {
-      setCurrentLanguage(locale);
-    }
-  }, [pathname]);
+  const currentLanguage = pathname.split("/")[1] || "en";
 
   return (
     <footer className="border-t bg-background">
