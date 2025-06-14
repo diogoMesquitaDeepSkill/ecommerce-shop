@@ -78,5 +78,77 @@
       "calculatedAtCheckout": "Calculated at checkout"
     },
     "checkout": "Proceed to Checkout"
+  },
+  "checkout": {
+    "emptyCart": {
+      "title": "Your cart is empty",
+      "description": "You need to add items to your cart before checking out.",
+      "browseProducts": "Browse Products"
+    },
+    "orderConfirmed": {
+      "title": "Order Confirmed!",
+      "description": "Thank you for your purchase. Your order has been confirmed and will be shipped soon.",
+      "orderNumber": "Order #12345",
+      "emailSent": "A confirmation email has been sent to your email address.",
+      "returnHome": "Return to Home"
+    },
+    "backToCart": "Back to Cart",
+    "title": "Checkout",
+    "contactInfo": {
+      "title": "Contact Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "shippingAddress": {
+      "title": "Shipping Address",
+      "address": "Address",
+      "apartment": "Apartment, suite, etc. (optional)",
+      "city": "City",
+      "state": "State",
+      "selectState": "Select state",
+      "zipCode": "ZIP Code"
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "creditCard": "Credit Card",
+      "paypal": "PayPal",
+      "cashOnDelivery": "Cash on Delivery",
+      "cardName": "Name on Card",
+      "cardNumber": "Card Number",
+      "expiryDate": "Expiry Date",
+      "cvc": "CVC",
+      "paypalRedirect": "You will be redirected to PayPal to complete your purchase securely.",
+      "continueWithPaypal": "Continue with PayPal",
+      "codDescription": "Pay with cash when your order is delivered to your doorstep. A small COD fee may apply.",
+      "secureAndConvenient": "Secure and convenient",
+      "noPaymentDetails": "No need to share payment details online",
+      "payOnReceive": "Pay only when you receive",
+      "inspectBeforePayment": "Inspect your items before payment"
+    },
+    "shippingMethod": {
+      "title": "Shipping Method",
+      "standard": {
+        "title": "Standard Shipping",
+        "price": "Free",
+        "delivery": "Delivery in 5-7 business days"
+      },
+      "express": {
+        "title": "Express Shipping",
+        "price": "$9.99",
+        "delivery": "Delivery in 2-3 business days"
+      }
+    },
+    "orderSummary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculated at checkout"
+    },
+    "placeOrder": "Place Order",
+    "processing": "Processing..."
   }
 } 

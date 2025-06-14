@@ -65,18 +65,90 @@
     "empty": {
       "title": "Seu carrinho está vazio",
       "description": "Parece que você ainda não adicionou nada ao seu carrinho.",
-      "continueShopping": "Continuar Comprando"
+      "continueShopping": "Continuar comprando"
     },
-    "title": "Carrinho de Compras",
-    "clearCart": "Limpar Carrinho",
+    "title": "Carrinho",
+    "clearCart": "Limpar carrinho",
     "orderSummary": {
-      "title": "Resumo do Pedido",
+      "title": "Resumo do pedido",
       "subtotal": "Subtotal",
       "shipping": "Frete",
       "tax": "Imposto",
       "total": "Total",
       "calculatedAtCheckout": "Calculado no checkout"
     },
-    "checkout": "Finalizar Compra"
+    "checkout": "Finalizar compra"
+  },
+  "checkout": {
+    "emptyCart": {
+      "title": "Seu carrinho está vazio",
+      "description": "Você precisa adicionar itens ao seu carrinho antes de finalizar a compra.",
+      "browseProducts": "Navegar produtos"
+    },
+    "orderConfirmed": {
+      "title": "Pedido confirmado!",
+      "description": "Obrigado pela sua compra. Seu pedido foi confirmado e será enviado em breve.",
+      "orderNumber": "Pedido #12345",
+      "emailSent": "Um email de confirmação foi enviado para o seu endereço de email.",
+      "returnHome": "Voltar para a página inicial"
+    },
+    "backToCart": "Voltar ao carrinho",
+    "title": "Finalizar compra",
+    "contactInfo": {
+      "title": "Informações de contato",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "Email",
+      "phone": "Telefone"
+    },
+    "shippingAddress": {
+      "title": "Endereço de entrega",
+      "address": "Endereço",
+      "apartment": "Apartamento, suite, etc. (opcional)",
+      "city": "Cidade",
+      "state": "Estado",
+      "selectState": "Selecione o estado",
+      "zipCode": "CEP"
+    },
+    "paymentMethod": {
+      "title": "Método de pagamento",
+      "creditCard": "Cartão de crédito",
+      "paypal": "PayPal",
+      "cashOnDelivery": "Pagamento na entrega",
+      "cardName": "Nome no cartão",
+      "cardNumber": "Número do cartão",
+      "expiryDate": "Data de validade",
+      "cvc": "CVC",
+      "paypalRedirect": "Você será redirecionado para o PayPal para completar sua compra com segurança.",
+      "continueWithPaypal": "Continuar com PayPal",
+      "codDescription": "Pague em dinheiro quando seu pedido for entregue. Uma pequena taxa de pagamento na entrega pode ser aplicada.",
+      "secureAndConvenient": "Seguro e conveniente",
+      "noPaymentDetails": "Não é necessário compartilhar detalhes de pagamento online",
+      "payOnReceive": "Pague apenas quando receber",
+      "inspectBeforePayment": "Inspecione seus itens antes do pagamento"
+    },
+    "shippingMethod": {
+      "title": "Método de envio",
+      "standard": {
+        "title": "Envio padrão",
+        "price": "Grátis",
+        "delivery": "Entrega em 5-7 dias úteis"
+      },
+      "express": {
+        "title": "Envio expresso",
+        "price": "R$ 9,99",
+        "delivery": "Entrega em 2-3 dias úteis"
+      }
+    },
+    "orderSummary": {
+      "title": "Resumo do pedido",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "tax": "Imposto",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculado no checkout"
+    },
+    "placeOrder": "Fazer pedido",
+    "processing": "Processando..."
   }
 } 

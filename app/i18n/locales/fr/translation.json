@@ -65,18 +65,90 @@
     "empty": {
       "title": "Votre panier est vide",
       "description": "Il semble que vous n'ayez pas encore ajouté d'articles à votre panier.",
-      "continueShopping": "Continuer les Achats"
+      "continueShopping": "Continuer les achats"
     },
     "title": "Panier",
-    "clearCart": "Vider le Panier",
+    "clearCart": "Vider le panier",
     "orderSummary": {
-      "title": "Récapitulatif de la Commande",
+      "title": "Récapitulatif de la commande",
       "subtotal": "Sous-total",
       "shipping": "Livraison",
       "tax": "Taxe",
       "total": "Total",
       "calculatedAtCheckout": "Calculé à la caisse"
     },
-    "checkout": "Passer à la Caisse"
+    "checkout": "Passer à la caisse"
+  },
+  "checkout": {
+    "emptyCart": {
+      "title": "Votre panier est vide",
+      "description": "Vous devez ajouter des articles à votre panier avant de passer à la caisse.",
+      "browseProducts": "Parcourir les produits"
+    },
+    "orderConfirmed": {
+      "title": "Commande confirmée !",
+      "description": "Merci pour votre achat. Votre commande a été confirmée et sera expédiée bientôt.",
+      "orderNumber": "Commande #12345",
+      "emailSent": "Un email de confirmation a été envoyé à votre adresse email.",
+      "returnHome": "Retour à l'accueil"
+    },
+    "backToCart": "Retour au panier",
+    "title": "Caisse",
+    "contactInfo": {
+      "title": "Informations de contact",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone"
+    },
+    "shippingAddress": {
+      "title": "Adresse de livraison",
+      "address": "Adresse",
+      "apartment": "Appartement, suite, etc. (optionnel)",
+      "city": "Ville",
+      "state": "État",
+      "selectState": "Sélectionner l'état",
+      "zipCode": "Code postal"
+    },
+    "paymentMethod": {
+      "title": "Méthode de paiement",
+      "creditCard": "Carte de crédit",
+      "paypal": "PayPal",
+      "cashOnDelivery": "Paiement à la livraison",
+      "cardName": "Nom sur la carte",
+      "cardNumber": "Numéro de carte",
+      "expiryDate": "Date d'expiration",
+      "cvc": "CVC",
+      "paypalRedirect": "Vous serez redirigé vers PayPal pour finaliser votre achat en toute sécurité.",
+      "continueWithPaypal": "Continuer avec PayPal",
+      "codDescription": "Payez en espèces lors de la livraison de votre commande. Des frais de paiement à la livraison peuvent s'appliquer.",
+      "secureAndConvenient": "Sûr et pratique",
+      "noPaymentDetails": "Pas besoin de partager vos informations de paiement en ligne",
+      "payOnReceive": "Payez uniquement à la réception",
+      "inspectBeforePayment": "Inspectez vos articles avant le paiement"
+    },
+    "shippingMethod": {
+      "title": "Méthode de livraison",
+      "standard": {
+        "title": "Livraison standard",
+        "price": "Gratuit",
+        "delivery": "Livraison en 5-7 jours ouvrables"
+      },
+      "express": {
+        "title": "Livraison express",
+        "price": "9,99 €",
+        "delivery": "Livraison en 2-3 jours ouvrables"
+      }
+    },
+    "orderSummary": {
+      "title": "Récapitulatif de la commande",
+      "subtotal": "Sous-total",
+      "shipping": "Livraison",
+      "tax": "Taxe",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculé à la caisse"
+    },
+    "placeOrder": "Passer la commande",
+    "processing": "Traitement en cours..."
   }
 } 
