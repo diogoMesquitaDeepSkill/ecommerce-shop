@@ -1,6 +1,6 @@
 "use client";
 
-import { useCart } from "@/components/cart-provider";
+import { getProduct } from "@/services/strapi";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,175 +8,68 @@ import { ChevronRight, Minus, Plus, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useCart } from "@/components/cart-provider";
+import { StrapiProduct } from "@/types/strapi";
 
-interface ProductDetails {
-  material: string;
-  fit: string;
-  care: string;
-  origin: string;
-}
-
-interface Product {
+interface CartProduct {
   id: number;
   name: string;
   price: number;
   image: string;
-  category: string;
-  isNew: boolean;
-  description: string;
-  details: ProductDetails;
-  sizes: string[];
-  colors: string[];
-  images: string[];
-}
-
-interface CartProduct extends Product {
   quantity: number;
-  selectedSize: string;
-  selectedColor: string;
+  categories: string[];
 }
-
-// Mock product data - in a real app, you would fetch this from an API
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Classic White T-Shirt",
-    price: 29.99,
-    image: "/placeholder.svg?height=600&width=600",
-    category: "wine",
-    isNew: true,
-    description:
-      "A timeless classic white t-shirt made from 100% organic cotton. Features a comfortable fit and durable construction that will last through countless washes.",
-    details: {
-      material: "100% Organic Cotton",
-      fit: "Regular",
-      care: "Machine wash cold, tumble dry low",
-      origin: "Ethically made in Portugal",
-    },
-    sizes: ["XS", "S", "M", "L", "XL"],
-    colors: ["White", "Black", "Gray"],
-    images: [
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-    ],
-  },
-  {
-    id: 2,
-    name: "Slim Fit Jeans",
-    price: 59.99,
-    image: "/placeholder.svg?height=600&width=600",
-    category: "wine",
-    isNew: false,
-    description:
-      "Modern slim fit jeans with a slight stretch for comfort. Features a classic five-pocket design and a versatile mid-wash that pairs well with anything.",
-    details: {
-      material: "98% Cotton, 2% Elastane",
-      fit: "Slim",
-      care: "Machine wash cold, inside out",
-      origin: "Made in Turkey",
-    },
-    sizes: ["28", "30", "32", "34", "36"],
-    colors: ["Blue", "Black", "Gray"],
-    images: [
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-    ],
-  },
-  {
-    id: 3,
-    name: "Summer Floral Dress",
-    price: 79.99,
-    image: "/placeholder.svg?height=600&width=600",
-    category: "food",
-    isNew: true,
-    description:
-      "A lightweight floral dress perfect for summer days. Features a flattering silhouette with a flowy skirt and adjustable straps.",
-    details: {
-      material: "100% Viscose",
-      fit: "Regular",
-      care: "Hand wash cold, line dry",
-      origin: "Made in India",
-    },
-    sizes: ["XS", "S", "M", "L", "XL"],
-    colors: ["Floral Print", "Blue", "White"],
-    images: [
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-    ],
-  },
-  {
-    id: 4,
-    name: "Casual Hoodie",
-    price: 49.99,
-    image: "/placeholder.svg?height=600&width=600",
-    category: "wine",
-    isNew: false,
-    description:
-      "A comfortable casual hoodie perfect for everyday wear. Features a soft fleece lining and a relaxed fit for maximum comfort.",
-    details: {
-      material: "80% Cotton, 20% Polyester",
-      fit: "Relaxed",
-      care: "Machine wash cold, tumble dry low",
-      origin: "Made in Vietnam",
-    },
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Gray", "Black", "Navy"],
-    images: [
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-    ],
-  },
-];
 
 export default function ProductPage() {
   const params = useParams();
-  const productId = Number.parseInt(params.id as string);
-  const locale = params.locale as string;
-  const product = products.find((p) => p.id === productId);
-
+  const [product, setProduct] = useState<StrapiProduct | null>(null);
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
-  const [selectedImage, setSelectedImage] = useState(0);
-
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await getProduct(params.id as string);
+      setProduct(data[0]);
+    };
+    fetchProduct();
+  }, [params.id]);
 
   if (!product) {
     return (
       <div className="container px-4 py-12 mx-auto text-center">
-        <h1 className="text-2xl font-bold">Product not found</h1>
-        <p className="mt-4">The product you are looking for does not exist.</p>
-        <Button asChild className="mt-6">
-          <Link href={`/${locale}/products`}>Back to Products</Link>
-        </Button>
+        <h1 className="text-2xl font-bold">Loading...</h1>
       </div>
     );
   }
 
-  const handleAddToCart = () => {
-    if (!selectedSize || !selectedColor) return;
+  console.log(product)
 
-    addToCart({
-      ...product,
+  const imageUrl = product.media[0]?.url || "/placeholder.svg";
+  const categories = product.categories.map(
+    (category) => category.name
+  );
+
+  const handleAddToCart = () => {
+    const cartProduct: CartProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: imageUrl,
       quantity,
-      selectedSize,
-      selectedColor,
-    } as CartProduct);
+      categories,
+    };
+    addToCart(cartProduct);
   };
 
   return (
     <div className="container px-4 py-12 mx-auto">
       <div className="flex items-center gap-1 text-sm text-muted-foreground mb-8">
-        <Link href={`/${locale}`} className="hover:text-foreground">
+        <Link href={`/${params.locale}`} className="hover:text-foreground">
           Home
         </Link>
         <ChevronRight className="h-4 w-4" />
-        <Link href={`/${locale}/products`} className="hover:text-foreground">
+        <Link href={`/${params.locale}/products`} className="hover:text-foreground">
           Products
         </Link>
         <ChevronRight className="h-4 w-4" />
@@ -187,32 +80,15 @@ export default function ProductPage() {
         <div className="space-y-4">
           <div className="relative aspect-square overflow-hidden rounded-lg border">
             <Image
-              src={product.images[selectedImage] || "/placeholder.svg"}
+              src={imageUrl}
               alt={product.name}
               fill
               className="object-cover"
             />
-            {product.isNew && (
-              <Badge className="absolute top-4 right-4">New</Badge>
-            )}
-          </div>
-
-          <div className="flex gap-4">
-            {product.images.map((image, index) => (
-              <button
-                key={index}
-                className={`relative aspect-square w-20 overflow-hidden rounded-md border ${
-                  selectedImage === index ? "ring-2 ring-primary" : ""
-                }`}
-                onClick={() => setSelectedImage(index)}
-              >
-                <Image
-                  src={image || "/placeholder.svg"}
-                  alt={`${product.name} - Image ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </button>
+            {categories.map((category) => (
+              <Badge key={category} className="absolute top-4 right-4">
+                {category}
+              </Badge>
             ))}
           </div>
         </div>
@@ -229,45 +105,10 @@ export default function ProductPage() {
 
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium mb-2">Size</h3>
-              <div className="flex flex-wrap gap-2">
-                {product.sizes.map((size) => (
-                  <Button
-                    key={size}
-                    variant={selectedSize === size ? "default" : "outline"}
-                    className="min-w-[60px]"
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </Button>
-                ))}
-              </div>
-              {!selectedSize && (
-                <p className="text-sm text-muted-foreground mt-2">
-                  Please select a size
-                </p>
-              )}
-            </div>
-
-            <div>
-              <h3 className="font-medium mb-2">Color</h3>
-              <div className="flex flex-wrap gap-2">
-                {product.colors.map((color) => (
-                  <Button
-                    key={color}
-                    variant={selectedColor === color ? "default" : "outline"}
-                    className="min-w-[80px]"
-                    onClick={() => setSelectedColor(color)}
-                  >
-                    {color}
-                  </Button>
-                ))}
-              </div>
-              {!selectedColor && (
-                <p className="text-sm text-muted-foreground mt-2">
-                  Please select a color
-                </p>
-              )}
+              <h3 className="font-medium mb-2">Stock</h3>
+              <p className="text-sm text-muted-foreground">
+                {product.stock} units available
+              </p>
             </div>
 
             <div>
@@ -295,7 +136,6 @@ export default function ProductPage() {
           <Button
             size="lg"
             className="w-full"
-            disabled={!selectedSize || !selectedColor}
             onClick={handleAddToCart}
           >
             <ShoppingCart className="h-5 w-5 mr-2" />
@@ -314,27 +154,15 @@ export default function ProductPage() {
             <TabsContent value="details" className="space-y-4 pt-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium">Material</h4>
+                  <h4 className="font-medium">Categories</h4>
                   <p className="text-sm text-muted-foreground">
-                    {product.details.material}
+                    {categories.join(", ")}
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium">Fit</h4>
+                  <h4 className="font-medium">Stock</h4>
                   <p className="text-sm text-muted-foreground">
-                    {product.details.fit}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium">Care</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {product.details.care}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium">Origin</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {product.details.origin}
+                    {product.stock} units
                   </p>
                 </div>
               </div>
@@ -351,7 +179,7 @@ export default function ProductPage() {
                 <h4 className="font-medium">Returns</h4>
                 <p className="text-sm text-muted-foreground">
                   We accept returns within 30 days of delivery. Items must be
-                  unworn, unwashed, and with the original tags attached.
+                  in original condition and packaging.
                 </p>
               </div>
             </TabsContent>
