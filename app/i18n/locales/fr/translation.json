@@ -26,14 +26,12 @@
       "title": "Entreprise",
       "aboutUs": "À Propos",
       "contact": "Contact",
-      "careers": "Carrières",
       "storeLocator": "Trouver un Magasin"
     },
     "customerService": {
       "title": "Service Client",
       "helpCenter": "Centre d'Aide",
       "shippingReturns": "Livraison & Retours",
-      "sizeGuide": "Guide des Tailles",
       "faq": "FAQ"
     },
     "legal": {
@@ -62,5 +60,23 @@
       "addToCart": "Ajouter au Panier",
       "new": "Nouveau"
     }
+  },
+  "cart": {
+    "empty": {
+      "title": "Votre panier est vide",
+      "description": "Il semble que vous n'ayez pas encore ajouté d'articles à votre panier.",
+      "continueShopping": "Continuer les Achats"
+    },
+    "title": "Panier",
+    "clearCart": "Vider le Panier",
+    "orderSummary": {
+      "title": "Récapitulatif de la Commande",
+      "subtotal": "Sous-total",
+      "shipping": "Livraison",
+      "tax": "Taxe",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculé à la caisse"
+    },
+    "checkout": "Passer à la Caisse"
   }
 } 

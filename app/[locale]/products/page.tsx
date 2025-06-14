@@ -2,15 +2,16 @@ import { getProducts } from "@/services/strapi";
 import { ProductGrid } from "@/components/product-grid";
 
 export default async function ProductsPage({
-  params: { locale },
+  params,
 }: {
   params: { locale: string };
 }) {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
   const { data: products } = await getProducts(locale);
 
   return (
     <div className="container px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">All Products</h1>
       <ProductGrid products={products} />
     </div>
   );

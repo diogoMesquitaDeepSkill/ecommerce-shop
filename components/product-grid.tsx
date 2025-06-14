@@ -9,28 +9,22 @@ import { ShoppingCart } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { StrapiProduct } from "@/types/strapi"
 import { useParams } from "next/navigation"
-
-type Product = {
-  id: number
-  documentId: string
-  name: string
-  price: number
-  stock: number
-  media: string[]
-  categories: string[]
-  description: string
-}
+import { useTranslation } from "react-i18next"
 
 export function ProductGrid({ products }: { products: StrapiProduct[] }) {
   const params = useParams()
   const locale = params.locale as string
+  const { t } = useTranslation()
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {products.map((product) => (
-        <ProductCard key={product.documentId} product={product} locale={locale} />
-      ))}
-    </div>
+    <>
+      <h1 className="text-3xl font-bold mb-8">{t("header.allProducts")}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard key={product.documentId} product={product} locale={locale} />
+        ))}
+      </div>
+    </>
   )
 }
 
@@ -38,6 +32,7 @@ function ProductCard({ product, locale }: { product: StrapiProduct; locale: stri
   const { addToCart } = useCart()
   const mediaUrls = product.media?.map(media => media.url) || ["/placeholder.svg"]
   const categories = product.categories.map(cat => cat.name)
+  const { t } = useTranslation()
 
   const productData = {
     id: product.id,
@@ -75,13 +70,13 @@ function ProductCard({ product, locale }: { product: StrapiProduct; locale: stri
         <p className="font-bold mt-2">${product.price.toFixed(2)}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button 
-          className="w-full" 
-          size="sm" 
+        <Button
+          className="w-full"
+          size="sm"
           onClick={() => addToCart(productData)}
         >
           <ShoppingCart className="h-4 w-4 mr-2" />
-          Add to Cart
+          {t('home.featured.addToCart')}
         </Button>
       </CardFooter>
     </Card>

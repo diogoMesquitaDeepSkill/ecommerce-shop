@@ -1,7 +1,7 @@
 {
   "header": {
     "home": "Início",
-    "allProducts": "Todos os Produtos",
+    "allProducts": "Produtos",
     "wine": "Vinhos",
     "food": "Alimentos",
     "about": "Sobre",
@@ -26,14 +26,12 @@
       "title": "Empresa",
       "aboutUs": "Sobre Nós",
       "contact": "Contato",
-      "careers": "Carreiras",
       "storeLocator": "Localizador de Lojas"
     },
     "customerService": {
       "title": "Atendimento ao Cliente",
       "helpCenter": "Central de Ajuda",
       "shippingReturns": "Envios e Devoluções",
-      "sizeGuide": "Guia de Tamanhos",
       "faq": "Perguntas Frequentes"
     },
     "legal": {
@@ -58,9 +56,27 @@
     },
     "featured": {
       "title": "Produtos em Destaque",
-      "description": "Nossos itens mais populares, cuidadosamente selecionados para você",
+      "description": "Nossos itens mais populares, cuidadosamente selecionados para si",
       "addToCart": "Adicionar ao Carrinho",
       "new": "Novo"
     }
+  },
+  "cart": {
+    "empty": {
+      "title": "Seu carrinho está vazio",
+      "description": "Parece que você ainda não adicionou nada ao seu carrinho.",
+      "continueShopping": "Continuar Comprando"
+    },
+    "title": "Carrinho de Compras",
+    "clearCart": "Limpar Carrinho",
+    "orderSummary": {
+      "title": "Resumo do Pedido",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "tax": "Imposto",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculado no checkout"
+    },
+    "checkout": "Finalizar Compra"
   }
 } 

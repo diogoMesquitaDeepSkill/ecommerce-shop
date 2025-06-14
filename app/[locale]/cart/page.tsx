@@ -7,8 +7,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { useCart } from "@/components/cart-provider"
+import { useTranslation } from "react-i18next"
+import { useParams } from "next/navigation"
 
 export default function CartPage() {
+  const params = useParams()
+  const locale = params.locale as string
+  const { t } = useTranslation()
   const { cartItems, removeFromCart, updateQuantity, subtotal, clearCart } = useCart()
 
   if (cartItems.length === 0) {
@@ -16,10 +21,10 @@ export default function CartPage() {
       <div className="container px-4 py-12 mx-auto">
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <ShoppingBag className="h-16 w-16 text-muted-foreground mb-4" />
-          <h1 className="text-2xl font-bold">Your cart is empty</h1>
-          <p className="text-muted-foreground mt-2">Looks like you haven't added anything to your cart yet.</p>
+          <h1 className="text-2xl font-bold">{t('cart.empty.title')}</h1>
+          <p className="text-muted-foreground mt-2">{t('cart.empty.description')}</p>
           <Button asChild className="mt-6">
-            <Link href="/products">Continue Shopping</Link>
+            <Link href={`/${locale}/products`}>{t('cart.empty.continueShopping')}</Link>
           </Button>
         </div>
       </div>
@@ -28,7 +33,7 @@ export default function CartPage() {
 
   return (
     <div className="container px-4 py-12 mx-auto">
-      <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
+      <h1 className="text-3xl font-bold mb-8">{t('cart.title')}</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-4">
@@ -83,10 +88,10 @@ export default function CartPage() {
 
           <div className="flex justify-between items-center">
             <Button variant="outline" onClick={clearCart}>
-              Clear Cart
+              {t('cart.clearCart')}
             </Button>
             <Button asChild variant="outline">
-              <Link href="/products">Continue Shopping</Link>
+              <Link href={`/${locale}/products`}>{t('cart.empty.continueShopping')}</Link>
             </Button>
           </div>
         </div>
@@ -94,30 +99,30 @@ export default function CartPage() {
         <div>
           <Card>
             <CardHeader>
-              <CardTitle>Order Summary</CardTitle>
+              <CardTitle>{t('cart.orderSummary.title')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between">
-                <span>Subtotal</span>
+                <span>{t('cart.orderSummary.subtotal')}</span>
                 <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span>Shipping</span>
-                <span>Calculated at checkout</span>
+                <span>{t('cart.orderSummary.shipping')}</span>
+                <span>{t('cart.orderSummary.calculatedAtCheckout')}</span>
               </div>
               <div className="flex justify-between">
-                <span>Tax</span>
-                <span>Calculated at checkout</span>
+                <span>{t('cart.orderSummary.tax')}</span>
+                <span>{t('cart.orderSummary.calculatedAtCheckout')}</span>
               </div>
               <Separator />
               <div className="flex justify-between font-bold">
-                <span>Total</span>
+                <span>{t('cart.orderSummary.total')}</span>
                 <span>${subtotal.toFixed(2)}</span>
               </div>
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
-                <Link href="/checkout">Proceed to Checkout</Link>
+                <Link href={`/${locale}/checkout`}>{t('cart.checkout')}</Link>
               </Button>
             </CardFooter>
           </Card>

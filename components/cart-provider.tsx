@@ -9,6 +9,8 @@ interface CartProduct {
   image: string
   quantity: number
   categories: string[]
+  selectedSize?: string
+  selectedColor?: string
 }
 
 interface CartContextType {

@@ -101,14 +101,6 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${currentLanguage}/careers`}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  {t('footer.company.careers')}
-                </Link>
-              </li>
-              <li>
-                <Link
                   href={`/${currentLanguage}/stores`}
                   className="text-muted-foreground hover:text-foreground"
                 >
@@ -134,14 +126,6 @@ export function Footer() {
                   className="text-muted-foreground hover:text-foreground"
                 >
                   {t('footer.customerService.shippingReturns')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${currentLanguage}/size-guide`}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  {t('footer.customerService.sizeGuide')}
                 </Link>
               </li>
               <li>

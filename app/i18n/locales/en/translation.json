@@ -26,14 +26,12 @@
       "title": "Company",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "careers": "Careers",
       "storeLocator": "Store Locator"
     },
     "customerService": {
       "title": "Customer Service",
       "helpCenter": "Help Center",
       "shippingReturns": "Shipping & Returns",
-      "sizeGuide": "Size Guide",
       "faq": "FAQ"
     },
     "legal": {
@@ -62,5 +60,23 @@
       "addToCart": "Add to Cart",
       "new": "New"
     }
+  },
+  "cart": {
+    "empty": {
+      "title": "Your cart is empty",
+      "description": "Looks like you haven't added anything to your cart yet.",
+      "continueShopping": "Continue Shopping"
+    },
+    "title": "Shopping Cart",
+    "clearCart": "Clear Cart",
+    "orderSummary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculated at checkout"
+    },
+    "checkout": "Proceed to Checkout"
   }
 } 
