@@ -88,7 +88,7 @@ export function Header() {
           </SheetContent>
         </Sheet>
 
-        <Link href="/" className="ml-4 md:ml-0 flex items-center gap-2">
+        <Link href={`/${currentLanguage}`} className="ml-4 md:ml-0 flex items-center gap-2">
           <span className="text-xl font-bold">GourmetHub</span>
         </Link>
 
