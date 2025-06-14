@@ -17,12 +17,15 @@ interface CartContextType {
   removeFromCart: (productId: number) => void
   updateQuantity: (productId: number, quantity: number) => void
   clearCart: () => void
+  subtotal: number
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cartItems, setCartItems] = useState<CartProduct[]>([])
+
+  const subtotal = cartItems.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0)
 
   const addToCart = (product: CartProduct) => {
     setCartItems((prevItems) => {
@@ -56,7 +59,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateQuantity, clearCart }}
+      value={{ cartItems, addToCart, removeFromCart, updateQuantity, clearCart, subtotal }}
     >
       {children}
     </CartContext.Provider>

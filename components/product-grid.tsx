@@ -39,15 +39,13 @@ function ProductCard({ product, locale }: { product: StrapiProduct; locale: stri
   const mediaUrls = product.media.map(media => media.url) || ["/placeholder.svg"]
   const categories = product.categories.map(cat => cat.name)
 
-  const productData: Product = {
+  const productData = {
     id: product.id,
-    documentId: product.documentId,
     name: product.name,
     price: product.price,
-    stock: product.stock,
-    media: mediaUrls,
-    categories,
-    description: product.description
+    image: mediaUrls[0] || "/placeholder.svg",
+    quantity: 1,
+    categories
   }
 
   return (
