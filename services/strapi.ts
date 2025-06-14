@@ -1,4 +1,4 @@
-import { StrapiProduct, StrapiResponse } from "@/types/strapi";
+import { StrapiProduct, StrapiListResponse, StrapiSingleResponse } from "@/types/strapi";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
@@ -6,9 +6,9 @@ if (!STRAPI_URL) {
   throw new Error("STRAPI_URL environment variable is not defined");
 }
 
-export async function getProducts(): Promise<StrapiResponse<StrapiProduct>> {
+export async function getProducts(locale: string = 'pt'): Promise<StrapiListResponse<StrapiProduct>> {
   const response = await fetch(
-    `${STRAPI_URL}/api/products?populate=*`,
+    `${STRAPI_URL}/api/products?populate=*&locale=${locale}`,
     {
       next: {
         revalidate: 60, // Revalidate every minute
@@ -20,14 +20,13 @@ export async function getProducts(): Promise<StrapiResponse<StrapiProduct>> {
     throw new Error("Failed to fetch products");
   }
 
-  console.log(response)
-
   return response.json();
 }
 
-export async function getProduct(id: string): Promise<StrapiResponse<StrapiProduct>> {
+export async function getProduct(documentId: string): Promise<StrapiSingleResponse<StrapiProduct>> {
+  console.log(documentId)
   const response = await fetch(
-    `${STRAPI_URL}/api/products/${id}?populate=*`,
+    `${STRAPI_URL}/api/products/${documentId}?populate=*`,
     {
       next: {
         revalidate: 60,
@@ -42,9 +41,9 @@ export async function getProduct(id: string): Promise<StrapiResponse<StrapiProdu
   return response.json();
 }
 
-export async function getProductsByCategory(categorySlug: string): Promise<StrapiResponse<StrapiProduct>> {
+export async function getProductsByCategory(categorySlug: string, locale: string = 'pt'): Promise<StrapiListResponse<StrapiProduct>> {
   const response = await fetch(
-    `${STRAPI_URL}/api/products?filters[categories][slug][$eq]=${categorySlug}&populate=*`,
+    `${STRAPI_URL}/api/products?filters[categories][slug][$eq]=${categorySlug}&populate=*&locale=${locale}`,
     {
       next: {
         revalidate: 60,

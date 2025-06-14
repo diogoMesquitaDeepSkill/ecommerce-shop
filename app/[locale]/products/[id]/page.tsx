@@ -14,6 +14,7 @@ import { StrapiProduct } from "@/types/strapi";
 
 interface CartProduct {
   id: number;
+  documentId: string;
   name: string;
   price: number;
   image: string;
@@ -30,7 +31,7 @@ export default function ProductPage() {
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await getProduct(params.id as string);
-      setProduct(data[0]);
+      setProduct(data);
     };
     fetchProduct();
   }, [params.id]);
@@ -43,7 +44,6 @@ export default function ProductPage() {
     );
   }
 
-  console.log(product)
 
   const imageUrl = product.media[0]?.url || "/placeholder.svg";
   const categories = product.categories.map(
@@ -53,6 +53,7 @@ export default function ProductPage() {
   const handleAddToCart = () => {
     const cartProduct: CartProduct = {
       id: product.id,
+      documentId: product.documentId,
       name: product.name,
       price: product.price,
       image: imageUrl,

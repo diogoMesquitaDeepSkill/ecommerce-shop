@@ -1,5 +1,6 @@
 export interface StrapiMedia {
     id: number;
+    documentId: string;
     url: string;
     formats: {
         thumbnail: { url: string };
@@ -11,22 +12,32 @@ export interface StrapiMedia {
 
 export interface StrapiCategory {
     id: number;
+    documentId: string;
     name: string;
     slug: string;
-    
 }
 
 export interface StrapiProduct {
     id: number;
+    documentId: string;
     name: string;
     description: string;
     price: number;
     stock: number;
     media: StrapiMedia[];
     categories: StrapiCategory[];
+    localizations?: {
+        id: number;
+        documentId: string;
+        name: string;
+        description: string;
+        price: number;
+        stock: number;
+        locale: string;
+    }[];
 }
 
-export interface StrapiResponse<T> {
+export interface StrapiListResponse<T> {
     data: T[];
     meta: {
         pagination: {
@@ -36,4 +47,9 @@ export interface StrapiResponse<T> {
             total: number;
         };
     };
+}
+
+export interface StrapiSingleResponse<T> {
+    data: T;
+    meta: Record<string, unknown>;
 } 

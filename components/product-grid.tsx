@@ -8,9 +8,11 @@ import { Badge } from "@/components/ui/badge"
 import { ShoppingCart } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { StrapiProduct } from "@/types/strapi"
+import { useParams } from "next/navigation"
 
 type Product = {
   id: number
+  documentId: string
   name: string
   price: number
   stock: number
@@ -20,24 +22,26 @@ type Product = {
 }
 
 export function ProductGrid({ products }: { products: StrapiProduct[] }) {
+  const params = useParams()
+  const locale = params.locale as string
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.documentId} product={product} locale={locale} />
       ))}
     </div>
   )
 }
 
-function ProductCard({ product }: { product: StrapiProduct }) {
+function ProductCard({ product, locale }: { product: StrapiProduct; locale: string }) {
   const { addToCart } = useCart()
-
-  console.log(product)
   const mediaUrls = product.media.map(media => media.url) || ["/placeholder.svg"]
   const categories = product.categories.map(cat => cat.name)
 
   const productData: Product = {
     id: product.id,
+    documentId: product.documentId,
     name: product.name,
     price: product.price,
     stock: product.stock,
@@ -48,7 +52,7 @@ function ProductCard({ product }: { product: StrapiProduct }) {
 
   return (
     <Card className="overflow-hidden group">
-      <Link href={`/products/${product.id}`}>
+      <Link href={`/${locale}/products/${product.documentId}`}>
         <div className="relative aspect-square overflow-hidden">
           <Image
             src={mediaUrls[0] || "/placeholder.svg"}
@@ -64,7 +68,7 @@ function ProductCard({ product }: { product: StrapiProduct }) {
         </div>
       </Link>
       <CardContent className="p-4">
-        <Link href={`/products/${product.id}`} className="hover:underline">
+        <Link href={`/${locale}/products/${product.documentId}`} className="hover:underline">
           <h3 className="font-medium">{product.name}</h3>
         </Link>
         <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
