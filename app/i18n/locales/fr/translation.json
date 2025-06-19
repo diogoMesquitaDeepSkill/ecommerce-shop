@@ -150,5 +150,47 @@
     },
     "placeOrder": "Passer la commande",
     "processing": "Traitement en cours..."
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "description": "Trouvez des réponses aux questions courantes sur nos produits, services et politiques. Vous ne trouvez pas ce que vous cherchez ? Contactez notre équipe de support.",
+    "contactButton": "Contacter le Support",
+    "categories": {
+      "shopping": "Achats et Commandes",
+      "returns": "Retours et Remboursements",
+      "account": "Compte et Sécurité",
+      "general": "Général",
+      "shipping": "Expédition et Livraison",
+      "payment": "Paiement et Facturation"
+    },
+    "empty": {
+      "title": "Aucune FAQ Disponible",
+      "description": "Nous mettons à jour notre section FAQ. Veuillez revenir bientôt ou contactez notre équipe de support pour obtenir de l'aide."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Vous avez une question ou besoin d'aide ? Nous sommes là pour vous aider. Contactez notre équipe.",
+    "emailUs": "Envoyez-nous un Email",
+    "callUs": "Appelez-nous",
+    "visitUs": "Visitez-nous",
+    "sendMessage": "Envoyez-nous un Message",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "firstNamePlaceholder": "Entrez votre prénom",
+      "lastNamePlaceholder": "Entrez votre nom de famille",
+      "emailPlaceholder": "Entrez votre email",
+      "subjectPlaceholder": "Entrez le sujet du message",
+      "messagePlaceholder": "Entrez votre message",
+      "sendMessage": "Envoyer le Message"
+    },
+    "empty": {
+      "title": "Informations de Contact Indisponibles",
+      "description": "Nous mettons à jour nos informations de contact. Veuillez réessayer plus tard ou nous envoyer un email directement."
+    }
   }
-} 
+}

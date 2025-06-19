@@ -150,5 +150,47 @@
     },
     "placeOrder": "Place Order",
     "processing": "Processing..."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about our products, services, and policies. Can't find what you're looking for? Contact our support team.",
+    "contactButton": "Contact Support",
+    "categories": {
+      "shopping": "Shopping & Orders",
+      "returns": "Returns & Refunds",
+      "account": "Account & Security",
+      "general": "General",
+      "shipping": "Shipping & Delivery",
+      "payment": "Payment & Billing"
+    },
+    "empty": {
+      "title": "No FAQs Available",
+      "description": "We're currently updating our FAQ section. Please check back soon or contact our support team for assistance."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have a question or need assistance? We're here to help. Get in touch with our team.",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "visitUs": "Visit Us",
+    "sendMessage": "Send us a Message",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name",
+      "emailPlaceholder": "Enter your email",
+      "subjectPlaceholder": "Enter message subject",
+      "messagePlaceholder": "Enter your message",
+      "sendMessage": "Send Message"
+    },
+    "empty": {
+      "title": "Contact Information Unavailable",
+      "description": "We're currently updating our contact information. Please try again later or email us directly."
+    }
   }
-} 
+}

@@ -17,7 +17,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">GourmetHub</h3>
             <p className="text-sm text-muted-foreground">
-              {t('footer.description')}
+              {t("footer.description")}
             </p>
             <div className="flex space-x-4">
               <Link
@@ -44,14 +44,14 @@ export function Footer() {
             </div>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{t('footer.shop.title')}</h3>
+            <h3 className="text-sm font-bold">{t("footer.shop.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${currentLanguage}/products/wine`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.shop.wine')}
+                  {t("footer.shop.wine")}
                 </Link>
               </li>
               <li>
@@ -59,7 +59,7 @@ export function Footer() {
                   href={`/${currentLanguage}/products/food`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.shop.food')}
+                  {t("footer.shop.food")}
                 </Link>
               </li>
               <li>
@@ -67,7 +67,7 @@ export function Footer() {
                   href={`/${currentLanguage}/products/new`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.shop.newArrivals')}
+                  {t("footer.shop.newArrivals")}
                 </Link>
               </li>
               <li>
@@ -75,28 +75,20 @@ export function Footer() {
                   href={`/${currentLanguage}/products/sale`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.shop.sale')}
+                  {t("footer.shop.sale")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{t('footer.company.title')}</h3>
+            <h3 className="text-sm font-bold">{t("footer.company.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${currentLanguage}/about`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.company.aboutUs')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${currentLanguage}/contact`}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  {t('footer.company.contact')}
+                  {t("footer.company.aboutUs")}
                 </Link>
               </li>
               <li>
@@ -104,28 +96,22 @@ export function Footer() {
                   href={`/${currentLanguage}/stores`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.company.storeLocator')}
+                  {t("footer.company.storeLocator")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">{t('footer.customerService.title')}</h3>
+            <h3 className="text-sm font-bold">
+              {t("footer.customerService.title")}
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href={`/${currentLanguage}/help`}
+                  href={`/${currentLanguage}/contact`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.customerService.helpCenter')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${currentLanguage}/shipping`}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  {t('footer.customerService.shippingReturns')}
+                  {t("footer.company.contact")}
                 </Link>
               </li>
               <li>
@@ -133,7 +119,7 @@ export function Footer() {
                   href={`/${currentLanguage}/faq`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  {t('footer.customerService.faq')}
+                  {t("footer.customerService.faq")}
                 </Link>
               </li>
             </ul>
@@ -141,17 +127,26 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t pt-8 mt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            {t('footer.legal.copyright', { year: new Date().getFullYear() })}
+            {t("footer.legal.copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
-            <Link href={`/${currentLanguage}/privacy`} className="hover:text-foreground">
-              {t('footer.legal.privacyPolicy')}
+            <Link
+              href={`/${currentLanguage}/privacy`}
+              className="hover:text-foreground"
+            >
+              {t("footer.legal.privacyPolicy")}
             </Link>
-            <Link href={`/${currentLanguage}/terms`} className="hover:text-foreground">
-              {t('footer.legal.termsOfService')}
+            <Link
+              href={`/${currentLanguage}/terms`}
+              className="hover:text-foreground"
+            >
+              {t("footer.legal.termsOfService")}
             </Link>
-            <Link href={`/${currentLanguage}/cookies`} className="hover:text-foreground">
-              {t('footer.legal.cookiePolicy')}
+            <Link
+              href={`/${currentLanguage}/cookies`}
+              className="hover:text-foreground"
+            >
+              {t("footer.legal.cookiePolicy")}
             </Link>
           </div>
         </div>

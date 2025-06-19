@@ -45,8 +45,8 @@
     "hero": {
       "mainTitle": "Seleção Premium de Vinhos & Gourmet",
       "mainDescription": "Descubra nossa coleção cuidadosamente selecionada de vinhos finos e produtos gourmet de todo o mundo.",
-      "title": "Pronto para melhorar seu estilo?",
-      "description": "Descubra nossas últimas coleções e encontre seu look perfeito.",
+      "title": "Pronto para descobrir produtos gourmet?",
+      "description": "Descubra nossa coleção cuidadosamente selecionada de vinhos finos e produtos gourmet de todo o mundo.",
       "shopNow": "Comprar Agora",
       "featuredWines": "Vinhos em Destaque"
     },
@@ -56,7 +56,7 @@
     },
     "featured": {
       "title": "Produtos em Destaque",
-      "description": "Nossos itens mais populares, cuidadosamente selecionados para si",
+      "description": "Nossos produtos mais populares, cuidadosamente selecionados para si",
       "addToCart": "Adicionar ao Carrinho",
       "new": "Novo"
     }
@@ -150,5 +150,47 @@
     },
     "placeOrder": "Fazer pedido",
     "processing": "Processando..."
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "description": "Encontre respostas para perguntas comuns sobre nossos produtos, serviços e políticas. Não encontrou o que procura? Entre em contato com nossa equipe de suporte.",
+    "contactButton": "Contactar Suporte",
+    "categories": {
+      "shopping": "Compras e Pedidos",
+      "returns": "Devoluções e Reembolsos",
+      "account": "Conta e Segurança",
+      "general": "Geral",
+      "shipping": "Envio e Entrega",
+      "payment": "Pagamento e Faturação"
+    },
+    "empty": {
+      "title": "Nenhuma FAQ Disponível",
+      "description": "Estamos atualizando nossa seção de perguntas frequentes. Por favor, volte em breve ou entre em contato com nossa equipe de suporte para obter ajuda."
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contato com nossa equipe.",
+    "emailUs": "Envie-nos um Email",
+    "callUs": "Ligue para Nós",
+    "visitUs": "Visite-nos",
+    "sendMessage": "Envie-nos uma Mensagem",
+    "form": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "Email",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "firstNamePlaceholder": "Digite seu nome",
+      "lastNamePlaceholder": "Digite seu sobrenome",
+      "emailPlaceholder": "Digite seu email",
+      "subjectPlaceholder": "Digite o assunto da mensagem",
+      "messagePlaceholder": "Digite sua mensagem",
+      "sendMessage": "Enviar Mensagem"
+    },
+    "empty": {
+      "title": "Informações de Contato Indisponíveis",
+      "description": "Estamos atualizando nossas informações de contato. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
+    }
   }
-} 
+}
