@@ -4,6 +4,7 @@
     "allProducts": "All Products",
     "wine": "Wine",
     "food": "Food",
+    "spirits": "Spirits",
     "about": "About",
     "contact": "Contact",
     "searchPlaceholder": "Search products...",
@@ -19,6 +20,7 @@
       "title": "Shop",
       "wine": "Wine",
       "food": "Food",
+      "spirits": "Spirits",
       "newArrivals": "New Arrivals",
       "sale": "Sale"
     },
@@ -52,7 +54,10 @@
     },
     "categories": {
       "title": "Shop by Category",
-      "description": "Explore our curated selection of premium wines and gourmet foods"
+      "description": "Explore our curated selection of premium wines and gourmet foods",
+      "wine": "Fine Wines",
+      "food": "Gourmet Foods",
+      "spirits": "Spirits"
     },
     "featured": {
       "title": "Featured Products",

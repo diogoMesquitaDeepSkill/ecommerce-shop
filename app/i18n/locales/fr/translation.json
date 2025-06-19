@@ -4,6 +4,7 @@
     "allProducts": "Tous les Produits",
     "wine": "Vins",
     "food": "Alimentation",
+    "spirits": "Spiritueux",
     "about": "À Propos",
     "contact": "Contact",
     "searchPlaceholder": "Rechercher des produits...",
@@ -19,6 +20,7 @@
       "title": "Boutique",
       "wine": "Vins",
       "food": "Alimentation",
+      "spirits": "Spiritueux",
       "newArrivals": "Nouveautés",
       "sale": "Soldes"
     },
@@ -52,7 +54,10 @@
     },
     "categories": {
       "title": "Acheter par Catégorie",
-      "description": "Explorez notre sélection de vins premium et de produits gastronomiques"
+      "description": "Explorez notre sélection de vins premium et de produits gastronomiques",
+      "wine": "Vins Fins",
+      "food": "Aliments Gourmet",
+      "spirits": "Spiritueux"
     },
     "featured": {
       "title": "Produits en Vedette",

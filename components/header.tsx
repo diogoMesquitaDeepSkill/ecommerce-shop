@@ -61,34 +61,61 @@ export function Header() {
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
-              <span className="sr-only">{t('header.toggleMenu')}</span>
+              <span className="sr-only">{t("header.toggleMenu")}</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-4 mt-8">
-              <Link href={`/${currentLanguage}`} className="text-lg font-medium">
-                {t('header.home')}
+              <Link
+                href={`/${currentLanguage}`}
+                className="text-lg font-medium"
+              >
+                {t("header.home")}
               </Link>
-              <Link href={`/${currentLanguage}/products`} className="text-lg font-medium">
-                {t('header.allProducts')}
+              <Link
+                href={`/${currentLanguage}/products`}
+                className="text-lg font-medium"
+              >
+                {t("header.allProducts")}
               </Link>
-              <Link href={`/${currentLanguage}/products/wine`} className="text-lg font-medium">
-                {t('header.wine')}
+              <Link
+                href={`/${currentLanguage}/categories/wine`}
+                className="text-lg font-medium"
+              >
+                {t("header.wine")}
               </Link>
-              <Link href={`/${currentLanguage}/products/food`} className="text-lg font-medium">
-                {t('header.food')}
+              <Link
+                href={`/${currentLanguage}/categories/food`}
+                className="text-lg font-medium"
+              >
+                {t("header.food")}
               </Link>
-              <Link href={`/${currentLanguage}/about`} className="text-lg font-medium">
-                {t('header.about')}
+              <Link
+                href={`/${currentLanguage}/categories/spirits`}
+                className="text-lg font-medium"
+              >
+                {t("header.spirits")}
               </Link>
-              <Link href={`/${currentLanguage}/contact`} className="text-lg font-medium">
-                {t('header.contact')}
+              <Link
+                href={`/${currentLanguage}/about`}
+                className="text-lg font-medium"
+              >
+                {t("header.about")}
+              </Link>
+              <Link
+                href={`/${currentLanguage}/contact`}
+                className="text-lg font-medium"
+              >
+                {t("header.contact")}
               </Link>
             </nav>
           </SheetContent>
         </Sheet>
 
-        <Link href={`/${currentLanguage}`} className="ml-4 md:ml-0 flex items-center gap-2">
+        <Link
+          href={`/${currentLanguage}`}
+          className="ml-4 md:ml-0 flex items-center gap-2"
+        >
           <span className="text-xl font-bold">GourmetHub</span>
         </Link>
 
@@ -97,25 +124,31 @@ export function Header() {
             href={`/${currentLanguage}`}
             className="font-medium transition-colors hover:text-primary"
           >
-            {t('header.home')}
+            {t("header.home")}
           </Link>
           <Link
             href={`/${currentLanguage}/products`}
             className="font-medium transition-colors hover:text-primary"
           >
-            {t('header.allProducts')}
+            {t("header.allProducts")}
           </Link>
           <Link
-            href={`/${currentLanguage}/products/wine`}
+            href={`/${currentLanguage}/categories/wine`}
             className="font-medium transition-colors hover:text-primary"
           >
-            {t('header.wine')}
+            {t("header.wine")}
           </Link>
           <Link
-            href={`/${currentLanguage}/products/food`}
+            href={`/${currentLanguage}/categories/food`}
             className="font-medium transition-colors hover:text-primary"
           >
-            {t('header.food')}
+            {t("header.food")}
+          </Link>
+          <Link
+            href={`/${currentLanguage}/categories/spirits`}
+            className="font-medium transition-colors hover:text-primary"
+          >
+            {t("header.spirits")}
           </Link>
         </nav>
 
@@ -124,7 +157,7 @@ export function Header() {
             <div className="relative flex items-center">
               <Input
                 type="search"
-                placeholder={t('header.searchPlaceholder')}
+                placeholder={t("header.searchPlaceholder")}
                 className="w-[200px] md:w-[300px]"
                 autoFocus
               />
@@ -135,7 +168,7 @@ export function Header() {
                 onClick={() => setIsSearchOpen(false)}
               >
                 <X className="h-4 w-4" />
-                <span className="sr-only">{t('header.closeSearch')}</span>
+                <span className="sr-only">{t("header.closeSearch")}</span>
               </Button>
             </div>
           ) : (
@@ -145,13 +178,13 @@ export function Header() {
               onClick={() => setIsSearchOpen(true)}
             >
               <Search className="h-5 w-5" />
-              <span className="sr-only">{t('header.search')}</span>
+              <span className="sr-only">{t("header.search")}</span>
             </Button>
           )}
 
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
-            <span className="sr-only">{t('header.account')}</span>
+            <span className="sr-only">{t("header.account")}</span>
           </Button>
 
           <Link href={`/${currentLanguage}/cart`}>
@@ -162,7 +195,7 @@ export function Header() {
                   {cartItemCount}
                 </span>
               )}
-              <span className="sr-only">{t('header.cart')}</span>
+              <span className="sr-only">{t("header.cart")}</span>
             </Button>
           </Link>
 

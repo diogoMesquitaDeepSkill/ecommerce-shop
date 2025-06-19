@@ -35,7 +35,6 @@ export async function getProducts(
 export async function getProduct(
   documentId: string
 ): Promise<StrapiSingleResponse<StrapiProduct>> {
-  console.log(documentId);
   const response = await fetch(
     `${STRAPI_URL}/api/products/${documentId}?populate=*`,
     {

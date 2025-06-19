@@ -4,8 +4,9 @@
     "allProducts": "Produtos",
     "wine": "Vinhos",
     "food": "Alimentos",
+    "spirits": "Espirituosas",
     "about": "Sobre",
-    "contact": "Contato",
+    "contact": "Contacto",
     "searchPlaceholder": "Buscar produtos...",
     "search": "Buscar",
     "closeSearch": "Fechar busca",
@@ -19,13 +20,14 @@
       "title": "Loja",
       "wine": "Vinhos",
       "food": "Alimentos",
+      "spirits": "Espirituosas",
       "newArrivals": "Novidades",
       "sale": "Promoções"
     },
     "company": {
       "title": "Empresa",
       "aboutUs": "Sobre Nós",
-      "contact": "Contato",
+      "contact": "Contacto",
       "storeLocator": "Localizador de Lojas"
     },
     "customerService": {
@@ -44,15 +46,18 @@
   "home": {
     "hero": {
       "mainTitle": "Seleção Premium de Vinhos & Gourmet",
-      "mainDescription": "Descubra nossa coleção cuidadosamente selecionada de vinhos finos e produtos gourmet de todo o mundo.",
+      "mainDescription": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
       "title": "Pronto para descobrir produtos gourmet?",
-      "description": "Descubra nossa coleção cuidadosamente selecionada de vinhos finos e produtos gourmet de todo o mundo.",
+      "description": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
       "shopNow": "Comprar Agora",
       "featuredWines": "Vinhos em Destaque"
     },
     "categories": {
       "title": "Comprar por Categoria",
-      "description": "Explore nossa seleção curada de vinhos premium e produtos gourmet"
+      "description": "Explore nossa seleção curada de vinhos premium e produtos gourmet",
+      "wine": "Vinhos",
+      "food": "Alimentos Gourmet",
+      "spirits": "Espirituosas"
     },
     "featured": {
       "title": "Produtos em Destaque",
@@ -95,7 +100,7 @@
     "backToCart": "Voltar ao carrinho",
     "title": "Finalizar compra",
     "contactInfo": {
-      "title": "Informações de contato",
+      "title": "Informações de contacto",
       "firstName": "Nome",
       "lastName": "Sobrenome",
       "email": "Email",
@@ -153,7 +158,7 @@
   },
   "faq": {
     "title": "Perguntas Frequentes",
-    "description": "Encontre respostas para perguntas comuns sobre nossos produtos, serviços e políticas. Não encontrou o que procura? Entre em contato com nossa equipe de suporte.",
+    "description": "Encontre respostas para perguntas comuns sobre nossos produtos, serviços e políticas. Não encontrou o que procura? Entre em contacto com nossa equipe de suporte.",
     "contactButton": "Contactar Suporte",
     "categories": {
       "shopping": "Compras e Pedidos",
@@ -165,12 +170,12 @@
     },
     "empty": {
       "title": "Nenhuma FAQ Disponível",
-      "description": "Estamos atualizando nossa seção de perguntas frequentes. Por favor, volte em breve ou entre em contato com nossa equipe de suporte para obter ajuda."
+      "description": "Estamos atualizando nossa seção de perguntas frequentes. Por favor, volte em breve ou entre em contacto com nossa equipe de suporte para obter ajuda."
     }
   },
   "contact": {
-    "title": "Entre em Contato",
-    "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contato com nossa equipe.",
+    "title": "Entre em Contacto",
+    "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contacto com nossa equipe.",
     "emailUs": "Envie-nos um Email",
     "callUs": "Ligue para Nós",
     "visitUs": "Visite-nos",
@@ -189,8 +194,8 @@
       "sendMessage": "Enviar Mensagem"
     },
     "empty": {
-      "title": "Informações de Contato Indisponíveis",
-      "description": "Estamos atualizando nossas informações de contato. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
+      "title": "Informações de Contacto Indisponíveis",
+      "description": "Estamos atualizando nossas informações de contacto. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
     }
   },
   "about": {

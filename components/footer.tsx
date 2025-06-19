@@ -48,7 +48,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href={`/${currentLanguage}/products/wine`}
+                  href={`/${currentLanguage}/categories/wine`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   {t("footer.shop.wine")}
@@ -56,10 +56,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href={`/${currentLanguage}/products/food`}
+                  href={`/${currentLanguage}/categories/food`}
                   className="text-muted-foreground hover:text-foreground"
                 >
                   {t("footer.shop.food")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${currentLanguage}/categories/spirits`}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  {t("footer.shop.spirits")}
                 </Link>
               </li>
               <li>

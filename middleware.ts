@@ -23,7 +23,7 @@ function getPreferredLocale(request: NextRequest): string {
 
   // Find the first supported language from browser preferences
   const preferredLocale = browserLocales.find((locale) =>
-    languages.includes(locale)
+    languages.includes(locale as any)
   );
 
   return preferredLocale || fallbackLng;
@@ -45,7 +45,10 @@ export function middleware(request: NextRequest) {
   // 2. Browser preference
   // 3. Default language
   const cookieLocale = request.cookies.get("i18next")?.value;
-  const locale = cookieLocale || getPreferredLocale(request);
+  const locale =
+    cookieLocale && languages.includes(cookieLocale as any)
+      ? cookieLocale
+      : getPreferredLocale(request);
 
   // Redirect to the appropriate locale path
   request.nextUrl.pathname = `/${locale}${pathname}`;
@@ -53,6 +56,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  // Matcher ignoring `/_next/`, `/api/`, and static files from public folder
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
+  ],
 };
