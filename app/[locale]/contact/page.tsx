@@ -8,8 +8,8 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | E-commerce Shop",
-  description: "Get in touch with our team for any questions or support.",
+  title: "meta.contact.title",
+  description: "meta.contact.description",
 };
 
 export default async function ContactPage({

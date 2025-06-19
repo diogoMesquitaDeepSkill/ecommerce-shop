@@ -13,8 +13,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "FAQ | E-commerce Shop",
-  description: "Frequently asked questions about our e-commerce shop.",
+  title: "meta.faq.title",
+  description: "meta.faq.description",
 };
 
 // Helper function to group FAQ entries by type

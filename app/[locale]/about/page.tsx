@@ -2,30 +2,17 @@ import { useTranslation } from "@/app/i18n";
 import { ImageCarousel } from "@/components/image-carousel";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getStrapiMediaUrl } from "@/lib/utils";
+import { getStore } from "@/services/strapi";
+import { StrapiStore } from "@/types/strapi";
 import { Building2, Heart, ShoppingBag, Users } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | E-commerce Shop",
-  description: "Learn more about our e-commerce shop and our mission.",
+  title: "meta.about.title",
+  description: "meta.about.description",
 };
-
-// Sample images for the Porto store carousel
-const portoStoreImages = [
-  {
-    src: "/placeholder.jpg",
-    alt: "Porto store exterior",
-  },
-  {
-    src: "/placeholder.jpg",
-    alt: "Porto store interior",
-  },
-  {
-    src: "/placeholder.jpg",
-    alt: "Porto store products display",
-  },
-];
 
 export default async function AboutPage({
   params,
@@ -35,6 +22,25 @@ export default async function AboutPage({
   const awaitedParams = await params;
   const locale = await awaitedParams.locale;
   const { t } = await useTranslation(locale);
+
+  let store: StrapiStore | null = null;
+  let storeImages: Array<{ src: string; alt: string }> = [];
+
+  try {
+    const storeResponse = await getStore(locale);
+    store = storeResponse.data;
+
+    // Convert Strapi media to carousel format
+    if (store) {
+      storeImages =
+        store.media?.map((media) => ({
+          src: getStrapiMediaUrl(media.url),
+          alt: media.alternativeText || store?.name || "Store image",
+        })) || [];
+    }
+  } catch (error) {
+    console.error("Failed to fetch store information:", error);
+  }
 
   return (
     <div className="container px-4 py-16 mx-auto">
@@ -65,14 +71,16 @@ export default async function AboutPage({
         </div>
 
         {/* Image Carousel */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <ImageCarousel
-            images={portoStoreImages}
-            autoPlayInterval={4000}
-            showControls={true}
-            showDots={true}
-          />
-        </div>
+        {storeImages.length > 0 && (
+          <div className="max-w-4xl mx-auto mb-8">
+            <ImageCarousel
+              images={storeImages}
+              autoPlayInterval={4000}
+              showControls={true}
+              showDots={true}
+            />
+          </div>
+        )}
       </div>
 
       {/* Values Section */}

@@ -245,9 +245,46 @@
   "stores": {
     "title": "Our Store",
     "description": "Visit our store in Porto and experience our products in person.",
+    "location": "Porto, Portugal",
     "openingHours": "Opening Hours",
     "visitStore": "Visit Store",
     "getDirections": "Get Directions",
-    "contactStore": "Contact Store"
+    "contactStore": "Contact Store",
+    "empty": {
+      "title": "Store Information Unavailable",
+      "description": "We're currently updating our store information. Please try again later or contact us directly."
+    }
+  },
+  "product": {
+    "loading": "Loading...",
+    "stock": "Stock",
+    "stockAvailable": "{{count}} units available",
+    "stockUnits": "{{count}} units",
+    "quantity": "Quantity",
+    "details": "Details",
+    "shippingReturns": "Shipping & Returns",
+    "categories": "Categories",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "shippingDescription": "Free standard shipping on all orders over $100. Delivery within 3-5 business days.",
+    "returnsDescription": "We accept returns within 30 days of delivery. Items must be in original condition and packaging."
+  },
+  "meta": {
+    "about": {
+      "title": "About Us | E-commerce Shop",
+      "description": "Learn more about our e-commerce shop and our mission."
+    },
+    "contact": {
+      "title": "Contact Us | E-commerce Shop",
+      "description": "Get in touch with our team for any questions or support."
+    },
+    "faq": {
+      "title": "FAQ | E-commerce Shop",
+      "description": "Frequently asked questions about our e-commerce shop."
+    },
+    "stores": {
+      "title": "Our Store | E-commerce Shop",
+      "description": "Visit our store in Porto and experience our products in person."
+    }
   }
 }

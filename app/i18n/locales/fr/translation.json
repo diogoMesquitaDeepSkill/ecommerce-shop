@@ -245,9 +245,46 @@
   "stores": {
     "title": "Notre Magasin",
     "description": "Visitez notre magasin à Porto et découvrez nos produits en personne.",
+    "location": "Porto, Portugal",
     "openingHours": "Heures d'Ouverture",
     "visitStore": "Visiter le Magasin",
     "getDirections": "Obtenir les Directions",
-    "contactStore": "Contacter le Magasin"
+    "contactStore": "Contacter le Magasin",
+    "empty": {
+      "title": "Informations du Magasin Indisponibles",
+      "description": "Nous mettons à jour les informations de notre magasin. Veuillez réessayer plus tard ou nous contacter directement."
+    }
+  },
+  "product": {
+    "loading": "Chargement...",
+    "stock": "Stock",
+    "stockAvailable": "{{count}} unités disponibles",
+    "stockUnits": "{{count}} unités",
+    "quantity": "Quantité",
+    "details": "Détails",
+    "shippingReturns": "Livraison et Retours",
+    "categories": "Catégories",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "shippingDescription": "Livraison standard gratuite pour toutes les commandes de plus de 100 $. Livraison en 3-5 jours ouvrables.",
+    "returnsDescription": "Nous acceptons les retours dans les 30 jours suivant la livraison. Les articles doivent être dans leur état d'origine et leur emballage."
+  },
+  "meta": {
+    "about": {
+      "title": "À Propos de Nous | Boutique E-commerce",
+      "description": "En savoir plus sur notre boutique e-commerce et notre mission."
+    },
+    "contact": {
+      "title": "Contactez-nous | Boutique E-commerce",
+      "description": "Contactez notre équipe pour toute question ou assistance."
+    },
+    "faq": {
+      "title": "FAQ | Boutique E-commerce",
+      "description": "Questions fréquemment posées sur notre boutique e-commerce."
+    },
+    "stores": {
+      "title": "Notre Magasin | Boutique E-commerce",
+      "description": "Visitez notre magasin à Porto et découvrez nos produits en personne."
+    }
   }
 }

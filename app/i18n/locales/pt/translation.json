@@ -245,9 +245,46 @@
   "stores": {
     "title": "A Nossa Loja",
     "description": "Visite a nossa loja no Porto e experimente os nossos produtos pessoalmente.",
+    "location": "Porto, Portugal",
     "openingHours": "Horário de Funcionamento",
     "visitStore": "Visitar Loja",
     "getDirections": "Obter Direções",
-    "contactStore": "Contactar Loja"
+    "contactStore": "Contactar Loja",
+    "empty": {
+      "title": "Informações da Loja Indisponíveis",
+      "description": "Estamos a atualizar as informações da nossa loja. Por favor, tente novamente mais tarde ou contacte-nos diretamente."
+    }
+  },
+  "product": {
+    "loading": "A carregar...",
+    "stock": "Stock",
+    "stockAvailable": "{{count}} unidades disponíveis",
+    "stockUnits": "{{count}} unidades",
+    "quantity": "Quantidade",
+    "details": "Detalhes",
+    "shippingReturns": "Envio e Devoluções",
+    "categories": "Categorias",
+    "shipping": "Envio",
+    "returns": "Devoluções",
+    "shippingDescription": "Envio padrão gratuito em todas as encomendas superiores a $100. Entrega em 3-5 dias úteis.",
+    "returnsDescription": "Aceitamos devoluções no prazo de 30 dias após a entrega. Os artigos devem estar em estado original e embalagem."
+  },
+  "meta": {
+    "about": {
+      "title": "Sobre Nós | Loja E-commerce",
+      "description": "Saiba mais sobre a nossa loja e-commerce e a nossa missão."
+    },
+    "contact": {
+      "title": "Contacte-nos | Loja E-commerce",
+      "description": "Entre em contacto com a nossa equipa para qualquer questão ou apoio."
+    },
+    "faq": {
+      "title": "Perguntas Frequentes | Loja E-commerce",
+      "description": "Perguntas frequentes sobre a nossa loja e-commerce."
+    },
+    "stores": {
+      "title": "A Nossa Loja | Loja E-commerce",
+      "description": "Visite a nossa loja no Porto e experimente os nossos produtos pessoalmente."
+    }
   }
 }

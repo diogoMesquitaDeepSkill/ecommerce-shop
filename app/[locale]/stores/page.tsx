@@ -3,15 +3,15 @@ import { ImageCarousel } from "@/components/image-carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getStrapiMediaUrl } from "@/lib/utils";
 import { getStore } from "@/services/strapi";
 import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Store | E-commerce Shop",
-  description:
-    "Visit our store in Porto and experience our products in person.",
+  title: "meta.stores.title",
+  description: "meta.stores.description",
 };
 
 export default async function StoresPage({
@@ -36,7 +36,7 @@ export default async function StoresPage({
   // Convert Strapi media to carousel format
   const storeImages =
     store?.media?.map((media) => ({
-      src: media.url,
+      src: getStrapiMediaUrl(media.url),
       alt: media.alternativeText || store.name,
     })) || [];
 
@@ -73,7 +73,7 @@ export default async function StoresPage({
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-2">{store.name}</h2>
                 <Badge variant="secondary" className="mb-4">
-                  Porto, Portugal
+                  {t("stores.location")}
                 </Badge>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   {store.description}
@@ -87,7 +87,9 @@ export default async function StoresPage({
                     <MapPin className="w-6 h-6 text-primary" />
                     <div>
                       <p className="font-medium text-lg">{store.address}</p>
-                      <p className="text-muted-foreground">Porto, Portugal</p>
+                      <p className="text-muted-foreground">
+                        {t("stores.location")}
+                      </p>
                     </div>
                   </div>
 
@@ -162,11 +164,10 @@ export default async function StoresPage({
         <div className="text-center max-w-2xl mx-auto">
           <Card className="p-12">
             <h2 className="text-2xl font-semibold mb-4">
-              Store Information Unavailable
+              {t("stores.empty.title")}
             </h2>
             <p className="text-muted-foreground">
-              We're currently updating our store information. Please try again
-              later or contact us directly.
+              {t("stores.empty.description")}
             </p>
           </Card>
         </div>
