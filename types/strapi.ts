@@ -2,6 +2,7 @@ export interface StrapiMedia {
   id: number;
   documentId: string;
   url: string;
+  alternativeText?: string;
   formats: {
     thumbnail: { url: string };
     small: { url: string };
@@ -115,6 +116,32 @@ export interface StrapiFAQ {
         | "shipping"
         | "payment";
     }[];
+    locale: string;
+  }[];
+}
+
+export interface StrapiStore {
+  id: number;
+  documentId: string;
+  name: string;
+  description: string;
+  address: string;
+  email: string;
+  phone: string;
+  openingHours: string;
+  mapsLink: string;
+  media?: StrapiMedia[];
+  localizations?: {
+    id: number;
+    documentId: string;
+    name: string;
+    description: string;
+    address: string;
+    email: string;
+    phone: string;
+    openingHours: string;
+    mapsLink: string;
+    media?: StrapiMedia[];
     locale: string;
   }[];
 }

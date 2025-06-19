@@ -192,5 +192,62 @@
       "title": "Contact Information Unavailable",
       "description": "We're currently updating our contact information. Please try again later or email us directly."
     }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are passionate about delivering high-quality products and exceptional shopping experiences to our customers.",
+    "portoStore": {
+      "title": "Our Store in the Heart of Porto",
+      "description": "Visit our beautiful store located in the historic center of Porto, where tradition meets modern shopping experience.",
+      "visitStore": "Visit Our Store"
+    },
+    "values": {
+      "story": {
+        "title": "Our Story",
+        "description": "Founded with a vision to revolutionize online shopping through quality and innovation."
+      },
+      "team": {
+        "title": "Our Team",
+        "description": "A dedicated group of professionals working to bring you the best shopping experience."
+      },
+      "values": {
+        "title": "Our Values",
+        "description": "Built on trust, quality, and customer satisfaction as our core principles."
+      },
+      "promise": {
+        "title": "Our Promise",
+        "description": "Committed to providing the best products and service to our valued customers."
+      }
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide our customers with an exceptional online shopping experience by offering high-quality products, outstanding customer service, and innovative solutions that make shopping easier and more enjoyable."
+    },
+    "whatSetsUsApart": {
+      "title": "What Sets Us Apart",
+      "items": [
+        "Curated selection of premium products",
+        "Exceptional customer service and support",
+        "Fast and reliable shipping worldwide",
+        "Secure and easy shopping experience"
+      ]
+    },
+    "commitment": {
+      "title": "Our Commitment",
+      "items": [
+        "Sustainable and eco-friendly practices",
+        "Continuous improvement and innovation",
+        "Building lasting relationships with customers",
+        "Supporting our community"
+      ]
+    }
+  },
+  "stores": {
+    "title": "Our Store",
+    "description": "Visit our store in Porto and experience our products in person.",
+    "openingHours": "Opening Hours",
+    "visitStore": "Visit Store",
+    "getDirections": "Get Directions",
+    "contactStore": "Contact Store"
   }
 }

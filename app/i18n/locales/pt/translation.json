@@ -192,5 +192,62 @@
       "title": "Informações de Contato Indisponíveis",
       "description": "Estamos atualizando nossas informações de contato. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
     }
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "description": "Somos apaixonados por entregar produtos de alta qualidade e experiências de compra excecionais aos nossos clientes.",
+    "portoStore": {
+      "title": "A Nossa Loja no Coração do Porto",
+      "description": "Visite a nossa bela loja localizada no centro histórico do Porto, onde a tradição se encontra com a experiência de compra moderna.",
+      "visitStore": "Visitar a Nossa Loja"
+    },
+    "values": {
+      "story": {
+        "title": "A Nossa História",
+        "description": "Fundada com a visão de revolucionar as compras online através da qualidade e inovação."
+      },
+      "team": {
+        "title": "A Nossa Equipa",
+        "description": "Um grupo dedicado de profissionais que trabalham para lhe trazer a melhor experiência de compra."
+      },
+      "values": {
+        "title": "Os Nossos Valores",
+        "description": "Construídos sobre confiança, qualidade e satisfação do cliente como os nossos princípios fundamentais."
+      },
+      "promise": {
+        "title": "A Nossa Promessa",
+        "description": "Comprometidos em fornecer os melhores produtos e serviço aos nossos valiosos clientes."
+      }
+    },
+    "mission": {
+      "title": "A Nossa Missão",
+      "description": "Fornecer aos nossos clientes uma experiência de compra online excecional, oferecendo produtos de alta qualidade, serviço ao cliente excecional e soluções inovadoras que tornam as compras mais fáceis e agradáveis."
+    },
+    "whatSetsUsApart": {
+      "title": "O Que Nos Diferencia",
+      "items": [
+        "Seleção curada de produtos premium",
+        "Serviço ao cliente e apoio excecionais",
+        "Envio rápido e fiável em todo o mundo",
+        "Experiência de compra segura e fácil"
+      ]
+    },
+    "commitment": {
+      "title": "O Nosso Compromisso",
+      "items": [
+        "Práticas sustentáveis e ecológicas",
+        "Melhoria contínua e inovação",
+        "Construir relacionamentos duradouros com os clientes",
+        "Apoiar a nossa comunidade"
+      ]
+    }
+  },
+  "stores": {
+    "title": "A Nossa Loja",
+    "description": "Visite a nossa loja no Porto e experimente os nossos produtos pessoalmente.",
+    "openingHours": "Horário de Funcionamento",
+    "visitStore": "Visitar Loja",
+    "getDirections": "Obter Direções",
+    "contactStore": "Contactar Loja"
   }
 }

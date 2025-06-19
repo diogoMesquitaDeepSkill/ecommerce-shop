@@ -4,6 +4,7 @@ import {
   StrapiListResponse,
   StrapiProduct,
   StrapiSingleResponse,
+  StrapiStore,
 } from "@/types/strapi";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
@@ -104,6 +105,25 @@ export async function getContact(
 
   if (!response.ok) {
     throw new Error("Failed to fetch contact information");
+  }
+
+  return response.json();
+}
+
+export async function getStore(
+  locale: string = "pt"
+): Promise<StrapiSingleResponse<StrapiStore>> {
+  const response = await fetch(
+    `${STRAPI_URL}/api/store?populate=*&locale=${locale}`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch store information");
   }
 
   return response.json();

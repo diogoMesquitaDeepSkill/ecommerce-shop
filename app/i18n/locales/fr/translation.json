@@ -192,5 +192,62 @@
       "title": "Informations de Contact Indisponibles",
       "description": "Nous mettons à jour nos informations de contact. Veuillez réessayer plus tard ou nous envoyer un email directement."
     }
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "description": "Nous sommes passionnés par la livraison de produits de haute qualité et d'expériences d'achat exceptionnelles à nos clients.",
+    "portoStore": {
+      "title": "Notre Magasin au Cœur de Porto",
+      "description": "Visitez notre beau magasin situé dans le centre historique de Porto, où la tradition rencontre l'expérience d'achat moderne.",
+      "visitStore": "Visiter Notre Magasin"
+    },
+    "values": {
+      "story": {
+        "title": "Notre Histoire",
+        "description": "Fondée avec la vision de révolutionner les achats en ligne grâce à la qualité et à l'innovation."
+      },
+      "team": {
+        "title": "Notre Équipe",
+        "description": "Un groupe dédié de professionnels qui travaillent pour vous apporter la meilleure expérience d'achat."
+      },
+      "values": {
+        "title": "Nos Valeurs",
+        "description": "Construites sur la confiance, la qualité et la satisfaction du client comme nos principes fondamentaux."
+      },
+      "promise": {
+        "title": "Notre Promesse",
+        "description": "Engagés à fournir les meilleurs produits et services à nos précieux clients."
+      }
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Fournir à nos clients une expérience d'achat en ligne exceptionnelle en offrant des produits de haute qualité, un service client exceptionnel et des solutions innovantes qui rendent les achats plus faciles et plus agréables."
+    },
+    "whatSetsUsApart": {
+      "title": "Ce Qui Nous Différencie",
+      "items": [
+        "Sélection organisée de produits premium",
+        "Service client et support exceptionnels",
+        "Expédition rapide et fiable dans le monde entier",
+        "Expérience d'achat sécurisée et facile"
+      ]
+    },
+    "commitment": {
+      "title": "Notre Engagement",
+      "items": [
+        "Pratiques durables et écologiques",
+        "Amélioration continue et innovation",
+        "Construire des relations durables avec les clients",
+        "Soutenir notre communauté"
+      ]
+    }
+  },
+  "stores": {
+    "title": "Notre Magasin",
+    "description": "Visitez notre magasin à Porto et découvrez nos produits en personne.",
+    "openingHours": "Heures d'Ouverture",
+    "visitStore": "Visiter le Magasin",
+    "getDirections": "Obtenir les Directions",
+    "contactStore": "Contacter le Magasin"
   }
 }
