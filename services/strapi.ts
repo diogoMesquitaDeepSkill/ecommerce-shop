@@ -1,4 +1,10 @@
-import { StrapiProduct, StrapiListResponse, StrapiSingleResponse } from "@/types/strapi";
+import {
+  StrapiContact,
+  StrapiFAQ,
+  StrapiListResponse,
+  StrapiProduct,
+  StrapiSingleResponse,
+} from "@/types/strapi";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
@@ -6,7 +12,9 @@ if (!STRAPI_URL) {
   throw new Error("STRAPI_URL environment variable is not defined");
 }
 
-export async function getProducts(locale: string = 'pt'): Promise<StrapiListResponse<StrapiProduct>> {
+export async function getProducts(
+  locale: string = "pt"
+): Promise<StrapiListResponse<StrapiProduct>> {
   const response = await fetch(
     `${STRAPI_URL}/api/products?populate=*&locale=${locale}`,
     {
@@ -23,8 +31,10 @@ export async function getProducts(locale: string = 'pt'): Promise<StrapiListResp
   return response.json();
 }
 
-export async function getProduct(documentId: string): Promise<StrapiSingleResponse<StrapiProduct>> {
-  console.log(documentId)
+export async function getProduct(
+  documentId: string
+): Promise<StrapiSingleResponse<StrapiProduct>> {
+  console.log(documentId);
   const response = await fetch(
     `${STRAPI_URL}/api/products/${documentId}?populate=*`,
     {
@@ -41,7 +51,10 @@ export async function getProduct(documentId: string): Promise<StrapiSingleRespon
   return response.json();
 }
 
-export async function getProductsByCategory(categorySlug: string, locale: string = 'pt'): Promise<StrapiListResponse<StrapiProduct>> {
+export async function getProductsByCategory(
+  categorySlug: string,
+  locale: string = "pt"
+): Promise<StrapiListResponse<StrapiProduct>> {
   const response = await fetch(
     `${STRAPI_URL}/api/products?filters[categories][slug][$eq]=${categorySlug}&populate=*&locale=${locale}`,
     {
@@ -56,4 +69,42 @@ export async function getProductsByCategory(categorySlug: string, locale: string
   }
 
   return response.json();
-} 
+}
+
+export async function getFAQs(
+  locale: string = "pt"
+): Promise<StrapiSingleResponse<StrapiFAQ>> {
+  const response = await fetch(
+    `${STRAPI_URL}/api/faq?populate=*&locale=${locale}`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch FAQs");
+  }
+
+  return response.json();
+}
+
+export async function getContact(
+  locale: string = "pt"
+): Promise<StrapiSingleResponse<StrapiContact>> {
+  const response = await fetch(
+    `${STRAPI_URL}/api/contact?populate=*&locale=${locale}`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch contact information");
+  }
+
+  return response.json();
+}
