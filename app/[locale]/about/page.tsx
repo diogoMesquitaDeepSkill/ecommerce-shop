@@ -1,115 +1,184 @@
+import { useTranslation } from "@/app/i18n";
+import { ImageCarousel } from "@/components/image-carousel";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getStrapiMediaUrl } from "@/lib/utils";
+import { getStore } from "@/services/strapi";
+import { StrapiStore } from "@/types/strapi";
 import { Building2, Heart, ShoppingBag, Users } from "lucide-react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | E-commerce Shop",
-  description: "Learn more about our e-commerce shop and our mission.",
+  title: "meta.about.title",
+  description: "meta.about.description",
 };
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
+  const { t } = await useTranslation(locale);
+
+  let store: StrapiStore | null = null;
+  let storeImages: Array<{ src: string; alt: string }> = [];
+
+  try {
+    const storeResponse = await getStore(locale);
+    store = storeResponse.data;
+
+    // Convert Strapi media to carousel format
+    if (store) {
+      storeImages =
+        store.media?.map((media) => ({
+          src: getStrapiMediaUrl(media.url),
+          alt: media.alternativeText || store?.name || "Store image",
+        })) || [];
+    }
+  } catch (error) {
+    console.error("Failed to fetch store information:", error);
+  }
+
   return (
     <div className="container px-4 py-16 mx-auto">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">About Us</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">
+          {t("about.title")}
+        </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          We are passionate about delivering high-quality products and
-          exceptional shopping experiences to our customers.
+          {t("about.description")}
         </p>
+      </div>
+
+      {/* Porto Store Section */}
+      <div className="mb-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4">
+            {t("about.portoStore.title")}
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
+            {t("about.portoStore.description")}
+          </p>
+          <Button asChild>
+            <Link href={`/${locale}/stores`}>
+              {t("about.portoStore.visitStore")}
+            </Link>
+          </Button>
+        </div>
+
+        {/* Image Carousel */}
+        {storeImages.length > 0 && (
+          <div className="max-w-4xl mx-auto mb-8">
+            <ImageCarousel
+              images={storeImages}
+              autoPlayInterval={4000}
+              showControls={true}
+              showDots={true}
+            />
+          </div>
+        )}
       </div>
 
       {/* Values Section */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         <Card className="p-6 flex flex-col items-center text-center">
           <Building2 className="w-12 h-12 mb-4 text-primary" />
-          <h3 className="text-xl font-semibold mb-2">Our Story</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            {t("about.values.story.title")}
+          </h3>
           <p className="text-muted-foreground">
-            Founded with a vision to revolutionize online shopping through
-            quality and innovation.
+            {t("about.values.story.description")}
           </p>
         </Card>
 
         <Card className="p-6 flex flex-col items-center text-center">
           <Users className="w-12 h-12 mb-4 text-primary" />
-          <h3 className="text-xl font-semibold mb-2">Our Team</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            {t("about.values.team.title")}
+          </h3>
           <p className="text-muted-foreground">
-            A dedicated group of professionals working to bring you the best
-            shopping experience.
+            {t("about.values.team.description")}
           </p>
         </Card>
 
         <Card className="p-6 flex flex-col items-center text-center">
           <Heart className="w-12 h-12 mb-4 text-primary" />
-          <h3 className="text-xl font-semibold mb-2">Our Values</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            {t("about.values.values.title")}
+          </h3>
           <p className="text-muted-foreground">
-            Built on trust, quality, and customer satisfaction as our core
-            principles.
+            {t("about.values.values.description")}
           </p>
         </Card>
 
         <Card className="p-6 flex flex-col items-center text-center">
           <ShoppingBag className="w-12 h-12 mb-4 text-primary" />
-          <h3 className="text-xl font-semibold mb-2">Our Promise</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            {t("about.values.promise.title")}
+          </h3>
           <p className="text-muted-foreground">
-            Committed to providing the best products and service to our valued
-            customers.
+            {t("about.values.promise.description")}
           </p>
         </Card>
       </div>
 
       {/* Mission Statement */}
       <div className="bg-muted rounded-lg p-8 text-center mb-16">
-        <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+        <h2 className="text-3xl font-bold mb-4">{t("about.mission.title")}</h2>
         <p className="text-lg max-w-3xl mx-auto">
-          To provide our customers with an exceptional online shopping
-          experience by offering high-quality products, outstanding customer
-          service, and innovative solutions that make shopping easier and more
-          enjoyable.
+          {t("about.mission.description")}
         </p>
       </div>
 
       {/* Additional Content */}
       <div className="grid md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-2xl font-bold mb-4">What Sets Us Apart</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            {t("about.whatSetsUsApart.title")}
+          </h2>
           <ul className="space-y-4">
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Curated selection of premium products</p>
+              <p>{t("about.whatSetsUsApart.items.0")}</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Exceptional customer service and support</p>
+              <p>{t("about.whatSetsUsApart.items.1")}</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Fast and reliable shipping worldwide</p>
+              <p>{t("about.whatSetsUsApart.items.2")}</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Secure and easy shopping experience</p>
+              <p>{t("about.whatSetsUsApart.items.3")}</p>
             </li>
           </ul>
         </div>
         <div>
-          <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            {t("about.commitment.title")}
+          </h2>
           <ul className="space-y-4">
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Sustainable and eco-friendly practices</p>
+              <p>{t("about.commitment.items.0")}</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Continuous improvement and innovation</p>
+              <p>{t("about.commitment.items.1")}</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Building lasting relationships with customers</p>
+              <p>{t("about.commitment.items.2")}</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-              <p>Supporting our community</p>
+              <p>{t("about.commitment.items.3")}</p>
             </li>
           </ul>
         </div>

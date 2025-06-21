@@ -1,1 +1,295 @@
-{} 
+{
+  "header": {
+    "home": "Início",
+    "allProducts": "Produtos",
+    "wine": "Vinhos",
+    "food": "Alimentos",
+    "spirits": "Espirituosas",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "searchPlaceholder": "Buscar produtos...",
+    "search": "Buscar",
+    "closeSearch": "Fechar busca",
+    "account": "Conta",
+    "cart": "Carrinho",
+    "toggleMenu": "Alternar menu"
+  },
+  "footer": {
+    "description": "Vinhos premium e produtos gourmet. Seleção curada das melhores iguarias.",
+    "shop": {
+      "title": "Loja",
+      "wine": "Vinhos",
+      "food": "Alimentos",
+      "spirits": "Espirituosas",
+      "newArrivals": "Novidades",
+      "sale": "Promoções"
+    },
+    "company": {
+      "title": "Empresa",
+      "aboutUs": "Sobre Nós",
+      "contact": "Contacto",
+      "storeLocator": "Localizador de Lojas"
+    },
+    "customerService": {
+      "title": "Atendimento ao Cliente",
+      "helpCenter": "Central de Ajuda",
+      "shippingReturns": "Envios e Devoluções",
+      "faq": "Perguntas Frequentes"
+    },
+    "legal": {
+      "copyright": "© {{year}} GourmetHub. Todos os direitos reservados.",
+      "privacyPolicy": "Política de Privacidade",
+      "termsOfService": "Termos de Serviço",
+      "cookiePolicy": "Política de Cookies"
+    }
+  },
+  "home": {
+    "hero": {
+      "mainTitle": "Seleção Premium de Vinhos & Gourmet",
+      "mainDescription": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
+      "title": "Pronto para descobrir produtos gourmet?",
+      "description": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
+      "shopNow": "Comprar Agora",
+      "featuredWines": "Vinhos em Destaque"
+    },
+    "categories": {
+      "title": "Comprar por Categoria",
+      "description": "Explore nossa seleção curada de vinhos premium e produtos gourmet",
+      "wine": "Vinhos",
+      "food": "Alimentos Gourmet",
+      "spirits": "Espirituosas"
+    },
+    "featured": {
+      "title": "Produtos em Destaque",
+      "description": "Nossos produtos mais populares, cuidadosamente selecionados para si",
+      "addToCart": "Adicionar ao Carrinho",
+      "new": "Novo"
+    }
+  },
+  "cart": {
+    "empty": {
+      "title": "Seu carrinho está vazio",
+      "description": "Parece que você ainda não adicionou nada ao seu carrinho.",
+      "continueShopping": "Continuar comprando"
+    },
+    "title": "Carrinho",
+    "clearCart": "Limpar carrinho",
+    "orderSummary": {
+      "title": "Resumo do pedido",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "tax": "Imposto",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculado no checkout"
+    },
+    "checkout": "Finalizar compra"
+  },
+  "checkout": {
+    "emptyCart": {
+      "title": "Seu carrinho está vazio",
+      "description": "Você precisa adicionar itens ao seu carrinho antes de finalizar a compra.",
+      "browseProducts": "Navegar produtos"
+    },
+    "orderConfirmed": {
+      "title": "Pedido confirmado!",
+      "description": "Obrigado pela sua compra. Seu pedido foi confirmado e será enviado em breve.",
+      "orderNumber": "Pedido #12345",
+      "emailSent": "Um email de confirmação foi enviado para o seu endereço de email.",
+      "returnHome": "Voltar para a página inicial"
+    },
+    "backToCart": "Voltar ao carrinho",
+    "title": "Finalizar compra",
+    "contactInfo": {
+      "title": "Informações de contacto",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "Email",
+      "phone": "Telefone"
+    },
+    "shippingAddress": {
+      "title": "Endereço de entrega",
+      "address": "Endereço",
+      "apartment": "Apartamento, suite, etc. (opcional)",
+      "city": "Cidade",
+      "state": "Estado",
+      "selectState": "Selecione o estado",
+      "zipCode": "CEP"
+    },
+    "paymentMethod": {
+      "title": "Método de pagamento",
+      "creditCard": "Cartão de crédito",
+      "paypal": "PayPal",
+      "cashOnDelivery": "Pagamento na entrega",
+      "cardName": "Nome no cartão",
+      "cardNumber": "Número do cartão",
+      "expiryDate": "Data de validade",
+      "cvc": "CVC",
+      "paypalRedirect": "Você será redirecionado para o PayPal para completar sua compra com segurança.",
+      "continueWithPaypal": "Continuar com PayPal",
+      "codDescription": "Pague em dinheiro quando seu pedido for entregue. Uma pequena taxa de pagamento na entrega pode ser aplicada.",
+      "secureAndConvenient": "Seguro e conveniente",
+      "noPaymentDetails": "Não é necessário compartilhar detalhes de pagamento online",
+      "payOnReceive": "Pague apenas quando receber",
+      "inspectBeforePayment": "Inspecione seus itens antes do pagamento"
+    },
+    "shippingMethod": {
+      "title": "Método de envio",
+      "standard": {
+        "title": "Envio padrão",
+        "price": "Grátis",
+        "delivery": "Entrega em 5-7 dias úteis"
+      },
+      "express": {
+        "title": "Envio expresso",
+        "price": "R$ 9,99",
+        "delivery": "Entrega em 2-3 dias úteis"
+      }
+    },
+    "orderSummary": {
+      "title": "Resumo do pedido",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "tax": "Imposto",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculado no checkout"
+    },
+    "placeOrder": "Fazer pedido",
+    "processing": "Processando..."
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "description": "Encontre respostas para perguntas comuns sobre nossos produtos, serviços e políticas. Não encontrou o que procura? Entre em contacto com nossa equipe de suporte.",
+    "contactButton": "Contactar Suporte",
+    "categories": {
+      "shopping": "Compras e Pedidos",
+      "returns": "Devoluções e Reembolsos",
+      "account": "Conta e Segurança",
+      "general": "Geral",
+      "shipping": "Envio e Entrega",
+      "payment": "Pagamento e Faturação"
+    },
+    "empty": {
+      "title": "Nenhuma FAQ Disponível",
+      "description": "Estamos atualizando nossa seção de perguntas frequentes. Por favor, volte em breve ou entre em contacto com nossa equipe de suporte para obter ajuda."
+    }
+  },
+  "contact": {
+    "title": "Entre em Contacto",
+    "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contacto com nossa equipe.",
+    "emailUs": "Envie-nos um Email",
+    "callUs": "Ligue para Nós",
+    "visitUs": "Visite-nos",
+    "sendMessage": "Envie-nos uma Mensagem",
+    "form": {
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "Email",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "firstNamePlaceholder": "Digite seu nome",
+      "lastNamePlaceholder": "Digite seu sobrenome",
+      "emailPlaceholder": "Digite seu email",
+      "subjectPlaceholder": "Digite o assunto da mensagem",
+      "messagePlaceholder": "Digite sua mensagem",
+      "sendMessage": "Enviar Mensagem"
+    },
+    "empty": {
+      "title": "Informações de Contacto Indisponíveis",
+      "description": "Estamos atualizando nossas informações de contacto. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
+    }
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "description": "Somos apaixonados por entregar produtos de alta qualidade e experiências de compra excecionais aos nossos clientes.",
+    "portoStore": {
+      "title": "A Nossa Loja no Coração do Porto",
+      "description": "Visite a nossa bela loja localizada no centro histórico do Porto, onde a tradição se encontra com a experiência de compra moderna.",
+      "visitStore": "Visitar a Nossa Loja"
+    },
+    "values": {
+      "story": {
+        "title": "A Nossa História",
+        "description": "Fundada com a visão de revolucionar as compras online através da qualidade e inovação."
+      },
+      "team": {
+        "title": "A Nossa Equipa",
+        "description": "Um grupo dedicado de profissionais que trabalham para lhe trazer a melhor experiência de compra."
+      },
+      "values": {
+        "title": "Os Nossos Valores",
+        "description": "Construídos sobre confiança, qualidade e satisfação do cliente como os nossos princípios fundamentais."
+      },
+      "promise": {
+        "title": "A Nossa Promessa",
+        "description": "Comprometidos em fornecer os melhores produtos e serviço aos nossos valiosos clientes."
+      }
+    },
+    "mission": {
+      "title": "A Nossa Missão",
+      "description": "Fornecer aos nossos clientes uma experiência de compra online excecional, oferecendo produtos de alta qualidade, serviço ao cliente excecional e soluções inovadoras que tornam as compras mais fáceis e agradáveis."
+    },
+    "whatSetsUsApart": {
+      "title": "O Que Nos Diferencia",
+      "items": [
+        "Seleção curada de produtos premium",
+        "Serviço ao cliente e apoio excecionais",
+        "Envio rápido e fiável em todo o mundo",
+        "Experiência de compra segura e fácil"
+      ]
+    },
+    "commitment": {
+      "title": "O Nosso Compromisso",
+      "items": [
+        "Práticas sustentáveis e ecológicas",
+        "Melhoria contínua e inovação",
+        "Construir relacionamentos duradouros com os clientes",
+        "Apoiar a nossa comunidade"
+      ]
+    }
+  },
+  "stores": {
+    "title": "A Nossa Loja",
+    "description": "Visite a nossa loja no Porto e experimente os nossos produtos pessoalmente.",
+    "location": "Porto, Portugal",
+    "openingHours": "Horário de Funcionamento",
+    "visitStore": "Visitar Loja",
+    "getDirections": "Obter Direções",
+    "contactStore": "Contactar Loja",
+    "empty": {
+      "title": "Informações da Loja Indisponíveis",
+      "description": "Estamos a atualizar as informações da nossa loja. Por favor, tente novamente mais tarde ou contacte-nos diretamente."
+    }
+  },
+  "product": {
+    "loading": "A carregar...",
+    "stock": "Stock",
+    "stockAvailable": "{{count}} unidades disponíveis",
+    "stockUnits": "{{count}} unidades",
+    "quantity": "Quantidade",
+    "details": "Detalhes",
+    "shippingReturns": "Envio e Devoluções",
+    "categories": "Categorias",
+    "shipping": "Envio",
+    "returns": "Devoluções",
+    "shippingDescription": "Envio padrão gratuito em todas as encomendas superiores a $100. Entrega em 3-5 dias úteis.",
+    "returnsDescription": "Aceitamos devoluções no prazo de 30 dias após a entrega. Os artigos devem estar em estado original e embalagem."
+  },
+  "meta": {
+    "about": {
+      "title": "Sobre Nós | Loja E-commerce",
+      "description": "Saiba mais sobre a nossa loja e-commerce e a nossa missão."
+    },
+    "contact": {
+      "title": "Contacte-nos | Loja E-commerce",
+      "description": "Entre em contacto com a nossa equipa para qualquer questão ou apoio."
+    },
+    "faq": {
+      "title": "Perguntas Frequentes | Loja E-commerce",
+      "description": "Perguntas frequentes sobre a nossa loja e-commerce."
+    },
+    "stores": {
+      "title": "A Nossa Loja | Loja E-commerce",
+      "description": "Visite a nossa loja no Porto e experimente os nossos produtos pessoalmente."
+    }
+  }
+}

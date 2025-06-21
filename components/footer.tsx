@@ -1,16 +1,23 @@
+"use client";
+
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const pathname = usePathname();
+  const { t } = useTranslation();
+  const currentLanguage = pathname.split("/")[1] || "en";
+
   return (
     <footer className="border-t bg-background">
       <div className="container px-4 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">StyleHub</h3>
+            <h3 className="text-lg font-bold">GourmetHub</h3>
             <p className="text-sm text-muted-foreground">
-              Premium wines and gourmet food products. Curated selection of the
-              finest delicacies.
+              {t("footer.description")}
             </p>
             <div className="flex space-x-4">
               <Link
@@ -37,112 +44,90 @@ export function Footer() {
             </div>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">Shop</h3>
+            <h3 className="text-sm font-bold">{t("footer.shop.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/products/men"
+                  href={`/${currentLanguage}/categories/wine`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Men's Collection
+                  {t("footer.shop.wine")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/women"
+                  href={`/${currentLanguage}/categories/food`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Women's Collection
+                  {t("footer.shop.food")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/new"
+                  href={`/${currentLanguage}/categories/spirits`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  New Arrivals
+                  {t("footer.shop.spirits")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products/sale"
+                  href={`/${currentLanguage}/products/new`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Sale
+                  {t("footer.shop.newArrivals")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${currentLanguage}/products/sale`}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  {t("footer.shop.sale")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">Company</h3>
+            <h3 className="text-sm font-bold">{t("footer.company.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href={`/${currentLanguage}/about`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  About Us
+                  {t("footer.company.aboutUs")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href={`/${currentLanguage}/stores`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/stores"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Store Locator
+                  {t("footer.company.storeLocator")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-bold">Customer Service</h3>
+            <h3 className="text-sm font-bold">
+              {t("footer.customerService.title")}
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/help"
+                  href={`/${currentLanguage}/contact`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Help Center
+                  {t("footer.company.contact")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/shipping"
+                  href={`/${currentLanguage}/faq`}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Shipping & Returns
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/size-guide"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  Size Guide
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  FAQ
+                  {t("footer.customerService.faq")}
                 </Link>
               </li>
             </ul>
@@ -150,17 +135,26 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t pt-8 mt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} StyleHub. All rights reserved.
+            {t("footer.legal.copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
-            <Link href="/privacy" className="hover:text-foreground">
-              Privacy Policy
+            <Link
+              href={`/${currentLanguage}/privacy`}
+              className="hover:text-foreground"
+            >
+              {t("footer.legal.privacyPolicy")}
             </Link>
-            <Link href="/terms" className="hover:text-foreground">
-              Terms of Service
+            <Link
+              href={`/${currentLanguage}/terms`}
+              className="hover:text-foreground"
+            >
+              {t("footer.legal.termsOfService")}
             </Link>
-            <Link href="/cookies" className="hover:text-foreground">
-              Cookie Policy
+            <Link
+              href={`/${currentLanguage}/cookies`}
+              className="hover:text-foreground"
+            >
+              {t("footer.legal.cookiePolicy")}
             </Link>
           </div>
         </div>
