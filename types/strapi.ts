@@ -193,7 +193,13 @@ export interface StrapiOrder {
   documentId: string;
   email: string;
   shippingMethod: string;
-  standing: string;
+  standing:
+    | "unpaid"
+    | "paid"
+    | "canceled"
+    | "completed"
+    | "shipped"
+    | "problem";
   totalPrice: number;
   name: string;
   date: string;
@@ -206,6 +212,7 @@ export interface StrapiOrder {
   locale: string | null;
   phoneNumber: string;
   orderItems: StrapiOrderItemWithProduct[];
+  address: StrapiOrderAddress;
 }
 
 export interface StrapiOrderResponse {

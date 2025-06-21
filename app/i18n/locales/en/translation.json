@@ -298,9 +298,12 @@
       "date": "Order Date",
       "customer": "Customer",
       "email": "Email",
+      "phone": "Phone",
       "shippingAddress": "Shipping Address",
       "addressNotAvailable": "Address information not available",
-      "shippingMethod": "Shipping Method"
+      "shippingMethod": "Shipping Method",
+      "tracking": "Tracking",
+      "trackPackage": "Track Package"
     },
     "items": {
       "title": "Order Items",
@@ -310,18 +313,52 @@
     "status": {
       "title": "Order Status",
       "paymentConfirmed": "Payment confirmed and order is being processed",
-      "trackingCode": "Tracking Code",
+      "tracking": "Tracking",
+      "unpaid": {
+        "title": "Payment Processing",
+        "description": "Your order has been placed and we're confirming your payment. This usually takes a few minutes.",
+        "secondaryTitle": "Payment Verification in Progress",
+        "secondaryDescription": "We're securely processing your payment with our payment processor. This step ensures your transaction is authorized and protected."
+      },
       "pending": {
         "title": "Payment Processing",
-        "description": "Your order has been placed and we're confirming your payment. This usually takes a few minutes."
+        "description": "Your order has been placed and we're confirming your payment. This usually takes a few minutes.",
+        "secondaryTitle": "Payment Verification in Progress",
+        "secondaryDescription": "We're securely processing your payment with our payment processor. This step ensures your transaction is authorized and protected."
       },
       "paid": {
         "title": "Payment Confirmed",
-        "description": "Your payment has been confirmed and your order is being prepared for shipment."
+        "description": "Your payment has been confirmed and your order is being prepared for shipment.",
+        "secondaryTitle": "Order Preparation Underway",
+        "secondaryDescription": "Our team is carefully preparing your items for shipment. We'll notify you as soon as your package is on its way."
       },
       "shipped": {
         "title": "Order Shipped",
-        "description": "Your order has been shipped and is on its way to you."
+        "description": "Your order has been shipped and is on its way to you.",
+        "secondaryTitle": "Package in Transit",
+        "secondaryDescription": "Your order is now traveling to your address. You can track its progress using the tracking link above."
+      },
+      "completed": {
+        "title": "Order Delivered",
+        "description": "Your order has been successfully delivered to your address.",
+        "secondaryTitle": "Delivery Successful",
+        "secondaryDescription": "Your package has arrived safely at your address. We hope you enjoy your purchase!",
+        "message": "Thank you for your purchase!",
+        "submessage": "We hope you enjoy your products. Consider leaving a review or shopping with us again."
+      },
+      "problem": {
+        "title": "Order Issue",
+        "description": "There is an issue with your order. Please contact our support team for assistance.",
+        "secondaryTitle": "Action Required - Contact Support",
+        "secondaryDescription": "We've encountered an issue that requires immediate attention. Our support team is ready to help resolve this quickly.",
+        "message": "Action Required",
+        "submessage": "Please contact our support team immediately to resolve this issue with your order."
+      },
+      "canceled": {
+        "title": "Order Canceled",
+        "description": "Your order has been canceled. No charges have been made to your account.",
+        "secondaryTitle": "Order Cancellation Confirmed",
+        "secondaryDescription": "Your order has been successfully canceled and no charges have been processed. You can place a new order anytime."
       },
       "paymentProcessing": "Payment Processing",
       "paymentProcessingDescription": "We're confirming your payment with our payment processor. This usually takes a few minutes. You'll receive an email confirmation once the payment is confirmed."
@@ -348,5 +385,10 @@
       "title": "Our Store | E-commerce Shop",
       "description": "Visit our store in Porto and experience our products in person."
     }
+  },
+  "shipping": {
+    "title": "Shipping Information",
+    "notes": "Order Notes",
+    "method": "Shipping method"
   }
 }

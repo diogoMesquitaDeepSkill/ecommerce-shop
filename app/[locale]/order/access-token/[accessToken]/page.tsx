@@ -5,7 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getOrderByAccessToken } from "@/services/strapi";
 import { StrapiOrder } from "@/types/strapi";
-import { CheckCircle, Clock, Loader2, Package, Truck } from "lucide-react";
+import {
+  AlertCircle,
+  CheckCircle,
+  Clock,
+  ExternalLink,
+  Home,
+  Loader2,
+  Package,
+  Truck,
+  XCircle,
+} from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -108,6 +118,36 @@ export default function OrderStatusPage() {
           bgColor: "bg-blue-50",
           borderColor: "border-blue-200",
         };
+      case "completed":
+        return {
+          icon: Home,
+          iconColor: "text-purple-500",
+          title: t("order.status.completed.title"),
+          description: t("order.status.completed.description"),
+          statusColor: "text-purple-600",
+          bgColor: "bg-purple-50",
+          borderColor: "border-purple-200",
+        };
+      case "problem":
+        return {
+          icon: AlertCircle,
+          iconColor: "text-red-500",
+          title: t("order.status.problem.title"),
+          description: t("order.status.problem.description"),
+          statusColor: "text-red-600",
+          bgColor: "bg-red-50",
+          borderColor: "border-red-200",
+        };
+      case "canceled":
+        return {
+          icon: XCircle,
+          iconColor: "text-gray-500",
+          title: t("order.status.canceled.title"),
+          description: t("order.status.canceled.description"),
+          statusColor: "text-gray-600",
+          bgColor: "bg-gray-50",
+          borderColor: "border-gray-200",
+        };
       case "unpaid":
       default:
         return {
@@ -147,10 +187,14 @@ export default function OrderStatusPage() {
             <StatusIcon className={`h-5 w-5 ${orderStatus.iconColor}`} />
             <div>
               <p className={`font-medium ${orderStatus.statusColor}`}>
-                {orderStatus.title}
+                {t(
+                  `order.status.${order.standing.toLowerCase()}.secondaryTitle`
+                )}
               </p>
               <p className="text-sm text-muted-foreground mt-1">
-                {orderStatus.description}
+                {t(
+                  `order.status.${order.standing.toLowerCase()}.secondaryDescription`
+                )}
               </p>
             </div>
           </div>
@@ -170,7 +214,7 @@ export default function OrderStatusPage() {
                 <p className="text-sm text-muted-foreground">
                   {t("order.details.orderNumber")}
                 </p>
-                <p className="font-medium">#{order.id}</p>
+                <p className="font-medium">#{order.accessToken}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">
@@ -192,6 +236,13 @@ export default function OrderStatusPage() {
                 </p>
                 <p className="font-medium">{order.email}</p>
               </div>
+            </div>
+
+            <div>
+              <p className="text-sm text-muted-foreground">
+                {t("order.details.phone")}
+              </p>
+              <p className="font-medium">{order.phoneNumber}</p>
             </div>
 
             <div>
@@ -236,38 +287,80 @@ export default function OrderStatusPage() {
           </CardContent>
         </Card>
 
-        {/* Order Status Details */}
+        {/* Shipment Details */}
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Truck className="h-5 w-5" />
-              {t("order.status.title")}
+              {t("order.shipping.title")}
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-4">
+            {/* Shipping Method */}
             <div className="flex items-center gap-3">
-              <div
-                className={`w-3 h-3 rounded-full ${orderStatus.iconColor.replace(
-                  "text-",
-                  "bg-"
-                )}`}
-              ></div>
+              <div className="w-3 h-3 rounded-full bg-blue-500"></div>
               <div>
-                <p className="font-medium capitalize">{order.standing}</p>
+                <p className="font-medium capitalize">{order.shippingMethod}</p>
                 <p className="text-sm text-muted-foreground">
-                  {orderStatus.description}
+                  {t("order.shipping.method")}
                 </p>
               </div>
             </div>
+
+            {/* Tracking Link */}
             {order.trackingLink && (
-              <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-                <p className="text-sm font-medium text-blue-800">
-                  {t("order.status.trackingCode")}: {order.trackingLink}
-                </p>
+              <div className="p-3 bg-blue-50 rounded-lg">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-medium text-blue-800">
+                    {t("order.details.tracking")}:
+                  </p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="flex items-center gap-2"
+                  >
+                    <a
+                      href={order.trackingLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("order.details.trackPackage")}
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             )}
+
+            {/* Shipping Address - Show for specific statuses */}
+            {["unpaid", "paid", "completed", "shipped", "problem"].includes(
+              order.standing.toLowerCase()
+            ) &&
+              order.address && (
+                <div className="p-3 bg-gray-50 rounded-lg">
+                  <p className="text-sm font-medium text-gray-800 mb-2">
+                    {t("order.details.shippingAddress")}:
+                  </p>
+                  <div className="text-sm text-gray-700 space-y-1">
+                    <p>{order.address.street}</p>
+                    <p>
+                      {order.address.city}, {order.address.postalCode}
+                    </p>
+                    <p>{order.address.country}</p>
+                    {order.address.notes && (
+                      <p className="text-gray-600 mt-2">
+                        <strong>{t("order.shipping.notes")}:</strong>{" "}
+                        {order.address.notes}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+            {/* Status-specific messages */}
             {order.standing.toLowerCase() === "unpaid" && (
-              <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
+              <div className="p-3 bg-yellow-50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin text-yellow-600" />
                   <p className="text-sm font-medium text-yellow-800">
@@ -279,21 +372,64 @@ export default function OrderStatusPage() {
                 </p>
               </div>
             )}
+            {order.standing.toLowerCase() === "completed" && (
+              <div className="p-3 bg-purple-50 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-purple-600" />
+                  <p className="text-sm font-medium text-purple-800">
+                    {t("order.status.completed.message")}
+                  </p>
+                </div>
+                <p className="text-sm text-purple-700 mt-1">
+                  {t("order.status.completed.submessage")}
+                </p>
+              </div>
+            )}
+            {order.standing.toLowerCase() === "problem" && (
+              <div className="p-3 bg-red-50 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <AlertCircle className="h-4 w-4 text-red-600" />
+                  <p className="text-sm font-medium text-red-800">
+                    {t("order.status.problem.message")}
+                  </p>
+                </div>
+                <p className="text-sm text-red-700 mt-1">
+                  {t("order.status.problem.submessage")}
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild variant="outline">
-            <Link href={`/${locale}/products`}>
-              {t("order.actions.continueShopping")}
-            </Link>
-          </Button>
-          <Button asChild>
-            <Link href={`/${locale}/contact`}>
-              {t("order.actions.contactSupport")}
-            </Link>
-          </Button>
+          {order.standing.toLowerCase() === "problem" ? (
+            <>
+              <Button asChild variant="outline">
+                <Link href={`/${locale}/products`}>
+                  {t("order.actions.continueShopping")}
+                </Link>
+              </Button>
+              <Button asChild className="bg-red-600 hover:bg-red-700">
+                <Link href={`/${locale}/contact`}>
+                  {t("order.actions.contactSupport")}
+                </Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button asChild variant="outline">
+                <Link href={`/${locale}/products`}>
+                  {t("order.actions.continueShopping")}
+                </Link>
+              </Button>
+              <Button asChild>
+                <Link href={`/${locale}/contact`}>
+                  {t("order.actions.contactSupport")}
+                </Link>
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </div>

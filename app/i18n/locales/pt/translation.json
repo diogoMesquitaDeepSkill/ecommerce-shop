@@ -298,9 +298,12 @@
       "date": "Data da Encomenda",
       "customer": "Cliente",
       "email": "Email",
+      "phone": "Telefone",
       "shippingAddress": "Endereço de Entrega",
       "addressNotAvailable": "Informações de endereço não disponíveis",
-      "shippingMethod": "Método de Envio"
+      "shippingMethod": "Método de Envio",
+      "tracking": "Rastreamento",
+      "trackPackage": "Rastrear Pacote"
     },
     "items": {
       "title": "Itens da Encomenda",
@@ -310,25 +313,64 @@
     "status": {
       "title": "Estado da Encomenda",
       "paymentConfirmed": "Pagamento confirmado e encomenda em processamento",
-      "trackingCode": "Código de Rastreamento",
+      "tracking": "Rastreamento",
       "pending": {
         "title": "Pagamento em Processamento",
-        "description": "A sua encomenda foi colocada e estamos a confirmar o seu pagamento. Isto geralmente leva alguns minutos."
+        "description": "A sua encomenda foi colocada e estamos a confirmar o seu pagamento. Isto geralmente leva alguns minutos.",
+        "secondaryTitle": "Verificação de Pagamento em Curso",
+        "secondaryDescription": "Estamos a processar de forma segura o seu pagamento com o nosso processador de pagamento. Este passo garante que a sua transação está autorizada e protegida."
       },
       "paid": {
         "title": "Pagamento Confirmado",
-        "description": "O seu pagamento foi confirmado e a sua encomenda está a ser preparada para envio."
+        "description": "O seu pagamento foi confirmado e a sua encomenda está a ser preparada para envio.",
+        "secondaryTitle": "Preparação da Encomenda em Curso",
+        "secondaryDescription": "A nossa equipa está a preparar cuidadosamente os seus artigos para envio. Notificá-lo-emos assim que a sua encomenda estiver a caminho."
       },
       "shipped": {
         "title": "Encomenda Enviada",
-        "description": "A sua encomenda foi enviada e está a caminho."
+        "description": "A sua encomenda foi enviada e está a caminho.",
+        "secondaryTitle": "Encomenda em Trânsito",
+        "secondaryDescription": "A sua encomenda está agora a viajar para o seu endereço. Pode acompanhar o progresso usando o link de rastreamento."
+      },
+      "completed": {
+        "title": "Encomenda Entregue",
+        "description": "A sua encomenda foi entregue com sucesso no seu endereço.",
+        "secondaryTitle": "Entrega Bem-sucedida",
+        "secondaryDescription": "A sua encomenda chegou em segurança ao seu endereço. Esperamos que goste da sua compra!",
+        "message": "Obrigado pela sua compra!",
+        "submessage": "Esperamos que goste dos seus produtos. Considere deixar uma avaliação ou fazer compras connosco novamente."
+      },
+      "problem": {
+        "title": "Problema com a Encomenda",
+        "description": "Existe um problema com a sua encomenda. Por favor, contacte a nossa equipa de suporte para obter ajuda.",
+        "secondaryTitle": "Ação Necessária - Contactar Suporte",
+        "secondaryDescription": "Encontrámos um problema que requer atenção imediata. A nossa equipa de suporte está pronta para ajudar a resolver isto rapidamente.",
+        "message": "Ação Necessária",
+        "submessage": "Por favor, contacte imediatamente a nossa equipa de suporte para resolver este problema com a sua encomenda."
+      },
+      "canceled": {
+        "title": "Encomenda Cancelada",
+        "description": "A sua encomenda foi cancelada. Nenhum valor foi cobrado na sua conta.",
+        "secondaryTitle": "Cancelamento da Encomenda Confirmado",
+        "secondaryDescription": "A sua encomenda foi cancelada com sucesso e nenhum valor foi processado. Pode fazer uma nova encomenda a qualquer momento."
       },
       "paymentProcessing": "Processamento do Pagamento",
-      "paymentProcessingDescription": "Estamos a confirmar o seu pagamento com o nosso processador de pagamento. Isto geralmente leva alguns minutos. Receberá um email de confirmação assim que o pagamento for confirmado."
+      "paymentProcessingDescription": "Estamos a confirmar o seu pagamento com o nosso processador de pagamento. Isto geralmente leva alguns minutos. Receberá um email de confirmação assim que o pagamento for confirmado.",
+      "unpaid": {
+        "title": "Pagamento em Processamento",
+        "description": "A sua encomenda foi colocada e estamos a confirmar o seu pagamento. Isto geralmente leva alguns minutos.",
+        "secondaryTitle": "Verificação de Pagamento em Curso",
+        "secondaryDescription": "Estamos a processar de forma segura o seu pagamento com o nosso processador de pagamento. Este passo garante que a sua transação está autorizada e protegida."
+      }
     },
     "actions": {
       "continueShopping": "Continuar a Comprar",
       "contactSupport": "Contactar Suporte"
+    },
+    "shipping": {
+      "title": "Informações de Envio",
+      "notes": "Notas da Encomenda",
+      "method": "Método de envio"
     }
   },
   "meta": {
