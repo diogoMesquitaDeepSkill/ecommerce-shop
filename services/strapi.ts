@@ -155,12 +155,15 @@ export async function createOrder(
 export async function getOrderByAccessToken(
   accessToken: string
 ): Promise<{ order: StrapiOrderResponse["order"] }> {
-  const response = await fetch(`${STRAPI_URL}/api/orders/${accessToken}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    `${STRAPI_URL}/api/orders/token/${accessToken}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   if (!response.ok) {
     if (response.status === 404) {

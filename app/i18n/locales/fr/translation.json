@@ -275,6 +275,62 @@
     "shippingDescription": "Livraison standard gratuite pour toutes les commandes de plus de 100 $. Livraison en 3-5 jours ouvrables.",
     "returnsDescription": "Nous acceptons les retours dans les 30 jours suivant la livraison. Les articles doivent être dans leur état d'origine et leur emballage."
   },
+  "order": {
+    "loading": "Chargement des détails de la commande...",
+    "success": {
+      "title": "Paiement Réussi !",
+      "description": "Merci pour votre achat. Votre commande a été confirmée et sera traitée bientôt."
+    },
+    "cancel": {
+      "title": "Paiement Annulé",
+      "description": "Votre paiement a été annulé. Aucun montant n'a été débité de votre compte.",
+      "paymentNotCompleted": "Paiement non terminé",
+      "noCharges": "Aucun montant n'a été débité de votre compte. Vous pouvez réessayer ou contacter le support si vous avez besoin d'aide."
+    },
+    "error": {
+      "title": "Erreur de Chargement de la Commande",
+      "notFound": "Commande introuvable ou jeton d'accès invalide",
+      "backToProducts": "Retour aux Produits"
+    },
+    "details": {
+      "title": "Détails de la Commande",
+      "orderNumber": "Numéro de Commande",
+      "date": "Date de Commande",
+      "customer": "Client",
+      "email": "Email",
+      "shippingAddress": "Adresse de Livraison",
+      "addressNotAvailable": "Informations d'adresse non disponibles",
+      "shippingMethod": "Méthode de Livraison"
+    },
+    "items": {
+      "title": "Articles de la Commande",
+      "quantity": "Quantité",
+      "total": "Total"
+    },
+    "status": {
+      "title": "Statut de la Commande",
+      "paymentConfirmed": "Paiement confirmé et commande en cours de traitement",
+      "trackingCode": "Code de Suivi",
+      "pending": {
+        "title": "Paiement en Cours",
+        "description": "Votre commande a été passée et nous confirmons votre paiement. Cela prend généralement quelques minutes."
+      },
+      "paid": {
+        "title": "Paiement Confirmé",
+        "description": "Votre paiement a été confirmé et votre commande est en cours de préparation pour l'expédition."
+      },
+      "shipped": {
+        "title": "Commande Expédiée",
+        "description": "Votre commande a été expédiée et est en route vers vous."
+      },
+      "paymentProcessing": "Traitement du Paiement",
+      "paymentProcessingDescription": "Nous confirmons votre paiement avec notre processeur de paiement. Cela prend généralement quelques minutes. Vous recevrez un email de confirmation une fois le paiement confirmé."
+    },
+    "actions": {
+      "continueShopping": "Continuer les Achats",
+      "contactSupport": "Contacter le Support"
+    }
+  },
   "meta": {
     "about": {
       "title": "À Propos de Nous | Boutique E-commerce",

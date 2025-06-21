@@ -275,6 +275,62 @@
     "shippingDescription": "Free standard shipping on all orders over $100. Delivery within 3-5 business days.",
     "returnsDescription": "We accept returns within 30 days of delivery. Items must be in original condition and packaging."
   },
+  "order": {
+    "loading": "Loading order details...",
+    "success": {
+      "title": "Payment Successful!",
+      "description": "Thank you for your purchase. Your order has been confirmed and will be processed soon."
+    },
+    "cancel": {
+      "title": "Payment Cancelled",
+      "description": "Your payment was cancelled. No charges have been made to your account.",
+      "paymentNotCompleted": "Payment not completed",
+      "noCharges": "No charges have been made to your account. You can try again or contact support if you need assistance."
+    },
+    "error": {
+      "title": "Error Loading Order",
+      "notFound": "Order not found or access token invalid",
+      "backToProducts": "Back to Products"
+    },
+    "details": {
+      "title": "Order Details",
+      "orderNumber": "Order Number",
+      "date": "Order Date",
+      "customer": "Customer",
+      "email": "Email",
+      "shippingAddress": "Shipping Address",
+      "addressNotAvailable": "Address information not available",
+      "shippingMethod": "Shipping Method"
+    },
+    "items": {
+      "title": "Order Items",
+      "quantity": "Quantity",
+      "total": "Total"
+    },
+    "status": {
+      "title": "Order Status",
+      "paymentConfirmed": "Payment confirmed and order is being processed",
+      "trackingCode": "Tracking Code",
+      "pending": {
+        "title": "Payment Processing",
+        "description": "Your order has been placed and we're confirming your payment. This usually takes a few minutes."
+      },
+      "paid": {
+        "title": "Payment Confirmed",
+        "description": "Your payment has been confirmed and your order is being prepared for shipment."
+      },
+      "shipped": {
+        "title": "Order Shipped",
+        "description": "Your order has been shipped and is on its way to you."
+      },
+      "paymentProcessing": "Payment Processing",
+      "paymentProcessingDescription": "We're confirming your payment with our payment processor. This usually takes a few minutes. You'll receive an email confirmation once the payment is confirmed."
+    },
+    "actions": {
+      "continueShopping": "Continue Shopping",
+      "contactSupport": "Contact Support"
+    }
+  },
   "meta": {
     "about": {
       "title": "About Us | E-commerce Shop",

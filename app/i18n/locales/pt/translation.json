@@ -275,6 +275,62 @@
     "shippingDescription": "Envio padrão gratuito em todas as encomendas superiores a $100. Entrega em 3-5 dias úteis.",
     "returnsDescription": "Aceitamos devoluções no prazo de 30 dias após a entrega. Os artigos devem estar em estado original e embalagem."
   },
+  "order": {
+    "loading": "A carregar detalhes da encomenda...",
+    "success": {
+      "title": "Pagamento Bem-sucedido!",
+      "description": "Obrigado pela sua compra. A sua encomenda foi confirmada e será processada em breve."
+    },
+    "cancel": {
+      "title": "Pagamento Cancelado",
+      "description": "O seu pagamento foi cancelado. Nenhum valor foi cobrado na sua conta.",
+      "paymentNotCompleted": "Pagamento não concluído",
+      "noCharges": "Nenhum valor foi cobrado na sua conta. Pode tentar novamente ou contactar o suporte se precisar de ajuda."
+    },
+    "error": {
+      "title": "Erro ao Carregar a Encomenda",
+      "notFound": "Encomenda não encontrada ou token de acesso inválido",
+      "backToProducts": "Voltar aos Produtos"
+    },
+    "details": {
+      "title": "Detalhes da Encomenda",
+      "orderNumber": "Número da Encomenda",
+      "date": "Data da Encomenda",
+      "customer": "Cliente",
+      "email": "Email",
+      "shippingAddress": "Endereço de Entrega",
+      "addressNotAvailable": "Informações de endereço não disponíveis",
+      "shippingMethod": "Método de Envio"
+    },
+    "items": {
+      "title": "Itens da Encomenda",
+      "quantity": "Quantidade",
+      "total": "Total"
+    },
+    "status": {
+      "title": "Estado da Encomenda",
+      "paymentConfirmed": "Pagamento confirmado e encomenda em processamento",
+      "trackingCode": "Código de Rastreamento",
+      "pending": {
+        "title": "Pagamento em Processamento",
+        "description": "A sua encomenda foi colocada e estamos a confirmar o seu pagamento. Isto geralmente leva alguns minutos."
+      },
+      "paid": {
+        "title": "Pagamento Confirmado",
+        "description": "O seu pagamento foi confirmado e a sua encomenda está a ser preparada para envio."
+      },
+      "shipped": {
+        "title": "Encomenda Enviada",
+        "description": "A sua encomenda foi enviada e está a caminho."
+      },
+      "paymentProcessing": "Processamento do Pagamento",
+      "paymentProcessingDescription": "Estamos a confirmar o seu pagamento com o nosso processador de pagamento. Isto geralmente leva alguns minutos. Receberá um email de confirmação assim que o pagamento for confirmado."
+    },
+    "actions": {
+      "continueShopping": "Continuar a Comprar",
+      "contactSupport": "Contactar Suporte"
+    }
+  },
   "meta": {
     "about": {
       "title": "Sobre Nós | Loja E-commerce",

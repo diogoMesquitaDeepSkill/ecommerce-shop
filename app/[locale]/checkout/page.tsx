@@ -100,8 +100,8 @@ export default function CheckoutPage({
         })
       );
 
-      // Clear cart after successful order creation
-      clearCart();
+      // Don't clear cart immediately - let the success/cancel pages handle it
+      // clearCart();
 
       // Redirect to Stripe
       window.location.href = result.stripeUrl;

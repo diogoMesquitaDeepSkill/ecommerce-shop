@@ -198,7 +198,7 @@ export interface StrapiOrder {
   name: string;
   date: string;
   stripeId: string | null;
-  trackingCode: string | null;
+  trackingLink: string | null;
   accessToken: string;
   createdAt: string;
   updatedAt: string;
