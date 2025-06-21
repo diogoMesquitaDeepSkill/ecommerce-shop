@@ -145,3 +145,70 @@ export interface StrapiStore {
     locale: string;
   }[];
 }
+
+// Order-related interfaces
+export interface StrapiOrderItem {
+  product: string;
+  quantity: number;
+}
+
+export interface StrapiOrderAddress {
+  street: string;
+  city: string;
+  postalCode: string;
+  country: string;
+  notes?: string;
+}
+
+export interface StrapiCreateOrderData {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  orderItems: StrapiOrderItem[];
+  shippingMethod: string;
+  address: StrapiOrderAddress;
+}
+
+export interface StrapiOrderProduct {
+  id: number;
+  documentId: string;
+  name: string;
+  price: number;
+  stock: number;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string | null;
+  locale: string;
+}
+
+export interface StrapiOrderItemWithProduct {
+  id: number;
+  quantity: number;
+  product: StrapiOrderProduct;
+}
+
+export interface StrapiOrder {
+  id: number;
+  documentId: string;
+  email: string;
+  shippingMethod: string;
+  standing: string;
+  totalPrice: number;
+  name: string;
+  date: string;
+  stripeId: string | null;
+  trackingCode: string | null;
+  accessToken: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string | null;
+  phoneNumber: string;
+  orderItems: StrapiOrderItemWithProduct[];
+}
+
+export interface StrapiOrderResponse {
+  order: StrapiOrder;
+  stripeUrl: string;
+}

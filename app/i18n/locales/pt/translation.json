@@ -154,6 +154,7 @@
       "calculatedAtCheckout": "Calculado no checkout"
     },
     "placeOrder": "Fazer pedido",
+    "payWithStripe": "Pagar com Stripe",
     "processing": "Processando..."
   },
   "faq": {
