@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getOrderByAccessToken } from "@/services/strapi";
 import { StrapiOrder } from "@/types/strapi";
-import { AlertTriangle, Package, XCircle } from "lucide-react";
+import { Package, Truck, XCircle } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -76,25 +76,25 @@ export default function OrderCancelPage() {
       <div className="max-w-2xl mx-auto">
         {/* Cancel Header */}
         <div className="text-center mb-8">
-          <XCircle className="h-16 w-16 text-red-500 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold text-red-600 mb-2">
-            {t("order.cancel.title")}
+          <XCircle className="h-16 w-16 text-gray-500 mx-auto mb-4" />
+          <h1 className="text-3xl font-bold text-gray-600 mb-2">
+            {t("order.status.canceled.title")}
           </h1>
           <p className="text-muted-foreground">
-            {t("order.cancel.description")}
+            {t("order.status.canceled.description")}
           </p>
         </div>
 
-        {/* Alert */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+        {/* Status Alert */}
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
           <div className="flex items-center gap-3">
-            <AlertTriangle className="h-5 w-5 text-yellow-600" />
+            <XCircle className="h-5 w-5 text-gray-500" />
             <div>
-              <p className="font-medium text-yellow-800">
-                {t("order.cancel.paymentNotCompleted")}
+              <p className="font-medium text-gray-600">
+                {t("order.status.canceled.secondaryTitle")}
               </p>
-              <p className="text-sm text-yellow-700 mt-1">
-                {t("order.cancel.noCharges")}
+              <p className="text-sm text-muted-foreground mt-1">
+                {t("order.status.canceled.secondaryDescription")}
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function OrderCancelPage() {
                 <p className="text-sm text-muted-foreground">
                   {t("order.details.orderNumber")}
                 </p>
-                <p className="font-medium">#{order.id}</p>
+                <p className="font-medium">#{order.accessToken}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">
@@ -140,6 +140,13 @@ export default function OrderCancelPage() {
 
             <div>
               <p className="text-sm text-muted-foreground">
+                {t("order.details.phone")}
+              </p>
+              <p className="font-medium">{order.phoneNumber}</p>
+            </div>
+
+            <div>
+              <p className="text-sm text-muted-foreground">
                 {t("order.details.shippingMethod")}
               </p>
               <p className="font-medium capitalize">{order.shippingMethod}</p>
@@ -148,7 +155,7 @@ export default function OrderCancelPage() {
         </Card>
 
         {/* Order Items */}
-        <Card className="mb-8">
+        <Card className="mb-6">
           <CardHeader>
             <CardTitle>{t("order.items.title")}</CardTitle>
           </CardHeader>
@@ -177,6 +184,50 @@ export default function OrderCancelPage() {
                 <span>€{order.totalPrice.toFixed(2)}</span>
               </div>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Shipment Details */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Truck className="h-5 w-5" />
+              {t("order.shipping.title")}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {/* Shipping Method */}
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+              <div>
+                <p className="font-medium capitalize">{order.shippingMethod}</p>
+                <p className="text-sm text-muted-foreground">
+                  {t("order.shipping.method")}
+                </p>
+              </div>
+            </div>
+
+            {/* Shipping Address - Show for canceled orders */}
+            {order.address && (
+              <div className="p-3 bg-gray-50 rounded-lg">
+                <p className="text-sm font-medium text-gray-800 mb-2">
+                  {t("order.details.shippingAddress")}:
+                </p>
+                <div className="text-sm text-gray-700 space-y-1">
+                  <p>{order.address.street}</p>
+                  <p>
+                    {order.address.city}, {order.address.postalCode}
+                  </p>
+                  <p>{order.address.country}</p>
+                  {order.address.notes && (
+                    <p className="text-gray-600 mt-2">
+                      <strong>{t("order.shipping.notes")}:</strong>{" "}
+                      {order.address.notes}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
 
