@@ -84,7 +84,7 @@ function ProductCard({
         <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
           {product.description}
         </p>
-        <p className="font-bold mt-2">${product.price.toFixed(2)}</p>
+        <p className="font-bold mt-2">{product.price.toFixed(2)}€</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button

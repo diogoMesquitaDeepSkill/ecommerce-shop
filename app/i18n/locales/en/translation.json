@@ -113,7 +113,11 @@
       "city": "City",
       "state": "State",
       "selectState": "Select state",
-      "zipCode": "ZIP Code"
+      "zipCode": "ZIP Code",
+      "country": "Country",
+      "defaultCountry": "Portugal",
+      "notes": "Order Notes (Optional)",
+      "notesPlaceholder": "Any special instructions..."
     },
     "paymentMethod": {
       "title": "Payment Method",
@@ -141,7 +145,7 @@
       },
       "express": {
         "title": "Express Shipping",
-        "price": "$9.99",
+        "price": "9.99€",
         "delivery": "Delivery in 2-3 business days"
       }
     },
@@ -272,7 +276,7 @@
     "categories": "Categories",
     "shipping": "Shipping",
     "returns": "Returns",
-    "shippingDescription": "Free standard shipping on all orders over $100. Delivery within 3-5 business days.",
+    "shippingDescription": "Free standard shipping on all orders over 100€. Delivery within 3-5 business days.",
     "returnsDescription": "We accept returns within 30 days of delivery. Items must be in original condition and packaging."
   },
   "order": {

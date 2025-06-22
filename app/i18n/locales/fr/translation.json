@@ -113,7 +113,11 @@
       "city": "Ville",
       "state": "État",
       "selectState": "Sélectionner l'état",
-      "zipCode": "Code postal"
+      "zipCode": "Code postal",
+      "country": "Pays",
+      "defaultCountry": "Portugal",
+      "notes": "Notes de commande (Optionnel)",
+      "notesPlaceholder": "Instructions spéciales..."
     },
     "paymentMethod": {
       "title": "Méthode de paiement",
@@ -272,7 +276,7 @@
     "categories": "Catégories",
     "shipping": "Livraison",
     "returns": "Retours",
-    "shippingDescription": "Livraison standard gratuite pour toutes les commandes de plus de 100 $. Livraison en 3-5 jours ouvrables.",
+    "shippingDescription": "Livraison standard gratuite pour toutes les commandes de plus de 100 €. Livraison en 3-5 jours ouvrables.",
     "returnsDescription": "Nous acceptons les retours dans les 30 jours suivant la livraison. Les articles doivent être dans leur état d'origine et leur emballage."
   },
   "order": {

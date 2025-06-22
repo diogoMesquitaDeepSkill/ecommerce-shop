@@ -186,20 +186,28 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="country">Country</Label>
+                    <Label htmlFor="country">
+                      {t("checkout.shippingAddress.country")}
+                    </Label>
                     <Input
                       id="country"
                       name="country"
-                      defaultValue="Portugal"
+                      defaultValue={t(
+                        "checkout.shippingAddress.defaultCountry"
+                      )}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="notes">Order Notes (Optional)</Label>
+                    <Label htmlFor="notes">
+                      {t("checkout.shippingAddress.notes")}
+                    </Label>
                     <Input
                       id="notes"
                       name="notes"
-                      placeholder="Any special instructions..."
+                      placeholder={t(
+                        "checkout.shippingAddress.notesPlaceholder"
+                      )}
                     />
                   </div>
                 </div>

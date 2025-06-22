@@ -113,7 +113,11 @@
       "city": "Cidade",
       "state": "Estado",
       "selectState": "Selecione o estado",
-      "zipCode": "CEP"
+      "zipCode": "Código Postal",
+      "country": "País",
+      "defaultCountry": "Portugal",
+      "notes": "Notas da Encomenda (Opcional)",
+      "notesPlaceholder": "Instruções especiais..."
     },
     "paymentMethod": {
       "title": "Método de pagamento",
@@ -141,7 +145,7 @@
       },
       "express": {
         "title": "Envio expresso",
-        "price": "R$ 9,99",
+        "price": "9,99€",
         "delivery": "Entrega em 2-3 dias úteis"
       }
     },
@@ -272,7 +276,7 @@
     "categories": "Categorias",
     "shipping": "Envio",
     "returns": "Devoluções",
-    "shippingDescription": "Envio padrão gratuito em todas as encomendas superiores a $100. Entrega em 3-5 dias úteis.",
+    "shippingDescription": "Envio padrão gratuito em todas as encomendas superiores a 100€. Entrega em 3-5 dias úteis.",
     "returnsDescription": "Aceitamos devoluções no prazo de 30 dias após a entrega. Os artigos devem estar em estado original e embalagem."
   },
   "order": {
