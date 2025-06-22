@@ -10,23 +10,17 @@ import { Separator } from "@/components/ui/separator";
 import { createOrder } from "@/services/strapi";
 import { ChevronLeft, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function CheckoutPage({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const { t } = useTranslation();
-  const { cartItems, subtotal, clearCart } = useCart();
+export default function CheckoutPage() {
+  const { t, i18n } = useTranslation();
+  const { cartItems, subtotal } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [shippingMethod, setShippingMethod] = useState("normal");
-  const pathname = usePathname();
 
-  const currentLanguage = pathname.split("/")[1] || "en";
+  const currentLanguage = i18n.language || "pt";
 
   // Calculate shipping cost
   const shippingCost = shippingMethod === "express" ? 9.99 : 0;

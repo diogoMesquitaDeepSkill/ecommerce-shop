@@ -23,13 +23,13 @@ import { useTranslation } from "react-i18next";
 
 export default function OrderStatusPage() {
   const params = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { clearCart } = useCart();
   const [order, setOrder] = useState<StrapiOrder | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const locale = params.locale as string;
+  const currentLanguage = i18n.language || "pt";
   const accessToken = params.accessToken as string;
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function OrderStatusPage() {
             {error || t("order.error.notFound")}
           </p>
           <Button asChild>
-            <Link href={`/${locale}/products`}>
+            <Link href={`/${currentLanguage}/products`}>
               {t("order.error.backToProducts")}
             </Link>
           </Button>
@@ -406,12 +406,12 @@ export default function OrderStatusPage() {
           {order.standing.toLowerCase() === "problem" ? (
             <>
               <Button asChild variant="outline">
-                <Link href={`/${locale}/products`}>
+                <Link href={`/${currentLanguage}/products`}>
                   {t("order.actions.continueShopping")}
                 </Link>
               </Button>
               <Button asChild className="bg-red-600 hover:bg-red-700">
-                <Link href={`/${locale}/contact`}>
+                <Link href={`/${currentLanguage}/contact`}>
                   {t("order.actions.contactSupport")}
                 </Link>
               </Button>
@@ -419,12 +419,12 @@ export default function OrderStatusPage() {
           ) : (
             <>
               <Button asChild variant="outline">
-                <Link href={`/${locale}/products`}>
+                <Link href={`/${currentLanguage}/products`}>
                   {t("order.actions.continueShopping")}
                 </Link>
               </Button>
               <Button asChild>
-                <Link href={`/${locale}/contact`}>
+                <Link href={`/${currentLanguage}/contact`}>
                   {t("order.actions.contactSupport")}
                 </Link>
               </Button>

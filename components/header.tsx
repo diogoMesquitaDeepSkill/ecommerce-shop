@@ -14,7 +14,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export function Header() {
@@ -31,9 +31,17 @@ export function Header() {
     { code: "fr", name: "Français", display: "FR" },
   ];
 
-  const currentLanguage = pathname.split("/")[1] || "en";
+  // Use useMemo to compute currentLanguage only when i18n.language changes
+  const currentLanguage = useMemo(() => {
+    return i18n.language || "pt";
+  }, [i18n.language]);
+
+  console.log(currentLanguage);
 
   const handleLanguageChange = (newLocale: string) => {
+    // Prevent unnecessary language changes
+    if (newLocale === currentLanguage) return;
+
     // Get the current path segments
     const segments = pathname.split("/");
 

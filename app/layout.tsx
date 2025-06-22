@@ -4,10 +4,10 @@ import { Header } from "@/components/header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type React from "react";
+import { Providers } from "./components/providers";
 import "./globals.css";
 import "./i18n-client";
 import { languages } from "./i18n/settings";
-import { Providers } from "./components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
+    <html>
       <body className={inter.className}>
         <Providers>
           <CartProvider>

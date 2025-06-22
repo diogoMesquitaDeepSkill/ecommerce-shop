@@ -1,13 +1,12 @@
-import { getProducts } from "@/services/strapi";
 import { ProductGrid } from "@/components/product-grid";
+import { getProducts } from "@/services/strapi";
 
 export default async function ProductsPage({
   params,
 }: {
   params: { locale: string };
 }) {
-  const awaitedParams = await params;
-  const locale = await awaitedParams.locale;
+  const locale = await params.locale;
   const { data: products } = await getProducts(locale);
 
   return (

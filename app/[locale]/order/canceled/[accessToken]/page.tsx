@@ -12,12 +12,12 @@ import { useTranslation } from "react-i18next";
 
 export default function OrderCancelPage() {
   const params = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [order, setOrder] = useState<StrapiOrder | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const locale = params.locale as string;
+  const currentLanguage = i18n.language || "pt";
   const accessToken = params.accessToken as string;
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function OrderCancelPage() {
             {error || t("order.error.notFound")}
           </p>
           <Button asChild>
-            <Link href={`/${locale}/products`}>
+            <Link href={`/${currentLanguage}/products`}>
               {t("order.error.backToProducts")}
             </Link>
           </Button>
@@ -234,12 +234,12 @@ export default function OrderCancelPage() {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild variant="outline">
-            <Link href={`/${locale}/products`}>
+            <Link href={`/${currentLanguage}/products`}>
               {t("order.actions.continueShopping")}
             </Link>
           </Button>
           <Button asChild>
-            <Link href={`/${locale}/contact`}>
+            <Link href={`/${currentLanguage}/contact`}>
               {t("order.actions.contactSupport")}
             </Link>
           </Button>

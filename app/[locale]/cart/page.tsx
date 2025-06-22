@@ -13,15 +13,14 @@ import { Separator } from "@/components/ui/separator";
 import { Minus, Plus, ShoppingBag, Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
 export default function CartPage() {
-  const params = useParams();
-  const locale = params.locale as string;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { cartItems, removeFromCart, updateQuantity, subtotal, clearCart } =
     useCart();
+
+  const currentLanguage = i18n.language || "pt";
 
   if (cartItems.length === 0) {
     return (
@@ -33,7 +32,7 @@ export default function CartPage() {
             {t("cart.empty.description")}
           </p>
           <Button asChild className="mt-6">
-            <Link href={`/${locale}/products`}>
+            <Link href={`/${currentLanguage}/products`}>
               {t("cart.empty.continueShopping")}
             </Link>
           </Button>
@@ -113,7 +112,7 @@ export default function CartPage() {
               {t("cart.clearCart")}
             </Button>
             <Button asChild variant="outline">
-              <Link href={`/${locale}/products`}>
+              <Link href={`/${currentLanguage}/products`}>
                 {t("cart.empty.continueShopping")}
               </Link>
             </Button>
@@ -146,7 +145,9 @@ export default function CartPage() {
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full">
-                <Link href={`/${locale}/checkout`}>{t("cart.checkout")}</Link>
+                <Link href={`/${currentLanguage}/checkout`}>
+                  {t("cart.checkout")}
+                </Link>
               </Button>
             </CardFooter>
           </Card>

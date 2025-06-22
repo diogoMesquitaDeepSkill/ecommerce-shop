@@ -29,7 +29,9 @@ export default function ProductPage() {
   const [product, setProduct] = useState<StrapiProduct | null>(null);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const currentLanguage = i18n.language || "pt";
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -68,12 +70,12 @@ export default function ProductPage() {
   return (
     <div className="container px-4 py-12 mx-auto">
       <div className="flex items-center gap-1 text-sm text-muted-foreground mb-8">
-        <Link href={`/${params.locale}`} className="hover:text-foreground">
+        <Link href={`/${currentLanguage}`} className="hover:text-foreground">
           {t("header.home")}
         </Link>
         <ChevronRight className="h-4 w-4" />
         <Link
-          href={`/${params.locale}/products`}
+          href={`/${currentLanguage}/products`}
           className="hover:text-foreground"
         >
           {t("header.allProducts")}

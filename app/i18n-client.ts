@@ -7,8 +7,8 @@ import { fallbackLng, languages } from "./i18n/settings";
 
 // Import translations
 import translationEN from "./i18n/locales/en/translation.json";
-import translationPT from "./i18n/locales/pt/translation.json";
 import translationFR from "./i18n/locales/fr/translation.json";
+import translationPT from "./i18n/locales/pt/translation.json";
 
 // Initialize i18next for client-side
 if (!i18next.isInitialized) {
@@ -29,9 +29,11 @@ if (!i18next.isInitialized) {
       },
       supportedLngs: languages,
       fallbackLng,
+      lng: fallbackLng, // Set initial language explicitly
       // debug: true,
       detection: {
         order: ["path", "cookie", "navigator"],
+        caches: ["cookie"], // Only cache in cookie, not localStorage
       },
       react: {
         useSuspense: false,

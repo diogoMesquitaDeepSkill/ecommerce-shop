@@ -3,29 +3,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
 export function CategorySection() {
-  const { t } = useTranslation();
-  const pathname = usePathname();
-  const locale = pathname.split("/")[1];
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language || "pt";
 
   const categories = [
     {
       name: t("home.categories.wine"),
       image: "/wine.jpg",
-      href: `/${locale}/categories/wine`,
+      href: `/${currentLanguage}/categories/wine`,
     },
     {
       name: t("home.categories.food"),
       image: "/food.webp",
-      href: `/${locale}/categories/food`,
+      href: `/${currentLanguage}/categories/food`,
     },
     {
       name: t("home.categories.spirits"),
       image: "/spirit.jpg",
-      href: `/${locale}/categories/spirits`,
+      href: `/${currentLanguage}/categories/spirits`,
     },
   ];
 
