@@ -28,6 +28,7 @@ export function FeaturedProductCard({ product, locale }: ProductCardProps) {
   const handleAddToCart = () => {
     addToCart({
       id: product.id,
+      documentId: product.documentId,
       name: product.name,
       price: product.price,
       image: mediaUrls[0] || "/placeholder.svg",

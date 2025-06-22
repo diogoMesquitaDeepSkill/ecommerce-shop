@@ -49,6 +49,7 @@ function ProductCard({
 
   const productData = {
     id: product.id,
+    documentId: product.documentId,
     name: product.name,
     price: product.price,
     image: mediaUrls[0] || "/placeholder.svg",

@@ -1,7 +1,9 @@
 import {
   StrapiContact,
+  StrapiCreateOrderData,
   StrapiFAQ,
   StrapiListResponse,
+  StrapiOrderResponse,
   StrapiProduct,
   StrapiSingleResponse,
   StrapiStore,
@@ -123,6 +125,51 @@ export async function getStore(
 
   if (!response.ok) {
     throw new Error("Failed to fetch store information");
+  }
+
+  return response.json();
+}
+
+// Create order
+export async function createOrder(
+  orderData: StrapiCreateOrderData
+): Promise<StrapiOrderResponse> {
+  const response = await fetch(`${STRAPI_URL}/api/orders`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data: orderData }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.text();
+    console.error("Strapi error:", errorData);
+    throw new Error("Failed to create order");
+  }
+
+  return response.json();
+}
+
+// Get order by access token
+export async function getOrderByAccessToken(
+  accessToken: string
+): Promise<{ order: StrapiOrderResponse["order"] }> {
+  const response = await fetch(
+    `${STRAPI_URL}/api/orders/token/${accessToken}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  if (!response.ok) {
+    if (response.status === 404) {
+      throw new Error("Order not found or access token invalid");
+    }
+    throw new Error("Failed to fetch order");
   }
 
   return response.json();

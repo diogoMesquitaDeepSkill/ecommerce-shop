@@ -154,6 +154,7 @@
       "calculatedAtCheckout": "Calculé à la caisse"
     },
     "placeOrder": "Passer la commande",
+    "payWithStripe": "Payer avec Stripe",
     "processing": "Traitement en cours..."
   },
   "faq": {
@@ -274,6 +275,99 @@
     "shippingDescription": "Livraison standard gratuite pour toutes les commandes de plus de 100 $. Livraison en 3-5 jours ouvrables.",
     "returnsDescription": "Nous acceptons les retours dans les 30 jours suivant la livraison. Les articles doivent être dans leur état d'origine et leur emballage."
   },
+  "order": {
+    "loading": "Chargement des détails de la commande...",
+    "success": {
+      "title": "Paiement Réussi !",
+      "description": "Merci pour votre achat. Votre commande a été confirmée et sera traitée bientôt."
+    },
+    "cancel": {
+      "title": "Paiement Annulé",
+      "description": "Votre paiement a été annulé. Aucun montant n'a été débité de votre compte.",
+      "paymentNotCompleted": "Paiement non terminé",
+      "noCharges": "Aucun montant n'a été débité de votre compte. Vous pouvez réessayer ou contacter le support si vous avez besoin d'aide."
+    },
+    "error": {
+      "title": "Erreur de Chargement de la Commande",
+      "notFound": "Commande introuvable ou jeton d'accès invalide",
+      "backToProducts": "Retour aux Produits"
+    },
+    "details": {
+      "title": "Détails de la Commande",
+      "orderNumber": "Numéro de Commande",
+      "date": "Date de Commande",
+      "customer": "Client",
+      "email": "Email",
+      "phone": "Téléphone",
+      "shippingAddress": "Adresse de Livraison",
+      "addressNotAvailable": "Informations d'adresse non disponibles",
+      "shippingMethod": "Méthode de Livraison",
+      "tracking": "Suivi",
+      "trackPackage": "Suivre le Colis"
+    },
+    "items": {
+      "title": "Articles de la Commande",
+      "quantity": "Quantité",
+      "total": "Total"
+    },
+    "status": {
+      "title": "Statut de la Commande",
+      "paymentConfirmed": "Paiement confirmé et commande en cours de traitement",
+      "tracking": "Suivi",
+      "unpaid": {
+        "title": "Paiement en Cours",
+        "description": "Votre commande a été passée et nous confirmons votre paiement. Cela prend généralement quelques minutes.",
+        "secondaryTitle": "Vérification du Paiement en Cours",
+        "secondaryDescription": "Nous traitons de manière sécurisée votre paiement avec notre processeur de paiement. Cette étape garantit que votre transaction est autorisée et protégée."
+      },
+      "pending": {
+        "title": "Paiement en Cours",
+        "description": "Votre commande a été passée et nous confirmons votre paiement. Cela prend généralement quelques minutes.",
+        "secondaryTitle": "Vérification du Paiement en Cours",
+        "secondaryDescription": "Nous traitons de manière sécurisée votre paiement avec notre processeur de paiement. Cette étape garantit que votre transaction est autorisée et protégée."
+      },
+      "paid": {
+        "title": "Paiement Confirmé",
+        "description": "Votre paiement a été confirmé et votre commande est en cours de préparation pour l'expédition.",
+        "secondaryTitle": "Préparation de la Commande en Cours",
+        "secondaryDescription": "Notre équipe prépare soigneusement vos articles pour l'expédition. Nous vous notifierons dès que votre colis sera en route."
+      },
+      "shipped": {
+        "title": "Commande Expédiée",
+        "description": "Votre commande a été expédiée et est en route vers vous.",
+        "secondaryTitle": "Colis en Transit",
+        "secondaryDescription": "Votre commande voyage maintenant vers votre adresse. Vous pouvez suivre son progrès en utilisant le lien de suivi ci-dessus."
+      },
+      "completed": {
+        "title": "Commande Livrée",
+        "description": "Votre commande a été livrée avec succès à votre adresse.",
+        "secondaryTitle": "Livraison Réussie",
+        "secondaryDescription": "Votre colis est arrivé en toute sécurité à votre adresse. Nous espérons que vous apprécierez votre achat !",
+        "message": "Merci pour votre achat !",
+        "submessage": "Nous espérons que vous apprécierez vos produits. Envisagez de laisser un avis ou de faire des achats chez nous à nouveau."
+      },
+      "problem": {
+        "title": "Problème avec la Commande",
+        "description": "Il y a un problème avec votre commande. Veuillez contacter notre équipe de support pour obtenir de l'aide.",
+        "secondaryTitle": "Action Requise - Contacter le Support",
+        "secondaryDescription": "Nous avons rencontré un problème qui nécessite une attention immédiate. Notre équipe de support est prête à vous aider à résoudre cela rapidement.",
+        "message": "Action Requise",
+        "submessage": "Veuillez contacter immédiatement notre équipe de support pour résoudre ce problème avec votre commande."
+      },
+      "canceled": {
+        "title": "Commande Annulée",
+        "description": "Votre commande a été annulée. Aucun montant n'a été débité de votre compte.",
+        "secondaryTitle": "Annulation de Commande Confirmée",
+        "secondaryDescription": "Votre commande a été annulée avec succès et aucun montant n'a été traité. Vous pouvez passer une nouvelle commande à tout moment."
+      },
+      "paymentProcessing": "Traitement du Paiement",
+      "paymentProcessingDescription": "Nous confirmons votre paiement avec notre processeur de paiement. Cela prend généralement quelques minutes. Vous recevrez un email de confirmation une fois le paiement confirmé."
+    },
+    "actions": {
+      "continueShopping": "Continuer les Achats",
+      "contactSupport": "Contacter le Support"
+    }
+  },
   "meta": {
     "about": {
       "title": "À Propos de Nous | Boutique E-commerce",
@@ -291,5 +385,10 @@
       "title": "Notre Magasin | Boutique E-commerce",
       "description": "Visitez notre magasin à Porto et découvrez nos produits en personne."
     }
+  },
+  "shipping": {
+    "title": "Informations de Livraison",
+    "notes": "Notes de Commande",
+    "method": "Méthode de livraison"
   }
 }
