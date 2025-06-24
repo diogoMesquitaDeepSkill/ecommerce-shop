@@ -1,3 +1,4 @@
+import { AgeVerificationProvider } from "@/components/age-verification-provider";
 import { CartProvider } from "@/components/cart-provider";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -35,9 +36,11 @@ export default function RootLayout({
         <Providers>
           <CartProvider>
             <div className="flex flex-col min-h-screen">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
+              <AgeVerificationProvider>
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </AgeVerificationProvider>
             </div>
           </CartProvider>
         </Providers>

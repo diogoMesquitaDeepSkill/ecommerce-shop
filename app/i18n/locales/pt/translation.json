@@ -15,6 +15,20 @@
     "cart": "Carrinho",
     "toggleMenu": "Alternar menu"
   },
+  "ageVerification": {
+    "title": "Verificação de Idade Necessária",
+    "description": "Você deve ter 18 anos ou mais para acessar este site.",
+    "question": "Você tem 18 anos ou mais?",
+    "yes": "Sim, tenho 18 anos ou mais",
+    "no": "Não, tenho menos de 18 anos",
+    "remember": "Lembrar minha escolha"
+  },
+  "underage": {
+    "title": "Acesso Restrito",
+    "description": "Desculpe, você deve ter 18 anos ou mais para acessar este site.",
+    "message": "Este site contém conteúdo que é adequado apenas para adultos. Por favor, volte quando tiver 18 anos ou mais.",
+    "returnHome": "Voltar ao Início"
+  },
   "footer": {
     "description": "Vinhos premium e produtos gourmet. Seleção curada das melhores iguarias.",
     "shop": {

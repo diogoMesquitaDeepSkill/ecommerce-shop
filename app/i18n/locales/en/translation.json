@@ -15,6 +15,20 @@
     "cart": "Cart",
     "toggleMenu": "Toggle menu"
   },
+  "ageVerification": {
+    "title": "Age Verification Required",
+    "description": "You must be 18 years or older to access this website.",
+    "question": "Are you 18 years or older?",
+    "yes": "Yes, I am 18 or older",
+    "no": "No, I am under 18",
+    "remember": "Remember my choice"
+  },
+  "underage": {
+    "title": "Access Restricted",
+    "description": "Sorry, you must be 18 years or older to access this website.",
+    "message": "This website contains content that is only suitable for adults. Please return when you are 18 years or older.",
+    "returnHome": "Return to Home"
+  },
   "footer": {
     "description": "Premium wines and gourmet food products. Curated selection of the finest delicacies.",
     "shop": {

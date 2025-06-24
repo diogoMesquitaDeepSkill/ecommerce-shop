@@ -15,6 +15,20 @@
     "cart": "Panier",
     "toggleMenu": "Basculer le menu"
   },
+  "ageVerification": {
+    "title": "Vérification d'âge requise",
+    "description": "Vous devez avoir 18 ans ou plus pour accéder à ce site web.",
+    "question": "Avez-vous 18 ans ou plus ?",
+    "yes": "Oui, j'ai 18 ans ou plus",
+    "no": "Non, j'ai moins de 18 ans",
+    "remember": "Se souvenir de mon choix"
+  },
+  "underage": {
+    "title": "Accès restreint",
+    "description": "Désolé, vous devez avoir 18 ans ou plus pour accéder à ce site web.",
+    "message": "Ce site web contient du contenu qui n'est approprié que pour les adultes. Veuillez revenir quand vous aurez 18 ans ou plus.",
+    "returnHome": "Retour à l'accueil"
+  },
   "footer": {
     "description": "Vins premium et produits gastronomiques. Sélection soignée des meilleures délicatesses.",
     "shop": {
