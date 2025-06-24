@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getLocalizedCategoryName } from "@/lib/utils";
 import { StrapiCategory } from "@/types/strapi";
 import { Filter, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -25,7 +26,8 @@ export function CategoryFilter({
   onClearFilters,
   currentCategorySlug,
 }: CategoryFilterProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language || "pt";
 
   // Filter out the current category if we're on a category page
   const availableCategories = currentCategorySlug
@@ -70,7 +72,9 @@ export function CategoryFilter({
             onClick={() => onCategoryToggle(category.slug)}
             className="w-full justify-between h-auto py-2 px-3"
           >
-            <span className="text-left">{category.name}</span>
+            <span className="text-left">
+              {getLocalizedCategoryName(category, currentLanguage)}
+            </span>
             <Badge variant="secondary" className="ml-2 text-xs">
               {count}
             </Badge>

@@ -1,9 +1,29 @@
-import { StrapiBlock, StrapiBlockChild } from "@/types/strapi";
+import { StrapiBlock, StrapiBlockChild, StrapiCategory } from "@/types/strapi";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+/**
+ * Gets the localized category name based on the current locale
+ * @param category - The category object
+ * @param locale - The current locale (pt, fr, en)
+ * @returns The localized category name
+ */
+export function getLocalizedCategoryName(
+  category: StrapiCategory,
+  locale: string
+): string {
+  switch (locale) {
+    case "pt":
+      return category.namePT || category.name;
+    case "fr":
+      return category.nameFR || category.name;
+    default:
+      return category.name;
+  }
 }
 
 /**

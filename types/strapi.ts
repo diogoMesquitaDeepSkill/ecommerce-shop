@@ -15,6 +15,8 @@ export interface StrapiCategory {
   id: number;
   documentId: string;
   name: string;
+  namePT: string;
+  nameFR: string;
   slug: string;
 }
 

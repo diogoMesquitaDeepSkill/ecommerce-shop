@@ -4,7 +4,7 @@ import { useCart } from "@/components/cart-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { getStrapiMediaUrl } from "@/lib/utils";
+import { getLocalizedCategoryName, getStrapiMediaUrl } from "@/lib/utils";
 import { StrapiProduct } from "@/types/strapi";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -33,7 +33,9 @@ export function FeaturedProductCard({ product, locale }: ProductCardProps) {
       price: product.price,
       image: mediaUrls[0] || "/placeholder.svg",
       quantity: 1,
-      categories: product.categories.map((cat) => cat.name),
+      categories: product.categories.map((cat) =>
+        getLocalizedCategoryName(cat, locale)
+      ),
     });
   };
 

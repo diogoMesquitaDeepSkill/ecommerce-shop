@@ -4,7 +4,7 @@ import { useCart } from "@/components/cart-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { getStrapiMediaUrl } from "@/lib/utils";
+import { getLocalizedCategoryName, getStrapiMediaUrl } from "@/lib/utils";
 import { StrapiProduct } from "@/types/strapi";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -54,7 +54,9 @@ function ProductCard({
   const mediaUrls = product.media?.map((media) =>
     getStrapiMediaUrl(media.url)
   ) || ["/placeholder.svg"];
-  const categories = product.categories.map((cat) => cat.name);
+  const categories = product.categories.map((cat) =>
+    getLocalizedCategoryName(cat, locale)
+  );
   const { t } = useTranslation();
 
   const productData = {

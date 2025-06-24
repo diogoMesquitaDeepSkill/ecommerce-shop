@@ -119,7 +119,17 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t pt-8 mt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            {t("footer.legal.copyright", { year: new Date().getFullYear() })}
+            © {new Date().getFullYear()} GourmetHub.{" "}
+            {t("footer.legal.developedBy")}{" "}
+            <Link
+              href="https://diogosantos.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground underline"
+            >
+              {t("footer.legal.developer")}
+            </Link>
+            . {t("footer.legal.allRightsReserved")}
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
             <Link

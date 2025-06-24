@@ -4,7 +4,7 @@ import { useCart } from "@/components/cart-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getStrapiMediaUrl } from "@/lib/utils";
+import { getLocalizedCategoryName, getStrapiMediaUrl } from "@/lib/utils";
 import { getProduct } from "@/services/strapi";
 import { StrapiProduct } from "@/types/strapi";
 import { ChevronRight, Minus, Plus, ShoppingCart } from "lucide-react";
@@ -52,7 +52,9 @@ export default function ProductPage() {
   const imageUrl = product.media
     ? getStrapiMediaUrl(product.media[0]?.url)
     : "/placeholder.svg";
-  const categories = product.categories.map((category) => category.name);
+  const categories = product.categories.map((category) =>
+    getLocalizedCategoryName(category, currentLanguage)
+  );
 
   const handleAddToCart = () => {
     const cartProduct: CartProduct = {

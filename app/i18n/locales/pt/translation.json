@@ -53,7 +53,10 @@
       "faq": "Perguntas Frequentes"
     },
     "legal": {
-      "copyright": "© {{year}} GourmetHub. Todos os direitos reservados.",
+      "copyright": "© {{year}} GourmetHub. Developed by {{developer}}. Todos os direitos reservados.",
+      "developer": "Diogo Santos",
+      "developedBy": "Desenvolvido por",
+      "allRightsReserved": "Todos os direitos reservados.",
       "privacyTerms": "Privacidade & Termos",
       "cookiePolicy": "Política de Cookies"
     }
