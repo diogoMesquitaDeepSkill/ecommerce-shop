@@ -70,22 +70,6 @@ export function Footer() {
                   {t("footer.shop.spirits")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href={`/${currentLanguage}/products/new`}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  {t("footer.shop.newArrivals")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${currentLanguage}/products/sale`}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  {t("footer.shop.sale")}
-                </Link>
-              </li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -139,22 +123,10 @@ export function Footer() {
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
             <Link
-              href={`/${currentLanguage}/privacy`}
+              href={`/${currentLanguage}/privacy-terms`}
               className="hover:text-foreground"
             >
-              {t("footer.legal.privacyPolicy")}
-            </Link>
-            <Link
-              href={`/${currentLanguage}/terms`}
-              className="hover:text-foreground"
-            >
-              {t("footer.legal.termsOfService")}
-            </Link>
-            <Link
-              href={`/${currentLanguage}/cookies`}
-              className="hover:text-foreground"
-            >
-              {t("footer.legal.cookiePolicy")}
+              {t("footer.legal.privacyTerms")}
             </Link>
           </div>
         </div>

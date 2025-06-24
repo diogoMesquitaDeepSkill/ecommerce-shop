@@ -219,3 +219,30 @@ export interface StrapiOrderResponse {
   order: StrapiOrder;
   stripeUrl: string;
 }
+
+export interface StrapiTerm {
+  id: number;
+  documentId: string;
+  content: StrapiBlock[];
+  localizations?: {
+    id: number;
+    documentId: string;
+    content: StrapiBlock[];
+    locale: string;
+  }[];
+}
+
+export interface StrapiBlock {
+  type: string;
+  level?: number;
+  children?: StrapiBlockChild[];
+}
+
+export interface StrapiBlockChild {
+  text: string;
+  type: string;
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+  children?: StrapiBlockChild[];
+}

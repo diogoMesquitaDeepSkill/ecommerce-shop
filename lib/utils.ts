@@ -1,4 +1,5 @@
-import { clsx, type ClassValue } from "clsx";
+import { StrapiBlock, StrapiBlockChild } from "@/types/strapi";
+import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -13,25 +14,82 @@ export function cn(...inputs: ClassValue[]) {
 export function getStrapiMediaUrl(url: string): string {
   if (!url) return "/placeholder.svg";
 
-  // If it's already a full URL, return as is
-  if (url.startsWith("http://") || url.startsWith("https://")) {
+  if (url.startsWith("http")) {
     return url;
   }
 
-  // If it's a placeholder or local asset (but not Strapi uploads), return as is
-  if (
-    url.startsWith("/placeholder") ||
-    (url.startsWith("/") && !url.startsWith("/uploads/"))
-  ) {
-    return url;
-  }
-
-  // Prefix with Strapi URL
   const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
-  if (!strapiUrl) {
-    console.warn("NEXT_PUBLIC_STRAPI_URL is not defined");
-    return url;
-  }
-
   return `${strapiUrl}${url}`;
+}
+
+export function renderStrapiBlocks(blocks: StrapiBlock[]): string {
+  return blocks.map((block) => renderBlock(block)).join("");
+}
+
+function renderBlock(block: StrapiBlock): string {
+  switch (block.type) {
+    case "heading":
+      const level = block.level || 1;
+      const headingTag = `h${level}`;
+      const content = renderChildren(block.children || []);
+      return `<${headingTag}>${content}</${headingTag}>`;
+
+    case "paragraph":
+      const paragraphContent = renderChildren(block.children || []);
+      return `<p>${paragraphContent}</p>`;
+
+    case "list":
+      const listType = block.level === 1 ? "ol" : "ul";
+      const listItems =
+        block.children
+          ?.map((child) => {
+            if (child.type === "list-item") {
+              return `<li>${renderChildren(child.children || [])}</li>`;
+            }
+            return "";
+          })
+          .join("") || "";
+      return `<${listType}>${listItems}</${listType}>`;
+
+    case "list-item":
+      return `<li>${renderChildren(block.children || [])}</li>`;
+
+    case "quote":
+      const quoteContent = renderChildren(block.children || []);
+      return `<blockquote>${quoteContent}</blockquote>`;
+
+    case "code":
+      const codeContent = renderChildren(block.children || []);
+      return `<code>${codeContent}</code>`;
+
+    case "link":
+      const linkContent = renderChildren(block.children || []);
+      // You might want to add URL handling here if Strapi provides it
+      return `<a href="#">${linkContent}</a>`;
+
+    default:
+      return renderChildren(block.children || []);
+  }
+}
+
+function renderChildren(children: StrapiBlockChild[]): string {
+  return children
+    .map((child) => {
+      let text = child.text;
+
+      if (child.bold) {
+        text = `<strong>${text}</strong>`;
+      }
+
+      if (child.italic) {
+        text = `<em>${text}</em>`;
+      }
+
+      if (child.underline) {
+        text = `<u>${text}</u>`;
+      }
+
+      return text;
+    })
+    .join("");
 }

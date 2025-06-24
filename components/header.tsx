@@ -157,6 +157,18 @@ export function Header() {
           >
             {t("header.spirits")}
           </Link>
+          <Link
+            href={`/${currentLanguage}/about`}
+            className="font-medium transition-colors hover:text-primary"
+          >
+            {t("header.about")}
+          </Link>
+          <Link
+            href={`/${currentLanguage}/stores`}
+            className="font-medium transition-colors hover:text-primary"
+          >
+            {t("header.stores")}
+          </Link>
         </nav>
 
         <div className="ml-auto flex items-center gap-2">

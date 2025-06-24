@@ -6,6 +6,7 @@
     "food": "Alimentation",
     "spirits": "Spiritueux",
     "about": "À Propos",
+    "stores": "Magasin",
     "contact": "Contact",
     "searchPlaceholder": "Rechercher des produits...",
     "search": "Rechercher",
@@ -53,8 +54,7 @@
     },
     "legal": {
       "copyright": "© {{year}} GourmetHub. Tous droits réservés.",
-      "privacyPolicy": "Politique de Confidentialité",
-      "termsOfService": "Conditions d'Utilisation",
+      "privacyTerms": "Confidentialité & Conditions",
       "cookiePolicy": "Politique des Cookies"
     }
   },
@@ -443,6 +443,17 @@
         "title": "Cookies de Marketing",
         "description": "Ces cookies sont utilisés pour suivre les visiteurs sur les sites web afin d'afficher des publicités pertinentes et engageantes."
       }
+    }
+  },
+  "privacyTerms": {
+    "title": "Politique de Confidentialité & Conditions d'Utilisation",
+    "description": "Découvrez comment nous collectons, utilisons et protégeons vos informations, et les conditions qui régissent votre utilisation de nos services.",
+    "error": {
+      "title": "Erreur de Chargement du Contenu"
+    },
+    "empty": {
+      "title": "Aucun Contenu Disponible",
+      "description": "Le contenu des conditions générales n'est pas disponible pour le moment."
     }
   }
 }

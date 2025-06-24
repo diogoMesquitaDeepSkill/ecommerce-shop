@@ -6,6 +6,7 @@
     "food": "Alimentos",
     "spirits": "Espirituosas",
     "about": "Sobre",
+    "stores": "Loja",
     "contact": "Contacto",
     "searchPlaceholder": "Buscar produtos...",
     "search": "Buscar",
@@ -53,8 +54,7 @@
     },
     "legal": {
       "copyright": "© {{year}} GourmetHub. Todos os direitos reservados.",
-      "privacyPolicy": "Política de Privacidade",
-      "termsOfService": "Termos de Serviço",
+      "privacyTerms": "Privacidade & Termos",
       "cookiePolicy": "Política de Cookies"
     }
   },
@@ -443,6 +443,17 @@
         "title": "Cookies de Marketing",
         "description": "Estes cookies são utilizados para rastrear visitantes em websites para exibir anúncios relevantes e envolventes."
       }
+    }
+  },
+  "privacyTerms": {
+    "title": "Política de Privacidade & Termos de Serviço",
+    "description": "Saiba como recolhemos, utilizamos e protegemos as suas informações, e os termos que regem a utilização dos nossos serviços.",
+    "error": {
+      "title": "Erro ao Carregar Conteúdo"
+    },
+    "empty": {
+      "title": "Nenhum Conteúdo Disponível",
+      "description": "O conteúdo dos termos e condições não está disponível neste momento."
     }
   }
 }

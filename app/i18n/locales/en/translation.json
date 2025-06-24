@@ -6,6 +6,7 @@
     "food": "Food",
     "spirits": "Spirits",
     "about": "About",
+    "stores": "Store",
     "contact": "Contact",
     "searchPlaceholder": "Search products...",
     "search": "Search",
@@ -53,8 +54,7 @@
     },
     "legal": {
       "copyright": "© {{year}} GourmetHub. All rights reserved.",
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service",
+      "privacyTerms": "Privacy & Terms",
       "cookiePolicy": "Cookie Policy"
     }
   },
@@ -443,6 +443,17 @@
         "title": "Marketing Cookies",
         "description": "These cookies are used to track visitors across websites to display relevant and engaging advertisements."
       }
+    }
+  },
+  "privacyTerms": {
+    "title": "Privacy Policy & Terms of Service",
+    "description": "Learn about how we collect, use, and protect your information, and the terms that govern your use of our services.",
+    "error": {
+      "title": "Error Loading Content"
+    },
+    "empty": {
+      "title": "No Content Available",
+      "description": "Terms and conditions content is not available at the moment."
     }
   }
 }
