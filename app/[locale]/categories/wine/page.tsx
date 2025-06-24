@@ -20,18 +20,22 @@ export default async function WineCategoryPage({
   let error: string | null = null;
 
   try {
-    // Fetch all products for filtering (1000 limit)
-    const allProductsResponse = await getAllProductsForFiltering(params.locale);
-    allProducts = allProductsResponse.data;
-
     if (searchQuery) {
       // Search within wine category
       const searchResults = await searchProducts(searchQuery, params.locale);
       // Filter search results by wine category
-      products = searchResults.data.filter((product: StrapiProduct) =>
-        product.categories.some((category) => category.slug === "wine")
+      const wineSearchResults = searchResults.data.filter(
+        (product: StrapiProduct) =>
+          product.categories.some((category) => category.slug === "wine")
       );
+      products = wineSearchResults;
+      allProducts = wineSearchResults; // Use filtered search results as allProducts
     } else {
+      // Fetch all products for filtering (1000 limit)
+      const allProductsResponse = await getAllProductsForFiltering(
+        params.locale
+      );
+      allProducts = allProductsResponse.data;
       // Filter all products by wine category and take first 12
       const wineProducts = allProducts.filter((product: StrapiProduct) =>
         product.categories.some((category) => category.slug === "wine")

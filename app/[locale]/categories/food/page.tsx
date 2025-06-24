@@ -20,18 +20,22 @@ export default async function FoodCategoryPage({
   let error: string | null = null;
 
   try {
-    // Fetch all products for filtering (1000 limit)
-    const allProductsResponse = await getAllProductsForFiltering(params.locale);
-    allProducts = allProductsResponse.data;
-
     if (searchQuery) {
       // Search within food category
       const searchResults = await searchProducts(searchQuery, params.locale);
       // Filter search results by food category
-      products = searchResults.data.filter((product: StrapiProduct) =>
-        product.categories.some((category) => category.slug === "food")
+      const foodSearchResults = searchResults.data.filter(
+        (product: StrapiProduct) =>
+          product.categories.some((category) => category.slug === "food")
       );
+      products = foodSearchResults;
+      allProducts = foodSearchResults; // Use filtered search results as allProducts
     } else {
+      // Fetch all products for filtering (1000 limit)
+      const allProductsResponse = await getAllProductsForFiltering(
+        params.locale
+      );
+      allProducts = allProductsResponse.data;
       // Filter all products by food category and take first 12
       const foodProducts = allProducts.filter((product: StrapiProduct) =>
         product.categories.some((category) => category.slug === "food")

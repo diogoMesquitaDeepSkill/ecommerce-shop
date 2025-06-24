@@ -21,15 +21,15 @@ export default async function ProductsPage({
   let error: string | null = null;
 
   try {
-    // Fetch all products for filtering (1000 limit)
-    const allProductsResponse = await getAllProductsForFiltering(locale);
-    allProducts = allProductsResponse.data;
-
     if (searchQuery) {
-      // If there's a search query, use search results
+      // If there's a search query, use search results for both products and allProducts
       const searchResults = await searchProducts(searchQuery, locale);
       products = searchResults.data;
+      allProducts = searchResults.data; // Use search results as allProducts for filtering
     } else {
+      // Fetch all products for filtering (1000 limit)
+      const allProductsResponse = await getAllProductsForFiltering(locale);
+      allProducts = allProductsResponse.data;
       // Take first 12 products from all products for initial display
       products = allProducts.slice(0, 12);
     }

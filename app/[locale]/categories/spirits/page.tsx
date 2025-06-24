@@ -20,18 +20,22 @@ export default async function SpiritsCategoryPage({
   let error: string | null = null;
 
   try {
-    // Fetch all products for filtering (1000 limit)
-    const allProductsResponse = await getAllProductsForFiltering(params.locale);
-    allProducts = allProductsResponse.data;
-
     if (searchQuery) {
       // Search within spirits category
       const searchResults = await searchProducts(searchQuery, params.locale);
       // Filter search results by spirits category
-      products = searchResults.data.filter((product: StrapiProduct) =>
-        product.categories.some((category) => category.slug === "spirit")
+      const spiritsSearchResults = searchResults.data.filter(
+        (product: StrapiProduct) =>
+          product.categories.some((category) => category.slug === "spirit")
       );
+      products = spiritsSearchResults;
+      allProducts = spiritsSearchResults; // Use filtered search results as allProducts
     } else {
+      // Fetch all products for filtering (1000 limit)
+      const allProductsResponse = await getAllProductsForFiltering(
+        params.locale
+      );
+      allProducts = allProductsResponse.data;
       // Filter all products by spirits category and take first 12
       const spiritsProducts = allProducts.filter((product: StrapiProduct) =>
         product.categories.some((category) => category.slug === "spirit")

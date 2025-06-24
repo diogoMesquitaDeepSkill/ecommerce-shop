@@ -2,6 +2,7 @@
 
 import { CategoryFilter } from "@/components/category-filter";
 import { ProductGrid } from "@/components/product-grid";
+import { SearchBar } from "@/components/search-bar";
 import { Button } from "@/components/ui/button";
 import { useProductPagination } from "@/hooks/useProductPagination";
 import { StrapiProduct } from "@/types/strapi";
@@ -88,6 +89,16 @@ export function SearchResults({
           </p>
         </div>
       )}
+
+      {/* Search Bar */}
+      <div className="w-full mb-6">
+        <SearchBar
+          defaultValue={searchQuery || ""}
+          placeholder={t("header.searchPlaceholder")}
+          isProductsPage={true}
+          categorySlug={categorySlug}
+        />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Category Filter Sidebar */}
