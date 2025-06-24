@@ -1,8 +1,8 @@
 "use client";
 
 import { useCart } from "@/components/cart-provider";
+import { SearchBar } from "@/components/search-bar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -11,14 +11,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import { Menu, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 export function Header() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { cartItems } = useCart();
   const cartItemCount = cartItems.length;
   const router = useRouter();
@@ -161,39 +160,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          {isSearchOpen ? (
-            <div className="relative flex items-center">
-              <Input
-                type="search"
-                placeholder={t("header.searchPlaceholder")}
-                className="w-[200px] md:w-[300px]"
-                autoFocus
-              />
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-0"
-                onClick={() => setIsSearchOpen(false)}
-              >
-                <X className="h-4 w-4" />
-                <span className="sr-only">{t("header.closeSearch")}</span>
-              </Button>
-            </div>
-          ) : (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsSearchOpen(true)}
-            >
-              <Search className="h-5 w-5" />
-              <span className="sr-only">{t("header.search")}</span>
-            </Button>
-          )}
-
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
-            <span className="sr-only">{t("header.account")}</span>
-          </Button>
+          <SearchBar />
 
           <Link href={`/${currentLanguage}/cart`}>
             <Button variant="ghost" size="icon" className="relative">

@@ -10,6 +10,7 @@
     "searchPlaceholder": "Rechercher des produits...",
     "search": "Rechercher",
     "closeSearch": "Fermer la recherche",
+    "clearSearch": "Effacer la recherche",
     "account": "Compte",
     "cart": "Panier",
     "toggleMenu": "Basculer le menu"
@@ -50,7 +51,7 @@
       "title": "Prêt à améliorer votre style ?",
       "description": "Découvrez nos dernières collections et trouvez votre look parfait.",
       "shopNow": "Acheter Maintenant",
-      "featuredWines": "Vins en Vedette"
+      "featuredWines": "Voir Collection de Vins"
     },
     "categories": {
       "title": "Acheter par Catégorie",
@@ -394,5 +395,12 @@
     "title": "Informations de Livraison",
     "notes": "Notes de Commande",
     "method": "Méthode de livraison"
+  },
+  "search": {
+    "resultsFor": "Résultats de recherche pour \"{{query}}\"",
+    "noResults": "Aucun produit trouvé",
+    "noResultsDescription": "Essayez d'ajuster vos critères de recherche ou parcourez tous les produits.",
+    "error": "Échec du chargement des produits",
+    "errorDescription": "Veuillez réessayer plus tard."
   }
 }

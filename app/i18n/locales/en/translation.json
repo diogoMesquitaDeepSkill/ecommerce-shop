@@ -10,6 +10,7 @@
     "searchPlaceholder": "Search products...",
     "search": "Search",
     "closeSearch": "Close search",
+    "clearSearch": "Clear search",
     "account": "Account",
     "cart": "Cart",
     "toggleMenu": "Toggle menu"
@@ -50,7 +51,7 @@
       "title": "Ready to upgrade your style?",
       "description": "Discover our latest collections and find your perfect fit.",
       "shopNow": "Shop Now",
-      "featuredWines": "Featured Wines"
+      "featuredWines": "Check our Wine Collection"
     },
     "categories": {
       "title": "Shop by Category",
@@ -394,5 +395,12 @@
     "title": "Shipping Information",
     "notes": "Order Notes",
     "method": "Shipping method"
+  },
+  "search": {
+    "resultsFor": "Search results for \"{{query}}\"",
+    "noResults": "No products found",
+    "noResultsDescription": "Try adjusting your search criteria or browse all products.",
+    "error": "Failed to load products",
+    "errorDescription": "Please try again later."
   }
 }

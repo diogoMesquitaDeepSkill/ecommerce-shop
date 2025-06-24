@@ -130,6 +130,31 @@ export async function getStore(
   return response.json();
 }
 
+// Search products
+export async function searchProducts(
+  query: string,
+  locale: string = "pt"
+): Promise<StrapiListResponse<StrapiProduct>> {
+  const response = await fetch(
+    `${STRAPI_URL}/api/products?filters[$or][0][name][$containsi]=${encodeURIComponent(
+      query
+    )}&filters[$or][1][description][$containsi]=${encodeURIComponent(
+      query
+    )}&populate=*&locale=${locale}`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to search products");
+  }
+
+  return response.json();
+}
+
 // Create order
 export async function createOrder(
   orderData: StrapiCreateOrderData

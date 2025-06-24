@@ -17,19 +17,29 @@ export function ProductGrid({ products }: { products: StrapiProduct[] }) {
   const locale = params.locale as string;
   const { t } = useTranslation();
 
-  return (
-    <>
-      <h1 className="text-3xl font-bold mb-8">{t("header.allProducts")}</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <ProductCard
-            key={product.documentId}
-            product={product}
-            locale={locale}
-          />
-        ))}
+  if (products.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <h3 className="text-lg font-medium text-muted-foreground mb-2">
+          {t("search.noResults")}
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          {t("search.noResultsDescription")}
+        </p>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {products.map((product) => (
+        <ProductCard
+          key={product.documentId}
+          product={product}
+          locale={locale}
+        />
+      ))}
+    </div>
   );
 }
 

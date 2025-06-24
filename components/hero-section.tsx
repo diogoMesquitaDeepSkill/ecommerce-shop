@@ -43,8 +43,7 @@ export function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white/10"
+                className="bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm"
               >
                 <Link href={`/${locale}/categories/wine`}>
                   {t("home.hero.featuredWines")}

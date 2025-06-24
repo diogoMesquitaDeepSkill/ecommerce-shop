@@ -10,6 +10,7 @@
     "searchPlaceholder": "Buscar produtos...",
     "search": "Buscar",
     "closeSearch": "Fechar busca",
+    "clearSearch": "Limpar busca",
     "account": "Conta",
     "cart": "Carrinho",
     "toggleMenu": "Alternar menu"
@@ -50,7 +51,7 @@
       "title": "Pronto para descobrir produtos gourmet?",
       "description": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
       "shopNow": "Comprar Agora",
-      "featuredWines": "Vinhos em Destaque"
+      "featuredWines": "Ver Coleção de Vinhos"
     },
     "categories": {
       "title": "Comprar por Categoria",
@@ -394,5 +395,12 @@
       "title": "A Nossa Loja | Loja E-commerce",
       "description": "Visite a nossa loja no Porto e experimente os nossos produtos pessoalmente."
     }
+  },
+  "search": {
+    "resultsFor": "Resultados da busca por \"{{query}}\"",
+    "noResults": "Nenhum produto encontrado",
+    "noResultsDescription": "Tente ajustar seus critérios de busca ou navegue por todos os produtos.",
+    "error": "Falha ao carregar produtos",
+    "errorDescription": "Por favor, tente novamente mais tarde."
   }
 }
