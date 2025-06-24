@@ -16,6 +16,7 @@ if (!STRAPI_URL) {
   throw new Error("STRAPI_URL environment variable is not defined");
 }
 
+// only used for featurd products component
 export async function getProducts(
   locale: string = "pt"
 ): Promise<StrapiListResponse<StrapiProduct>> {
@@ -30,6 +31,25 @@ export async function getProducts(
 
   if (!response.ok) {
     throw new Error("Failed to fetch products");
+  }
+
+  return response.json();
+}
+
+export async function getAllProductsForFiltering(
+  locale: string = "pt"
+): Promise<StrapiListResponse<StrapiProduct>> {
+  const response = await fetch(
+    `${STRAPI_URL}/api/products?populate=*&locale=${locale}&pagination[pageSize]=1000`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch all products for filtering");
   }
 
   return response.json();

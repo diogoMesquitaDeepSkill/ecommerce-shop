@@ -1,6 +1,6 @@
 import { useTranslation } from "@/app/i18n";
 import { SearchResults } from "@/components/search-results";
-import { getProducts, searchProducts } from "@/services/strapi";
+import { getAllProductsForFiltering, searchProducts } from "@/services/strapi";
 import { StrapiProduct } from "@/types/strapi";
 
 interface FoodCategoryPageProps {
@@ -16,9 +16,14 @@ export default async function FoodCategoryPage({
   const searchQuery = searchParams.search;
 
   let products: StrapiProduct[] = [];
+  let allProducts: StrapiProduct[] = [];
   let error: string | null = null;
 
   try {
+    // Fetch all products for filtering (1000 limit)
+    const allProductsResponse = await getAllProductsForFiltering(params.locale);
+    allProducts = allProductsResponse.data;
+
     if (searchQuery) {
       // Search within food category
       const searchResults = await searchProducts(searchQuery, params.locale);
@@ -27,11 +32,11 @@ export default async function FoodCategoryPage({
         product.categories.some((category) => category.slug === "food")
       );
     } else {
-      // Get all products and filter by food category
-      const { data } = await getProducts(params.locale);
-      products = data.filter((product: StrapiProduct) =>
+      // Filter all products by food category and take first 12
+      const foodProducts = allProducts.filter((product: StrapiProduct) =>
         product.categories.some((category) => category.slug === "food")
       );
+      products = foodProducts.slice(0, 12);
     }
   } catch (err) {
     console.error("Error fetching products:", err);
@@ -50,16 +55,16 @@ export default async function FoodCategoryPage({
         <p className="text-muted-foreground mb-6">
           {t("home.categories.description")}
         </p>
-        <div className="w-full">
-          <SearchResults
-            products={products}
-            searchQuery={searchQuery}
-            error={error}
-            isCategoryPage={true}
-            categorySlug="food"
-          />
-        </div>
       </div>
+
+      <SearchResults
+        products={products}
+        searchQuery={searchQuery}
+        error={error}
+        isCategoryPage={true}
+        categorySlug="food"
+        allProducts={allProducts}
+      />
     </div>
   );
 }

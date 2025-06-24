@@ -1,5 +1,6 @@
+import { useTranslation } from "@/app/i18n";
 import { SearchResults } from "@/components/search-results";
-import { getProducts, searchProducts } from "@/services/strapi";
+import { getAllProductsForFiltering, searchProducts } from "@/services/strapi";
 import { StrapiProduct } from "@/types/strapi";
 
 interface ProductsPageProps {
@@ -13,17 +14,24 @@ export default async function ProductsPage({
 }: ProductsPageProps) {
   const locale = params.locale;
   const searchQuery = searchParams.search;
+  const { t } = await useTranslation(locale);
 
   let products: StrapiProduct[] = [];
+  let allProducts: StrapiProduct[] = [];
   let error: string | null = null;
 
   try {
+    // Fetch all products for filtering (1000 limit)
+    const allProductsResponse = await getAllProductsForFiltering(locale);
+    allProducts = allProductsResponse.data;
+
     if (searchQuery) {
+      // If there's a search query, use search results
       const searchResults = await searchProducts(searchQuery, locale);
       products = searchResults.data;
     } else {
-      const allProducts = await getProducts(locale);
-      products = allProducts.data;
+      // Take first 12 products from all products for initial display
+      products = allProducts.slice(0, 12);
     }
   } catch (err) {
     console.error("Error fetching products:", err);
@@ -31,10 +39,24 @@ export default async function ProductsPage({
   }
 
   return (
-    <SearchResults
-      products={products}
-      searchQuery={searchQuery}
-      error={error}
-    />
+    <div className="container px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-6">
+          {searchQuery
+            ? t("products.searchResults", { query: searchQuery })
+            : t("products.title")}
+        </h1>
+        <p className="text-muted-foreground mb-6">
+          {t("products.description")}
+        </p>
+      </div>
+
+      <SearchResults
+        products={products}
+        searchQuery={searchQuery}
+        error={error}
+        allProducts={allProducts}
+      />
+    </div>
   );
 }

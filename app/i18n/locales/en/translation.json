@@ -412,10 +412,20 @@
   },
   "search": {
     "resultsFor": "Search results for \"{{query}}\"",
-    "noResults": "No products found",
-    "noResultsDescription": "Try adjusting your search criteria or browse all products.",
-    "error": "Failed to load products",
-    "errorDescription": "Please try again later."
+    "resultsCount": "{{count}} products found",
+    "noResults": {
+      "title": "No results found",
+      "description": "Try adjusting your search terms or browse our categories."
+    },
+    "noProducts": {
+      "title": "No products available",
+      "description": "Check back later for new products."
+    },
+    "error": {
+      "title": "Error loading products"
+    },
+    "loading": "Loading more products...",
+    "loadMore": "Load More Products"
   },
   "cookieConsent": {
     "title": "We use cookies",
@@ -455,5 +465,15 @@
       "title": "No Content Available",
       "description": "Terms and conditions content is not available at the moment."
     }
+  },
+  "filters": {
+    "categories": "Categories",
+    "clear": "Clear Filters",
+    "noCategories": "No categories available"
+  },
+  "products": {
+    "title": "All Products",
+    "description": "Discover our curated selection of premium wines, spirits, and gourmet foods.",
+    "searchResults": "Search Results for \"{{query}}\""
   }
 }

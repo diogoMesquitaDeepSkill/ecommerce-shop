@@ -412,10 +412,20 @@
   },
   "search": {
     "resultsFor": "Résultats de recherche pour \"{{query}}\"",
-    "noResults": "Aucun produit trouvé",
-    "noResultsDescription": "Essayez d'ajuster vos critères de recherche ou parcourez tous les produits.",
-    "error": "Échec du chargement des produits",
-    "errorDescription": "Veuillez réessayer plus tard."
+    "resultsCount": "{{count}} produits trouvés",
+    "noResults": {
+      "title": "Aucun résultat trouvé",
+      "description": "Essayez d'ajuster vos termes de recherche ou parcourez nos catégories."
+    },
+    "noProducts": {
+      "title": "Aucun produit disponible",
+      "description": "Revenez plus tard pour de nouveaux produits."
+    },
+    "error": {
+      "title": "Erreur lors du chargement des produits"
+    },
+    "loading": "Chargement de plus de produits...",
+    "loadMore": "Charger Plus de Produits"
   },
   "cookieConsent": {
     "title": "Nous utilisons des cookies",
@@ -455,5 +465,15 @@
       "title": "Aucun Contenu Disponible",
       "description": "Le contenu des conditions générales n'est pas disponible pour le moment."
     }
+  },
+  "filters": {
+    "categories": "Catégories",
+    "clear": "Effacer les Filtres",
+    "noCategories": "Aucune catégorie disponible"
+  },
+  "products": {
+    "title": "Tous les Produits",
+    "description": "Découvrez notre sélection de vins, spiritueux et aliments gastronomiques de qualité.",
+    "searchResults": "Résultats de recherche pour \"{{query}}\""
   }
 }
