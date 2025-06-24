@@ -1,6 +1,6 @@
 "use client";
 
-import { StrapiProduct } from "@/types/strapi";
+import { StrapiCategory, StrapiProduct } from "@/types/strapi";
 import { useCallback, useEffect, useState } from "react";
 
 interface UseProductPaginationProps {
@@ -11,12 +11,7 @@ interface UseProductPaginationProps {
 }
 
 interface CategoryCount {
-  category: {
-    id: number;
-    documentId: string;
-    name: string;
-    slug: string;
-  };
+  category: StrapiCategory;
   count: number;
 }
 

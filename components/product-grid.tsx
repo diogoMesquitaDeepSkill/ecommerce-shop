@@ -70,7 +70,7 @@ function ProductCard({
   };
 
   return (
-    <Card className="overflow-hidden group">
+    <Card className="overflow-hidden group h-full flex flex-col">
       <Link href={`/${locale}/products/${product.documentId}`}>
         <div className="relative aspect-square overflow-hidden">
           <Image
@@ -86,19 +86,19 @@ function ProductCard({
           ))}
         </div>
       </Link>
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex-1 flex flex-col">
         <Link
           href={`/${locale}/products/${product.documentId}`}
           className="hover:underline"
         >
           <h3 className="font-medium">{product.name}</h3>
         </Link>
-        <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
+        <p className="text-sm text-muted-foreground line-clamp-2 mt-1 flex-1">
           {product.description}
         </p>
         <p className="font-bold mt-2">{product.price.toFixed(2)}€</p>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-4 pt-0 mt-auto">
         <Button
           className="w-full"
           size="sm"
