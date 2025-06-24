@@ -8,25 +8,25 @@
     "about": "Sobre",
     "stores": "Loja",
     "contact": "Contacto",
-    "searchPlaceholder": "Buscar produtos...",
-    "search": "Buscar",
-    "closeSearch": "Fechar busca",
-    "clearSearch": "Limpar busca",
+    "searchPlaceholder": "Procurar produtos...",
+    "search": "Procurar",
+    "closeSearch": "Fechar procura",
+    "clearSearch": "Limpar procura",
     "account": "Conta",
     "cart": "Carrinho",
     "toggleMenu": "Alternar menu"
   },
   "ageVerification": {
     "title": "Verificação de Idade Necessária",
-    "description": "Você deve ter 18 anos ou mais para acessar este site.",
-    "question": "Você tem 18 anos ou mais?",
+    "description": "Deve ter 18 anos ou mais para aceder a este site.",
+    "question": "Tem 18 anos ou mais?",
     "yes": "Sim, tenho 18 anos ou mais",
     "no": "Não, tenho menos de 18 anos",
-    "remember": "Lembrar minha escolha"
+    "remember": "Lembrar a minha escolha"
   },
   "underage": {
     "title": "Acesso Restrito",
-    "description": "Desculpe, você deve ter 18 anos ou mais para acessar este site.",
+    "description": "Desculpe, deve ter 18 anos ou mais para aceder a este site.",
     "message": "Este site contém conteúdo que é adequado apenas para adultos. Por favor, volte quando tiver 18 anos ou mais.",
     "returnHome": "Voltar ao Início"
   },
@@ -48,7 +48,7 @@
     },
     "customerService": {
       "title": "Atendimento ao Cliente",
-      "helpCenter": "Central de Ajuda",
+      "helpCenter": "Centro de Ajuda",
       "shippingReturns": "Envios e Devoluções",
       "faq": "Perguntas Frequentes"
     },
@@ -61,38 +61,38 @@
   "home": {
     "hero": {
       "mainTitle": "Seleção Premium de Vinhos & Gourmet",
-      "mainDescription": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
+      "mainDescription": "Descubra a nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
       "title": "Pronto para descobrir produtos gourmet?",
-      "description": "Descubra nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
+      "description": "Descubra a nossa coleção cuidadosamente selecionada de vinhos e produtos gourmet de todo o mundo.",
       "shopNow": "Comprar Agora",
       "featuredWines": "Ver Coleção de Vinhos"
     },
     "categories": {
       "title": "Comprar por Categoria",
-      "description": "Explore nossa seleção curada de vinhos premium e produtos gourmet",
+      "description": "Explore a nossa seleção curada de vinhos premium e produtos gourmet",
       "wine": "Vinhos",
       "food": "Alimentos Gourmet",
       "spirits": "Espirituosas"
     },
     "featured": {
       "title": "Produtos em Destaque",
-      "description": "Nossos produtos mais populares, cuidadosamente selecionados para si",
+      "description": "Os nossos produtos mais populares, cuidadosamente selecionados para si",
       "addToCart": "Adicionar ao Carrinho",
       "new": "Novo"
     }
   },
   "cart": {
     "empty": {
-      "title": "Seu carrinho está vazio",
-      "description": "Parece que você ainda não adicionou nada ao seu carrinho.",
-      "continueShopping": "Continuar comprando"
+      "title": "O seu carrinho está vazio",
+      "description": "Parece que ainda não adicionou nada ao seu carrinho.",
+      "continueShopping": "Continuar a comprar"
     },
     "title": "Carrinho",
     "clearCart": "Limpar carrinho",
     "orderSummary": {
       "title": "Resumo do pedido",
       "subtotal": "Subtotal",
-      "shipping": "Frete",
+      "shipping": "Portes",
       "tax": "Imposto",
       "total": "Total",
       "calculatedAtCheckout": "Calculado no checkout"
@@ -101,13 +101,13 @@
   },
   "checkout": {
     "emptyCart": {
-      "title": "Seu carrinho está vazio",
-      "description": "Você precisa adicionar itens ao seu carrinho antes de finalizar a compra.",
+      "title": "O seu carrinho está vazio",
+      "description": "Precisa de adicionar itens ao seu carrinho antes de finalizar a compra.",
       "browseProducts": "Navegar produtos"
     },
     "orderConfirmed": {
       "title": "Pedido confirmado!",
-      "description": "Obrigado pela sua compra. Seu pedido foi confirmado e será enviado em breve.",
+      "description": "Obrigado pela sua compra. O seu pedido foi confirmado e será enviado em breve.",
       "orderNumber": "Pedido #12345",
       "emailSent": "Um email de confirmação foi enviado para o seu endereço de email.",
       "returnHome": "Voltar para a página inicial"
@@ -117,7 +117,7 @@
     "contactInfo": {
       "title": "Informações de contacto",
       "firstName": "Nome",
-      "lastName": "Sobrenome",
+      "lastName": "Apelido",
       "email": "Email",
       "phone": "Telefone"
     },
@@ -126,8 +126,8 @@
       "address": "Endereço",
       "apartment": "Apartamento, suite, etc. (opcional)",
       "city": "Cidade",
-      "state": "Estado",
-      "selectState": "Selecione o estado",
+      "state": "Distrito",
+      "selectState": "Selecione o distrito",
       "zipCode": "Código Postal",
       "country": "País",
       "defaultCountry": "Portugal",
@@ -143,13 +143,13 @@
       "cardNumber": "Número do cartão",
       "expiryDate": "Data de validade",
       "cvc": "CVC",
-      "paypalRedirect": "Você será redirecionado para o PayPal para completar sua compra com segurança.",
+      "paypalRedirect": "Será redirecionado para o PayPal para completar a sua compra com segurança.",
       "continueWithPaypal": "Continuar com PayPal",
-      "codDescription": "Pague em dinheiro quando seu pedido for entregue. Uma pequena taxa de pagamento na entrega pode ser aplicada.",
+      "codDescription": "Pague em dinheiro quando o seu pedido for entregue. Uma pequena taxa de pagamento na entrega pode ser aplicada.",
       "secureAndConvenient": "Seguro e conveniente",
-      "noPaymentDetails": "Não é necessário compartilhar detalhes de pagamento online",
+      "noPaymentDetails": "Não é necessário partilhar detalhes de pagamento online",
       "payOnReceive": "Pague apenas quando receber",
-      "inspectBeforePayment": "Inspecione seus itens antes do pagamento"
+      "inspectBeforePayment": "Inspecione os seus itens antes do pagamento"
     },
     "shippingMethod": {
       "title": "Método de envio",
@@ -167,18 +167,18 @@
     "orderSummary": {
       "title": "Resumo do pedido",
       "subtotal": "Subtotal",
-      "shipping": "Frete",
+      "shipping": "Portes",
       "tax": "Imposto",
       "total": "Total",
       "calculatedAtCheckout": "Calculado no checkout"
     },
     "placeOrder": "Fazer pedido",
     "payWithStripe": "Pagar com Stripe",
-    "processing": "Processando..."
+    "processing": "A processar..."
   },
   "faq": {
     "title": "Perguntas Frequentes",
-    "description": "Encontre respostas para perguntas comuns sobre nossos produtos, serviços e políticas. Não encontrou o que procura? Entre em contacto com nossa equipe de suporte.",
+    "description": "Encontre respostas para perguntas comuns sobre os nossos produtos, serviços e políticas. Não encontrou o que procura? Entre em contacto com a nossa equipa de suporte.",
     "contactButton": "Contactar Suporte",
     "categories": {
       "shopping": "Compras e Pedidos",
@@ -190,32 +190,32 @@
     },
     "empty": {
       "title": "Nenhuma FAQ Disponível",
-      "description": "Estamos atualizando nossa seção de perguntas frequentes. Por favor, volte em breve ou entre em contacto com nossa equipe de suporte para obter ajuda."
+      "description": "Estamos a atualizar a nossa secção de perguntas frequentes. Por favor, volte em breve ou entre em contacto com a nossa equipa de suporte para obter ajuda."
     }
   },
   "contact": {
     "title": "Entre em Contacto",
-    "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contacto com nossa equipe.",
+    "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contacto com a nossa equipa.",
     "emailUs": "Envie-nos um Email",
     "callUs": "Ligue para Nós",
     "visitUs": "Visite-nos",
     "sendMessage": "Envie-nos uma Mensagem",
     "form": {
       "firstName": "Nome",
-      "lastName": "Sobrenome",
+      "lastName": "Apelido",
       "email": "Email",
       "subject": "Assunto",
       "message": "Mensagem",
-      "firstNamePlaceholder": "Digite seu nome",
-      "lastNamePlaceholder": "Digite seu sobrenome",
-      "emailPlaceholder": "Digite seu email",
+      "firstNamePlaceholder": "Digite o seu nome",
+      "lastNamePlaceholder": "Digite o seu apelido",
+      "emailPlaceholder": "Digite o seu email",
       "subjectPlaceholder": "Digite o assunto da mensagem",
-      "messagePlaceholder": "Digite sua mensagem",
+      "messagePlaceholder": "Digite a sua mensagem",
       "sendMessage": "Enviar Mensagem"
     },
     "empty": {
       "title": "Informações de Contacto Indisponíveis",
-      "description": "Estamos atualizando nossas informações de contacto. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
+      "description": "Estamos a atualizar as nossas informações de contacto. Por favor, tente novamente mais tarde ou envie-nos um email diretamente."
     }
   },
   "about": {
@@ -411,11 +411,11 @@
     }
   },
   "search": {
-    "resultsFor": "Resultados da pesquisa para \"{{query}}\"",
+    "resultsFor": "Resultados da procura para \"{{query}}\"",
     "resultsCount": "{{count}} produtos encontrados",
     "noResults": {
       "title": "Nenhum resultado encontrado",
-      "description": "Tente ajustar os seus termos de pesquisa ou navegue pelas nossas categorias."
+      "description": "Tente ajustar os seus termos de procura ou navegue pelas nossas categorias."
     },
     "noProducts": {
       "title": "Nenhum produto disponível",
@@ -474,6 +474,6 @@
   "products": {
     "title": "Todos os Produtos",
     "description": "Descubra a nossa seleção de vinhos, espirituosas e alimentos gourmet de qualidade.",
-    "searchResults": "Resultados da pesquisa para \"{{query}}\""
+    "searchResults": "Resultados da procura para \"{{query}}\""
   }
 }
