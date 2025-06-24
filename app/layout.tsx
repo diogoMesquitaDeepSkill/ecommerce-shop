@@ -1,5 +1,7 @@
 import { AgeVerificationProvider } from "@/components/age-verification-provider";
 import { CartProvider } from "@/components/cart-provider";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner";
+import { CookieConsentProvider } from "@/components/cookie-consent-provider";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import type { Metadata } from "next";
@@ -34,15 +36,18 @@ export default function RootLayout({
     <html>
       <body className={inter.className}>
         <Providers>
-          <CartProvider>
-            <div className="flex flex-col min-h-screen">
-              <AgeVerificationProvider>
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
-              </AgeVerificationProvider>
-            </div>
-          </CartProvider>
+          <CookieConsentProvider>
+            <CartProvider>
+              <div className="flex flex-col min-h-screen">
+                <AgeVerificationProvider>
+                  <Header />
+                  <main className="flex-1">{children}</main>
+                  <Footer />
+                </AgeVerificationProvider>
+              </div>
+              <CookieConsentBanner />
+            </CartProvider>
+          </CookieConsentProvider>
         </Providers>
       </body>
     </html>

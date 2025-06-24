@@ -416,5 +416,33 @@
     "noResultsDescription": "Essayez d'ajuster vos critères de recherche ou parcourez tous les produits.",
     "error": "Échec du chargement des produits",
     "errorDescription": "Veuillez réessayer plus tard."
+  },
+  "cookieConsent": {
+    "title": "Nous utilisons des cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, fournir du contenu personnalisé et analyser notre trafic. En cliquant sur \"Accepter Tout\", vous consentez à notre utilisation de cookies.",
+    "customize": "Personnaliser",
+    "acceptAll": "Accepter Tout",
+    "rejectAll": "Rejeter Tout",
+    "savePreferences": "Enregistrer les Préférences",
+    "preferencesTitle": "Préférences de Cookies",
+    "categories": {
+      "necessary": {
+        "title": "Cookies Nécessaires",
+        "required": "Requis",
+        "description": "Ces cookies sont essentiels au bon fonctionnement du site web. Ils ne peuvent pas être désactivés."
+      },
+      "functional": {
+        "title": "Cookies Fonctionnels",
+        "description": "Ces cookies permettent des fonctionnalités améliorées et la personnalisation, comme les préférences de langue et le panier d'achat."
+      },
+      "analytics": {
+        "title": "Cookies d'Analyse",
+        "description": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations de manière anonyme."
+      },
+      "marketing": {
+        "title": "Cookies de Marketing",
+        "description": "Ces cookies sont utilisés pour suivre les visiteurs sur les sites web afin d'afficher des publicités pertinentes et engageantes."
+      }
+    }
   }
 }

@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 
 export function AgeVerificationPopup() {
   const { t } = useTranslation();
-  const { status, verifyAge, resetAgeVerification } = useAgeVerification();
+  const { status, isLoading, verifyAge, resetAgeVerification } =
+    useAgeVerification();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -21,8 +22,8 @@ export function AgeVerificationPopup() {
     router.push("/underage");
   };
 
-  // Don't show popup if status is not pending or if user is on underage page
-  if (status !== "pending" || pathname.includes("/underage")) {
+  // Don't show popup if still loading, status is not pending, or if user is on underage page
+  if (isLoading || status !== "pending" || pathname.includes("/underage")) {
     return null;
   }
 
