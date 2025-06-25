@@ -205,16 +205,30 @@
     "sendMessage": "Envoyez-nous un Message",
     "form": {
       "firstName": "Prénom",
-      "lastName": "Nom de famille",
+      "lastName": "Nom",
       "email": "Email",
       "subject": "Sujet",
+      "orderId": "Numéro de Commande (Optionnel)",
       "message": "Message",
       "firstNamePlaceholder": "Entrez votre prénom",
-      "lastNamePlaceholder": "Entrez votre nom de famille",
+      "lastNamePlaceholder": "Entrez votre nom",
       "emailPlaceholder": "Entrez votre email",
       "subjectPlaceholder": "Entrez le sujet du message",
+      "orderIdPlaceholder": "Entrez le numéro de commande si lié à une commande",
       "messagePlaceholder": "Entrez votre message",
-      "sendMessage": "Envoyer le Message"
+      "sendMessage": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Échec de l'envoi du message. Veuillez réessayer."
+    },
+    "validation": {
+      "firstNameRequired": "Le prénom est requis",
+      "lastNameRequired": "Le nom est requis",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Veuillez entrer une adresse email valide",
+      "subjectRequired": "Le sujet est requis",
+      "messageRequired": "Le message est requis",
+      "messageMinLength": "Le message doit contenir au moins 10 caractères"
     },
     "empty": {
       "title": "Informations de Contact Indisponibles",

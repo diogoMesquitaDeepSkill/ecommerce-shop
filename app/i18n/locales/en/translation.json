@@ -208,13 +208,27 @@
       "lastName": "Last Name",
       "email": "Email",
       "subject": "Subject",
+      "orderId": "Order ID (Optional)",
       "message": "Message",
       "firstNamePlaceholder": "Enter your first name",
       "lastNamePlaceholder": "Enter your last name",
       "emailPlaceholder": "Enter your email",
       "subjectPlaceholder": "Enter message subject",
+      "orderIdPlaceholder": "Enter order ID if related to an order",
       "messagePlaceholder": "Enter your message",
-      "sendMessage": "Send Message"
+      "sendMessage": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters"
     },
     "empty": {
       "title": "Contact Information Unavailable",

@@ -197,10 +197,10 @@
     }
   },
   "contact": {
-    "title": "Entre em Contacto",
+    "title": "Contacte-nos",
     "description": "Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar. Entre em contacto com a nossa equipa.",
     "emailUs": "Envie-nos um Email",
-    "callUs": "Ligue para Nós",
+    "callUs": "Ligue-nos",
     "visitUs": "Visite-nos",
     "sendMessage": "Envie-nos uma Mensagem",
     "form": {
@@ -208,13 +208,27 @@
       "lastName": "Apelido",
       "email": "Email",
       "subject": "Assunto",
+      "orderId": "ID da Encomenda (Opcional)",
       "message": "Mensagem",
-      "firstNamePlaceholder": "Digite o seu nome",
-      "lastNamePlaceholder": "Digite o seu apelido",
-      "emailPlaceholder": "Digite o seu email",
-      "subjectPlaceholder": "Digite o assunto da mensagem",
-      "messagePlaceholder": "Digite a sua mensagem",
-      "sendMessage": "Enviar Mensagem"
+      "firstNamePlaceholder": "Introduza o seu nome",
+      "lastNamePlaceholder": "Introduza o seu apelido",
+      "emailPlaceholder": "Introduza o seu email",
+      "subjectPlaceholder": "Introduza o assunto da mensagem",
+      "orderIdPlaceholder": "Introduza o ID da encomenda se relacionado com uma encomenda",
+      "messagePlaceholder": "Introduza a sua mensagem",
+      "sendMessage": "Enviar Mensagem",
+      "sending": "A enviar...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Falha ao enviar mensagem. Por favor, tente novamente."
+    },
+    "validation": {
+      "firstNameRequired": "O nome é obrigatório",
+      "lastNameRequired": "O apelido é obrigatório",
+      "emailRequired": "O email é obrigatório",
+      "emailInvalid": "Por favor, introduza um endereço de email válido",
+      "subjectRequired": "O assunto é obrigatório",
+      "messageRequired": "A mensagem é obrigatória",
+      "messageMinLength": "A mensagem deve ter pelo menos 10 caracteres"
     },
     "empty": {
       "title": "Informações de Contacto Indisponíveis",

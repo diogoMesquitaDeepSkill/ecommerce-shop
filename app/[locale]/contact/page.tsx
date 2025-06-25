@@ -1,16 +1,25 @@
 import { useTranslation } from "@/app/i18n";
-import { Button } from "@/components/ui/button";
+import { ContactForm } from "@/components/contact-form";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { getContact } from "@/services/strapi";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
+import { ContactFormWrapper } from "@/components/contact-form-wrapper";
 
-export const metadata: Metadata = {
-  title: "meta.contact.title",
-  description: "meta.contact.description",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
+  const { t } = await useTranslation(locale);
+
+  return {
+    title: t("meta.contact.title"),
+    description: t("meta.contact.description"),
+  };
+}
 
 export default async function ContactPage({
   params,
@@ -78,84 +87,7 @@ export default async function ContactPage({
           </div>
 
           {/* Contact Form */}
-          <Card className="max-w-2xl mx-auto p-6">
-            <h2 className="text-2xl font-bold mb-6">
-              {t("contact.sendMessage")}
-            </h2>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="firstName"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {t("contact.form.firstName")}
-                  </label>
-                  <Input
-                    id="firstName"
-                    placeholder={t("contact.form.firstNamePlaceholder")}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor="lastName"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {t("contact.form.lastName")}
-                  </label>
-                  <Input
-                    id="lastName"
-                    placeholder={t("contact.form.lastNamePlaceholder")}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {t("contact.form.email")}
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder={t("contact.form.emailPlaceholder")}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="subject"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {t("contact.form.subject")}
-                </label>
-                <Input
-                  id="subject"
-                  placeholder={t("contact.form.subjectPlaceholder")}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="message"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {t("contact.form.message")}
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder={t("contact.form.messagePlaceholder")}
-                  className="min-h-[150px]"
-                />
-              </div>
-
-              <Button type="submit" className="w-full">
-                {t("contact.form.sendMessage")}
-              </Button>
-            </form>
-          </Card>
+          <ContactFormWrapper locale={locale} />
         </>
       ) : (
         /* Empty State */
