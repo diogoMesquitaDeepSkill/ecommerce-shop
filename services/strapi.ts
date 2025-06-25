@@ -197,6 +197,36 @@ export async function createOrder(
   return response.json();
 }
 
+// Submit contact form
+export async function submitContactForm(
+  contactData: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone?: string;
+    subject: string;
+    orderId?: string;
+    message: string;
+    locale: string;
+  }
+): Promise<any> {
+  const response = await fetch(`${STRAPI_URL}/api/contact-form`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data: contactData }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.text();
+    console.error("Strapi contact form error:", errorData);
+    throw new Error("Failed to submit contact form");
+  }
+
+  return response.json();
+}
+
 // Get order by access token
 export async function getOrderByAccessToken(
   accessToken: string

@@ -7,11 +7,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import i18next from "@/app/i18n-client";
+import { submitContactForm, getContact } from "@/services/strapi";
 
 interface ContactFormData {
   firstName: string;
   lastName: string;
   email: string;
+  phone?: string;
   subject: string;
   orderId?: string;
   message: string;
@@ -21,6 +23,7 @@ interface ContactFormErrors {
   firstName?: string;
   lastName?: string;
   email?: string;
+  phone?: string;
   subject?: string;
   orderId?: string;
   message?: string;
@@ -36,6 +39,7 @@ export function ContactForm({ locale }: ContactFormProps) {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     subject: "",
     orderId: "",
     message: "",
@@ -43,12 +47,29 @@ export function ContactForm({ locale }: ContactFormProps) {
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [supportEmail, setSupportEmail] = useState<string>("");
 
   // Initialize i18n with the correct locale
   useEffect(() => {
     if (i18next.language !== locale) {
       i18next.changeLanguage(locale);
     }
+  }, [locale]);
+
+  // Fetch contact data to get support email
+  useEffect(() => {
+    const fetchContactData = async () => {
+      try {
+        const contactResponse = await getContact(locale);
+        if (contactResponse.data?.email) {
+          setSupportEmail(contactResponse.data.email);
+        }
+      } catch (error) {
+        console.error("Failed to fetch contact data:", error);
+      }
+    };
+
+    fetchContactData();
   }, [locale]);
 
   const validateForm = (): boolean => {
@@ -106,30 +127,21 @@ export function ContactForm({ locale }: ContactFormProps) {
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          locale,
-        }),
+      await submitContactForm({
+        ...formData,
+        locale,
       });
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          subject: "",
-          orderId: "",
-          message: "",
-        });
-      } else {
-        setSubmitStatus("error");
-      }
+      setSubmitStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        orderId: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Error submitting contact form:", error);
       setSubmitStatus("error");
@@ -143,18 +155,6 @@ export function ContactForm({ locale }: ContactFormProps) {
       <h2 className="text-2xl font-bold mb-6">
         {t("contact.sendMessage")}
       </h2>
-
-      {submitStatus === "success" && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-md">
-          <p className="text-green-800">{t("contact.form.success")}</p>
-        </div>
-      )}
-
-      {submitStatus === "error" && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md">
-          <p className="text-red-800">{t("contact.form.error")}</p>
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-4">
@@ -218,6 +218,22 @@ export function ContactForm({ locale }: ContactFormProps) {
 
         <div className="space-y-2">
           <label
+            htmlFor="phone"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            {t("contact.form.phone")}
+          </label>
+          <Input
+            id="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => handleInputChange("phone", e.target.value)}
+            placeholder={t("contact.form.phonePlaceholder")}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
             htmlFor="subject"
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
@@ -277,6 +293,21 @@ export function ContactForm({ locale }: ContactFormProps) {
           {isSubmitting ? t("contact.form.sending") : t("contact.form.sendMessage")}
         </Button>
       </form>
+
+      
+      {submitStatus === "success" && (
+        <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-md">
+          <p className="text-green-800">{t("contact.form.success")}</p>
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-md">
+          <p className="text-red-800">
+            {t("contact.form.error", { email: supportEmail })}
+          </p>
+        </div>
+      )}
     </Card>
   );
 } 

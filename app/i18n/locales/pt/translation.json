@@ -207,19 +207,21 @@
       "firstName": "Nome",
       "lastName": "Apelido",
       "email": "Email",
+      "phone": "Número de Telefone",
       "subject": "Assunto",
-      "orderId": "ID da Encomenda (Opcional)",
+      "orderId": "ID da Encomenda",
       "message": "Mensagem",
       "firstNamePlaceholder": "Introduza o seu nome",
       "lastNamePlaceholder": "Introduza o seu apelido",
       "emailPlaceholder": "Introduza o seu email",
+      "phonePlaceholder": "Introduza o seu número de telefone",
       "subjectPlaceholder": "Introduza o assunto da mensagem",
       "orderIdPlaceholder": "Introduza o ID da encomenda se relacionado com uma encomenda",
       "messagePlaceholder": "Introduza a sua mensagem",
       "sendMessage": "Enviar Mensagem",
       "sending": "A enviar...",
       "success": "Mensagem enviada com sucesso!",
-      "error": "Falha ao enviar mensagem. Por favor, tente novamente."
+      "error": "Falha ao enviar mensagem. Por favor, tente novamente mais tarde ou contacte-nos diretamente em {{email}}"
     },
     "validation": {
       "firstNameRequired": "O nome é obrigatório",

@@ -207,19 +207,21 @@
       "firstName": "Prénom",
       "lastName": "Nom",
       "email": "Email",
+      "phone": "Numéro de Téléphone",
       "subject": "Sujet",
-      "orderId": "Numéro de Commande (Optionnel)",
+      "orderId": "Numéro de Commande",
       "message": "Message",
       "firstNamePlaceholder": "Entrez votre prénom",
       "lastNamePlaceholder": "Entrez votre nom",
       "emailPlaceholder": "Entrez votre email",
+      "phonePlaceholder": "Entrez votre numéro de téléphone",
       "subjectPlaceholder": "Entrez le sujet du message",
       "orderIdPlaceholder": "Entrez le numéro de commande si lié à une commande",
       "messagePlaceholder": "Entrez votre message",
       "sendMessage": "Envoyer le Message",
       "sending": "Envoi en cours...",
       "success": "Message envoyé avec succès !",
-      "error": "Échec de l'envoi du message. Veuillez réessayer."
+      "error": "Échec de l'envoi du message. Veuillez réessayer plus tard ou nous contacter directement à {{email}}"
     },
     "validation": {
       "firstNameRequired": "Le prénom est requis",
