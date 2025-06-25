@@ -9,10 +9,20 @@ import { Building2, Heart, ShoppingBag, Users } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "meta.about.title",
-  description: "meta.about.description",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
+  const { t } = await useTranslation(locale);
+
+  return {
+    title: t("meta.about.title"),
+    description: t("meta.about.description"),
+  };
+}
 
 export default async function AboutPage({
   params,

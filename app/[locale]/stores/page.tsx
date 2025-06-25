@@ -9,10 +9,20 @@ import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "meta.stores.title",
-  description: "meta.stores.description",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
+  const { t } = await useTranslation(locale);
+
+  return {
+    title: t("meta.stores.title"),
+    description: t("meta.stores.description"),
+  };
+}
 
 export default async function StoresPage({
   params,

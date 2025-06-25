@@ -12,10 +12,20 @@ import { StrapiFAQ } from "@/types/strapi";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "meta.faq.title",
-  description: "meta.faq.description",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const awaitedParams = await params;
+  const locale = await awaitedParams.locale;
+  const { t } = await useTranslation(locale);
+
+  return {
+    title: t("meta.faq.title"),
+    description: t("meta.faq.description"),
+  };
+}
 
 // Helper function to group FAQ entries by type
 function groupFAQEntriesByType(faq: StrapiFAQ, t: any) {
