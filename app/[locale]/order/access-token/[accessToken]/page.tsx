@@ -209,12 +209,12 @@ export default function OrderStatusPage() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <p className="text-sm text-muted-foreground">
                   {t("order.details.orderNumber")}
                 </p>
-                <p className="font-medium">#{order.accessToken}</p>
+                <p className="font-medium break-all text-sm sm:text-base">#{order.accessToken}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">
@@ -234,7 +234,7 @@ export default function OrderStatusPage() {
                 <p className="text-sm text-muted-foreground">
                   {t("order.details.email")}
                 </p>
-                <p className="font-medium">{order.email}</p>
+                <p className="font-medium break-all text-sm sm:text-base">{order.email}</p>
               </div>
             </div>
 
